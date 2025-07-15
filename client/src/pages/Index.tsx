@@ -293,7 +293,7 @@ const Index = () => {
           title="Content & Creative Services"
           description="Professional content creation and creative services that tell your story and captivate your audience."
           services={contentServices}
-          categoryColor="hsl(45 100% 65%)"
+          categoryColor="hsl(220 100% 65%)"
           onServiceClick={handleServiceClick}
         />
 

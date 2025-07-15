@@ -53,7 +53,7 @@ Preferred communication style: Simple, everyday language.
 - **Storage Interface**: Abstracted storage layer with both memory and database implementations
 
 ### Frontend Components
-- **Design System**: Premium/luxury themed components with gold/platinum color schemes
+- **Design System**: Premium/luxury themed components with blue/neon blue color schemes
 - **Component Library**: Full shadcn/ui component suite including forms, dialogs, cards, etc.
 - **Custom Components**: HeroSection, ServiceCard, ServiceSection for business presentation
 - **Responsive Design**: Mobile-first approach with Tailwind breakpoints

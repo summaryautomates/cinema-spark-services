@@ -4,6 +4,7 @@
 
 /* Luxurious Design System - Cinematic Grade Colors & Effects
 All colors MUST be HSL for consistency and theming.
+Premium Blue & Neon Blue Luxury Theme
 */
 
 @layer base {
@@ -20,10 +21,10 @@ All colors MUST be HSL for consistency and theming.
     --popover: 220 25% 10%;
     --popover-foreground: 210 15% 95%;
 
-    /* Luxury Gold Primary */
-    --primary: 45 100% 65%;
+    /* Luxury Blue Primary */
+    --primary: 220 100% 65%;
     --primary-foreground: 220 25% 8%;
-    --primary-glow: 45 100% 75%;
+    --primary-glow: 200 100% 75%;
 
     /* Platinum Secondary */
     --secondary: 215 25% 15%;
@@ -34,7 +35,7 @@ All colors MUST be HSL for consistency and theming.
     --muted-foreground: 215 10% 65%;
 
     /* Premium Accent */
-    --accent: 270 70% 65%;
+    --accent: 200 100% 70%;
     --accent-foreground: 220 25% 8%;
 
     /* Elegant Destructive */
@@ -44,19 +45,19 @@ All colors MUST be HSL for consistency and theming.
     /* Refined Borders */
     --border: 215 15% 18%;
     --input: 215 15% 18%;
-    --ring: 45 100% 65%;
+    --ring: 220 100% 65%;
 
     /* Premium Gradients */
-    --gradient-luxury: linear-gradient(135deg, hsl(45 100% 65%), hsl(45 80% 55%));
+    --gradient-luxury: linear-gradient(135deg, hsl(220 100% 65%), hsl(200 100% 75%));
     --gradient-platinum: linear-gradient(135deg, hsl(215 25% 15%), hsl(215 20% 20%));
-    --gradient-royal: linear-gradient(135deg, hsl(270 70% 65%), hsl(260 60% 70%));
+    --gradient-royal: linear-gradient(135deg, hsl(200 100% 60%), hsl(180 100% 70%));
     --gradient-hero: linear-gradient(135deg, hsl(220 25% 6%), hsl(215 30% 12%));
 
     /* Cinematic Shadows */
-    --shadow-luxury: 0 25px 50px -12px hsl(45 100% 65% / 0.4);
+    --shadow-luxury: 0 25px 50px -12px hsl(220 100% 65% / 0.4);
     --shadow-premium: 0 20px 40px -10px hsl(0 0% 0% / 0.6);
-    --shadow-glow: 0 0 40px hsl(45 100% 65% / 0.3);
-    --shadow-royal: 0 15px 35px -8px hsl(270 70% 65% / 0.3);
+    --shadow-glow: 0 0 40px hsl(200 100% 75% / 0.3);
+    --shadow-royal: 0 15px 35px -8px hsl(200 100% 60% / 0.3);
 
     /* Animation Durations */
     --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
