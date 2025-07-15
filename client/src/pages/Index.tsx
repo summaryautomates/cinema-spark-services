@@ -250,40 +250,40 @@ const Index = () => {
       />
 
       {/* Stats Section */}
-      <section className="py-16 bg-muted/20">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-muted/10 border-t border-border/50">
+        <div className="container mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div className="space-y-2">
-              <div className="text-4xl font-bold gradient-text">500+</div>
-              <p className="text-muted-foreground">Projects Completed</p>
+            <div className="space-y-4 p-6 rounded-lg bg-card/50 backdrop-blur-sm">
+              <div className="text-4xl md:text-5xl font-bold gradient-text">500+</div>
+              <p className="text-muted-foreground font-medium">Projects Completed</p>
             </div>
-            <div className="space-y-2">
-              <div className="text-4xl font-bold gradient-text">98%</div>
-              <p className="text-muted-foreground">Client Satisfaction</p>
+            <div className="space-y-4 p-6 rounded-lg bg-card/50 backdrop-blur-sm">
+              <div className="text-4xl md:text-5xl font-bold gradient-text">98%</div>
+              <p className="text-muted-foreground font-medium">Client Satisfaction</p>
             </div>
-            <div className="space-y-2">
-              <div className="text-4xl font-bold gradient-text">50+</div>
-              <p className="text-muted-foreground">AI Models Deployed</p>
+            <div className="space-y-4 p-6 rounded-lg bg-card/50 backdrop-blur-sm">
+              <div className="text-4xl md:text-5xl font-bold gradient-text">50+</div>
+              <p className="text-muted-foreground font-medium">AI Models Deployed</p>
             </div>
-            <div className="space-y-2">
-              <div className="text-4xl font-bold gradient-text">24/7</div>
-              <p className="text-muted-foreground">Expert Support</p>
+            <div className="space-y-4 p-6 rounded-lg bg-card/50 backdrop-blur-sm">
+              <div className="text-4xl md:text-5xl font-bold gradient-text">24/7</div>
+              <p className="text-muted-foreground font-medium">Expert Support</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Services Introduction */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 text-center">
-          <Badge variant="secondary" className="mb-6 px-4 py-2 bg-primary/10 text-primary border-primary/20">
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-6 text-center">
+          <Badge variant="secondary" className="mb-8 px-6 py-3 bg-primary/10 text-primary border-primary/20 backdrop-blur-sm">
             <Sparkles className="w-4 h-4 mr-2" />
             Our Expertise
           </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 gradient-text leading-tight">
             Comprehensive AI Solutions for Every Business Need
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-12">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto mb-16 leading-relaxed">
             From strategic consulting to cutting-edge development, we provide end-to-end AI solutions 
             that transform businesses and drive sustainable growth in the digital age.
           </p>
