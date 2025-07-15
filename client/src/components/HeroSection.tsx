@@ -10,20 +10,20 @@ export const HeroSection = ({
   onExploreServices,
   onContactUs
 }: HeroSectionProps) => {
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 w-full h-full"
+        className="absolute inset-0 w-full h-full flex items-center justify-center"
         style={{
           backgroundImage: `url(${heroImage})`,
           backgroundPosition: 'center center',
-          backgroundSize: 'cover',
+          backgroundSize: 'contain',
           backgroundRepeat: 'no-repeat'
         }} 
       />
       
       {/* Minimal Overlay for better contrast */}
-      <div className="absolute inset-0 bg-black/10" />
+      <div className="absolute inset-0 bg-black/5" />
       
       {/* Content */}
       <div className="relative z-10 w-full h-full flex flex-col">
