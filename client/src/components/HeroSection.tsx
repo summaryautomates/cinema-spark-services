@@ -17,7 +17,7 @@ export const HeroSection = ({
         style={{
           backgroundImage: `url(${heroImage})`,
           backgroundPosition: 'center center',
-          backgroundSize: 'contain',
+          backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat'
         }} 
       />
