@@ -19,7 +19,7 @@ export const HeroSection = ({
       />
       
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-hero" />
+      <div className="absolute inset-0 bg-black/60" />
       
       {/* Content */}
       <div className="container mx-auto px-4 text-center relative z-10">
