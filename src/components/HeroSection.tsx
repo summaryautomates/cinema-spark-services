@@ -10,13 +10,11 @@ export const HeroSection = ({
   onExploreServices,
   onContactUs
 }: HeroSectionProps) => {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      />
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
+      backgroundImage: `url(${heroBg})`
+    }} />
       
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/60" />
@@ -29,9 +27,7 @@ export const HeroSection = ({
             Premium AI Solutions
           </Badge>
           
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 gradient-text animate-fade-in">
-            Transform Your Business with AI Excellence
-          </h1>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 gradient-text animate-fade-in">Summarize your Business by Summary Automates</h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto animate-fade-in">
             From strategic consulting to cutting-edge development, we deliver comprehensive AI solutions that drive growth and innovation.
@@ -49,6 +45,5 @@ export const HeroSection = ({
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
