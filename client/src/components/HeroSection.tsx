@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Sparkles, Zap } from "lucide-react";
-const heroBg = "/lovable-uploads/d625cce6-15c7-4085-89d2-2700fbfc4d40.png";
+import heroImage from "@assets/ChatGPT Image Jul 15, 2025, 11_18_23 PM_1752602257547.png";
 interface HeroSectionProps {
   onExploreServices?: () => void;
   onContactUs?: () => void;
@@ -13,7 +13,7 @@ export const HeroSection = ({
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
-      backgroundImage: `url(${heroBg})`
+      backgroundImage: `url(${heroImage})`
     }} />
       
       {/* Overlay */}
