@@ -33,9 +33,7 @@ export const HeroSection = ({
             Premium AI Solutions
           </Badge>
           
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 gradient-text animate-fade-in leading-tight">
-            Summarize your Business with Summary Automates
-          </h1>
+          
           
           <p className="text-lg md:text-xl lg:text-2xl text-white/90 mb-12 max-w-4xl mx-auto animate-fade-in leading-relaxed">
             From strategic consulting to cutting-edge development, we deliver comprehensive AI solutions that drive growth and innovation.
