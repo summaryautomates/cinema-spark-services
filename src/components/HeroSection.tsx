@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Sparkles, Zap } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
+const heroBg = "/lovable-uploads/d625cce6-15c7-4085-89d2-2700fbfc4d40.png";
 interface HeroSectionProps {
   onExploreServices?: () => void;
   onContactUs?: () => void;
