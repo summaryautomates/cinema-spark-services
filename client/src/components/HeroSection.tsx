@@ -32,16 +32,7 @@ export const HeroSection = ({
           Premium AI Solutions
         </Badge>
         
-        <div className="flex justify-center animate-fade-in">
-          <Button 
-            variant="hero" 
-            size="lg" 
-            onClick={onContactUs}
-            className="px-8 py-4 text-lg font-semibold"
-          >
-            Get Started Today
-          </Button>
-        </div>
+        
       </div>
     </section>;
 };
