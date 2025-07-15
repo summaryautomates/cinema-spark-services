@@ -27,13 +27,7 @@ export const HeroSection = ({
       
       {/* Content */}
       <div className="relative z-10 w-full h-full flex flex-col">
-        {/* Badge at top */}
-        <div className="absolute top-8 left-1/2 transform -translate-x-1/2">
-          <Badge variant="secondary" className="px-6 py-3 bg-white/10 text-white border-white/20 backdrop-blur-sm">
-            <Sparkles className="w-4 h-4 mr-2" />
-            Premium AI Solutions
-          </Badge>
-        </div>
+        
         
         
       </div>
