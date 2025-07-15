@@ -10,7 +10,7 @@ export const HeroSection = ({
   onExploreServices,
   onContactUs
 }: HeroSectionProps) => {
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 to-slate-800">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div 
         className="absolute inset-0 w-full h-full"
@@ -22,17 +22,30 @@ export const HeroSection = ({
         }} 
       />
       
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-transparent to-black/40" />
+      {/* Minimal Overlay for better contrast */}
+      <div className="absolute inset-0 bg-black/10" />
       
       {/* Content */}
-      <div className="container mx-auto px-6 text-center relative z-10">
-        <Badge variant="secondary" className="mb-8 px-6 py-3 bg-primary/10 text-primary border-primary/20 backdrop-blur-sm">
-          <Sparkles className="w-4 h-4 mr-2" />
-          Premium AI Solutions
-        </Badge>
+      <div className="relative z-10 w-full h-full flex flex-col">
+        {/* Badge at top */}
+        <div className="absolute top-8 left-1/2 transform -translate-x-1/2">
+          <Badge variant="secondary" className="px-6 py-3 bg-white/10 text-white border-white/20 backdrop-blur-sm">
+            <Sparkles className="w-4 h-4 mr-2" />
+            Premium AI Solutions
+          </Badge>
+        </div>
         
-        
+        {/* Button at bottom */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+          <Button 
+            variant="hero" 
+            size="lg" 
+            onClick={onContactUs}
+            className="px-8 py-4 text-lg font-semibold bg-white/10 text-white border-white/20 backdrop-blur-sm hover:bg-white/20"
+          >
+            Get Started Today
+          </Button>
+        </div>
       </div>
     </section>;
 };
