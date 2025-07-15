@@ -32,17 +32,7 @@ export const HeroSection = ({
           Premium AI Solutions
         </Badge>
         
-        <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in">
-          <Button 
-            variant="luxury" 
-            size="lg" 
-            onClick={onExploreServices}
-            className="px-8 py-4 text-lg font-semibold"
-          >
-            <Zap className="mr-2 w-5 h-5" />
-            Explore Services
-            <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
+        <div className="flex justify-center animate-fade-in">
           <Button 
             variant="hero" 
             size="lg" 
