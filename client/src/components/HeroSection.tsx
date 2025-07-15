@@ -33,12 +33,6 @@ export const HeroSection = ({
             Premium AI Solutions
           </Badge>
           
-          
-          
-          <p className="text-lg md:text-xl lg:text-2xl text-white/90 mb-12 max-w-4xl mx-auto animate-fade-in leading-relaxed">
-            From strategic consulting to cutting-edge development, we deliver comprehensive AI solutions that drive growth and innovation.
-          </p>
-          
           <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in">
             <Button 
               variant="luxury" 
