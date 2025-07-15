@@ -10,17 +10,20 @@ export const HeroSection = ({
   onExploreServices,
   onContactUs
 }: HeroSectionProps) => {
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 to-slate-800">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
+        className="absolute inset-0 w-full h-full"
         style={{
-          backgroundImage: `url(${heroImage})`
+          backgroundImage: `url(${heroImage})`,
+          backgroundPosition: 'center center',
+          backgroundSize: 'contain',
+          backgroundRepeat: 'no-repeat'
         }} 
       />
       
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/70" />
+      <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-transparent to-black/40" />
       
       {/* Content */}
       <div className="container mx-auto px-6 text-center relative z-10">
