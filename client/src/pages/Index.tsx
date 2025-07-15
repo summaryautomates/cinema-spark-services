@@ -249,29 +249,7 @@ const Index = () => {
         onContactUs={handleContactUs}
       />
 
-      {/* Stats Section */}
-      <section className="py-20 bg-muted/10 border-t border-border/50">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div className="space-y-4 p-6 rounded-lg bg-card/50 backdrop-blur-sm">
-              <div className="text-4xl md:text-5xl font-bold gradient-text">500+</div>
-              <p className="text-muted-foreground font-medium">Projects Completed</p>
-            </div>
-            <div className="space-y-4 p-6 rounded-lg bg-card/50 backdrop-blur-sm">
-              <div className="text-4xl md:text-5xl font-bold gradient-text">98%</div>
-              <p className="text-muted-foreground font-medium">Client Satisfaction</p>
-            </div>
-            <div className="space-y-4 p-6 rounded-lg bg-card/50 backdrop-blur-sm">
-              <div className="text-4xl md:text-5xl font-bold gradient-text">50+</div>
-              <p className="text-muted-foreground font-medium">AI Models Deployed</p>
-            </div>
-            <div className="space-y-4 p-6 rounded-lg bg-card/50 backdrop-blur-sm">
-              <div className="text-4xl md:text-5xl font-bold gradient-text">24/7</div>
-              <p className="text-muted-foreground font-medium">Expert Support</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Services Introduction */}
       <section className="py-24 bg-background">
