@@ -249,6 +249,47 @@ const Index = () => {
         onContactUs={handleContactUs}
       />
 
+      {/* Stats Section */}
+      <section className="py-16 bg-muted/20">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div className="space-y-2">
+              <div className="text-4xl font-bold gradient-text">500+</div>
+              <p className="text-muted-foreground">Projects Completed</p>
+            </div>
+            <div className="space-y-2">
+              <div className="text-4xl font-bold gradient-text">98%</div>
+              <p className="text-muted-foreground">Client Satisfaction</p>
+            </div>
+            <div className="space-y-2">
+              <div className="text-4xl font-bold gradient-text">50+</div>
+              <p className="text-muted-foreground">AI Models Deployed</p>
+            </div>
+            <div className="space-y-2">
+              <div className="text-4xl font-bold gradient-text">24/7</div>
+              <p className="text-muted-foreground">Expert Support</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Introduction */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4 text-center">
+          <Badge variant="secondary" className="mb-6 px-4 py-2 bg-primary/10 text-primary border-primary/20">
+            <Sparkles className="w-4 h-4 mr-2" />
+            Our Expertise
+          </Badge>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">
+            Comprehensive AI Solutions for Every Business Need
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-12">
+            From strategic consulting to cutting-edge development, we provide end-to-end AI solutions 
+            that transform businesses and drive sustainable growth in the digital age.
+          </p>
+        </div>
+      </section>
+
       {/* Services Sections */}
       <div id="services" className="relative">
         {/* Strategic Services */}
@@ -306,30 +347,80 @@ const Index = () => {
         />
       </div>
 
+      {/* Why Choose Us Section */}
+      <section className="py-20 bg-muted/20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <Badge variant="secondary" className="mb-6 px-4 py-2 bg-primary/10 text-primary border-primary/20">
+              <Target className="w-4 h-4 mr-2" />
+              Why Choose Us
+            </Badge>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">
+              The AI Excellence Advantage
+            </h2>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="p-8 text-center hover-scale bg-card/50 backdrop-blur-sm border-border/50">
+              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center">
+                <Brain className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-4">AI-First Approach</h3>
+              <p className="text-muted-foreground">
+                Every solution is built with AI at its core, ensuring future-ready implementations 
+                that scale with your business needs.
+              </p>
+            </Card>
+            
+            <Card className="p-8 text-center hover-scale bg-card/50 backdrop-blur-sm border-border/50">
+              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center">
+                <Users className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Expert Team</h3>
+              <p className="text-muted-foreground">
+                Our team of AI specialists, developers, and strategists bring years of experience 
+                across diverse industries and cutting-edge technologies.
+              </p>
+            </Card>
+            
+            <Card className="p-8 text-center hover-scale bg-card/50 backdrop-blur-sm border-border/50">
+              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center">
+                <Zap className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Rapid Implementation</h3>
+              <p className="text-muted-foreground">
+                Fast-track your AI transformation with our proven methodologies and 
+                accelerated development processes that deliver results quickly.
+              </p>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Call to Action Section */}
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-hero" />
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
-            <Badge variant="secondary" className="mb-6 px-4 py-2 bg-primary/10 text-primary border-primary/20">
+            <Badge variant="secondary" className="mb-6 px-4 py-2 bg-white/10 text-white border-white/20">
               <Sparkles className="w-4 h-4 mr-2" />
               Ready to Transform Your Business?
             </Badge>
             
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
               Let's Build Something Extraordinary Together
             </h2>
             
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
               Join hundreds of satisfied clients who have transformed their businesses with our premium AI solutions and creative services.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="luxury" size="lg" onClick={handleContactUs}>
+              <Button variant="secondary" size="lg" onClick={handleContactUs} className="bg-white text-primary hover:bg-white/90">
                 <Phone className="mr-2" />
                 Schedule Consultation
               </Button>
-              <Button variant="hero" size="lg">
+              <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10">
                 View Portfolio
                 <ArrowUp className="ml-2" />
               </Button>
@@ -339,11 +430,52 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 border-t border-border">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-muted-foreground">
-            © 2024 Premium AI Services. All rights reserved. Crafted with excellence and innovation.
-          </p>
+      <footer className="py-16 border-t border-border bg-muted/20">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold gradient-text">AI Excellence</h3>
+              <p className="text-muted-foreground">
+                Transforming businesses through innovative AI solutions and strategic excellence.
+              </p>
+            </div>
+            
+            <div className="space-y-4">
+              <h4 className="font-semibold">Services</h4>
+              <ul className="space-y-2 text-muted-foreground">
+                <li>AI Consulting</li>
+                <li>Custom Development</li>
+                <li>Content Creation</li>
+                <li>Marketing Strategy</li>
+              </ul>
+            </div>
+            
+            <div className="space-y-4">
+              <h4 className="font-semibold">Company</h4>
+              <ul className="space-y-2 text-muted-foreground">
+                <li>About Us</li>
+                <li>Case Studies</li>
+                <li>Careers</li>
+                <li>Contact</li>
+              </ul>
+            </div>
+            
+            <div className="space-y-4">
+              <h4 className="font-semibold">Connect</h4>
+              <ul className="space-y-2 text-muted-foreground">
+                <li>LinkedIn</li>
+                <li>Twitter</li>
+                <li>GitHub</li>
+                <li>Newsletter</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="text-center pt-8 border-t border-border">
+            <p className="text-muted-foreground">
+              © 2024 AI Excellence. All rights reserved. Crafted with innovation and precision.
+            </p>
+          </div>
         </div>
       </footer>
     </div>
