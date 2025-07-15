@@ -35,17 +35,7 @@ export const HeroSection = ({
           </Badge>
         </div>
         
-        {/* Button at bottom */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-          <Button 
-            variant="hero" 
-            size="lg" 
-            onClick={onContactUs}
-            className="px-8 py-4 text-lg font-semibold bg-white/10 text-white border-white/20 backdrop-blur-sm hover:bg-white/20"
-          >
-            Get Started Today
-          </Button>
-        </div>
+        
       </div>
     </section>;
 };
