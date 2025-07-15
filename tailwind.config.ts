@@ -26,7 +26,8 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					glow: 'hsl(var(--primary-glow))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -62,6 +63,21 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				}
+			},
+			backgroundImage: {
+				'gradient-luxury': 'var(--gradient-luxury)',
+				'gradient-platinum': 'var(--gradient-platinum)',
+				'gradient-royal': 'var(--gradient-royal)',
+				'gradient-hero': 'var(--gradient-hero)'
+			},
+			boxShadow: {
+				'luxury': 'var(--shadow-luxury)',
+				'premium': 'var(--shadow-premium)',
+				'glow': 'var(--shadow-glow)',
+				'royal': 'var(--shadow-royal)'
+			},
+			transitionDuration: {
+				'luxury': '600ms'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
