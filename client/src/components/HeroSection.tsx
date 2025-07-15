@@ -27,32 +27,30 @@ export const HeroSection = ({
       
       {/* Content */}
       <div className="container mx-auto px-6 text-center relative z-10">
-        <div className="max-w-5xl mx-auto">
-          <Badge variant="secondary" className="mb-8 px-6 py-3 bg-primary/10 text-primary border-primary/20 backdrop-blur-sm">
-            <Sparkles className="w-4 h-4 mr-2" />
-            Premium AI Solutions
-          </Badge>
-          
-          <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in">
-            <Button 
-              variant="luxury" 
-              size="lg" 
-              onClick={onExploreServices}
-              className="px-8 py-4 text-lg font-semibold"
-            >
-              <Zap className="mr-2 w-5 h-5" />
-              Explore Services
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-            <Button 
-              variant="hero" 
-              size="lg" 
-              onClick={onContactUs}
-              className="px-8 py-4 text-lg font-semibold"
-            >
-              Get Started Today
-            </Button>
-          </div>
+        <Badge variant="secondary" className="mb-8 px-6 py-3 bg-primary/10 text-primary border-primary/20 backdrop-blur-sm">
+          <Sparkles className="w-4 h-4 mr-2" />
+          Premium AI Solutions
+        </Badge>
+        
+        <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in">
+          <Button 
+            variant="luxury" 
+            size="lg" 
+            onClick={onExploreServices}
+            className="px-8 py-4 text-lg font-semibold"
+          >
+            <Zap className="mr-2 w-5 h-5" />
+            Explore Services
+            <ArrowRight className="ml-2 w-5 h-5" />
+          </Button>
+          <Button 
+            variant="hero" 
+            size="lg" 
+            onClick={onContactUs}
+            className="px-8 py-4 text-lg font-semibold"
+          >
+            Get Started Today
+          </Button>
         </div>
       </div>
     </section>;
