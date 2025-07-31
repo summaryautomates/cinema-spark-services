@@ -82,77 +82,139 @@ const FloatingNavButton = ({ item, side, index }: FloatingNavButtonProps) => {
 
   return (
     <div
-      className={`fixed top-1/2 z-50 cursor-pointer transition-all duration-700 ease-out ${
+      className={`absolute top-1/2 z-40 cursor-pointer transition-all duration-700 ease-out group ${
         side === "left" 
-          ? "left-2 hover:left-4" 
-          : "right-2 hover:right-4"
+          ? "left-[15%] hover:left-[12%]" 
+          : "right-[15%] hover:right-[12%]"
       }`}
       style={{
-        transform: `translateY(${(index - 2.5) * 80}px)`,
-        animationDelay: `${index * 150}ms`
+        transform: `translateY(${(index - 2.5) * 90}px)`,
+        animationDelay: `${index * 200}ms`
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={handleClick}
     >
-      {/* Outer Glow Ring */}
-      <div
-        className={`absolute inset-0 rounded-2xl blur-lg transition-all duration-500 ${
-          isHovered ? "scale-125 opacity-60" : "scale-100 opacity-20"
+      {/* Connection Line to Hero Image */}
+      <div 
+        className={`absolute top-1/2 w-16 h-0.5 transition-all duration-500 ${
+          side === "left" ? "right-full" : "left-full"
         }`}
         style={{
-          background: `radial-gradient(circle, rgba(${item.glowColor}, 0.4) 0%, rgba(${item.glowColor}, 0.1) 50%, transparent 70%)`,
-          boxShadow: isHovered ? `0 0 40px rgba(${item.glowColor}, 0.3)` : "none"
+          background: `linear-gradient(${side === "left" ? "90deg" : "270deg"}, rgba(${item.glowColor}, 0.8), transparent)`,
+          opacity: isHovered ? 1 : 0.3,
+          boxShadow: isHovered ? `0 0 10px rgba(${item.glowColor}, 0.6)` : "none"
+        }}
+      />
+
+      {/* Outer Glow Ring */}
+      <div
+        className={`absolute inset-0 rounded-2xl blur-md transition-all duration-500 animate-pulse ${
+          isHovered ? "scale-150 opacity-80" : "scale-110 opacity-30"
+        }`}
+        style={{
+          background: `radial-gradient(circle, rgba(${item.glowColor}, 0.6) 0%, rgba(${item.glowColor}, 0.2) 50%, transparent 70%)`,
+          boxShadow: isHovered ? `0 0 60px rgba(${item.glowColor}, 0.4)` : `0 0 30px rgba(${item.glowColor}, 0.2)`
         }}
       />
 
       {/* Main Button Container */}
       <div
-        className={`relative bg-slate-900/95 backdrop-blur-lg border border-slate-700/50 rounded-xl p-4 min-w-[130px] transition-all duration-500 ${
-          isHovered ? "scale-105 bg-slate-800/95" : "scale-100"
+        className={`relative bg-black/80 backdrop-blur-xl border-2 rounded-2xl p-5 min-w-[140px] transition-all duration-500 ${
+          isHovered ? "scale-110 bg-black/90" : "scale-100"
         }`}
         style={{
-          borderColor: isHovered ? item.color : "rgba(148, 163, 184, 0.3)",
+          borderColor: isHovered ? item.color : `rgba(${item.glowColor.split(', ').join(', ')}, 0.4)`,
           boxShadow: isHovered 
-            ? `0 0 20px rgba(${item.glowColor}, 0.4), inset 0 0 10px rgba(${item.glowColor}, 0.1)`
-            : `0 4px 15px rgba(0, 0, 0, 0.3)`
+            ? `0 0 30px rgba(${item.glowColor}, 0.6), inset 0 0 20px rgba(${item.glowColor}, 0.1), 0 10px 40px rgba(0, 0, 0, 0.3)`
+            : `0 0 15px rgba(${item.glowColor}, 0.3), 0 5px 20px rgba(0, 0, 0, 0.2)`
         }}
       >
+        {/* Background Pattern */}
+        <div 
+          className="absolute inset-0 rounded-2xl opacity-5"
+          style={{
+            background: `radial-gradient(circle at 30% 30%, ${item.color} 0%, transparent 50%)`
+          }}
+        />
+
         {/* Icon */}
-        <div className="flex items-center justify-center mb-2">
-          <Icon
-            size={24}
-            style={{ color: item.color }}
-            className={`transition-all duration-300 ${
+        <div className="flex items-center justify-center mb-3 relative z-10">
+          <div
+            className={`p-2 rounded-full transition-all duration-300 ${
               isHovered ? "scale-125" : "scale-100"
             }`}
-          />
+            style={{
+              background: isHovered ? `rgba(${item.glowColor}, 0.2)` : "transparent",
+              boxShadow: isHovered ? `0 0 20px rgba(${item.glowColor}, 0.4)` : "none"
+            }}
+          >
+            <Icon
+              size={28}
+              style={{ 
+                color: item.color,
+                filter: isHovered ? `drop-shadow(0 0 8px ${item.color})` : "none"
+              }}
+            />
+          </div>
         </div>
 
         {/* Title */}
         <div
-          className="text-xs font-semibold text-center transition-all duration-300 leading-tight"
+          className="text-sm font-bold text-center transition-all duration-300 leading-tight relative z-10"
           style={{
-            color: isHovered ? item.color : "#e2e8f0",
-            textShadow: isHovered ? `0 0 8px rgba(${item.glowColor}, 0.5)` : "none"
+            color: isHovered ? item.color : "#f1f5f9",
+            textShadow: isHovered ? `0 0 10px rgba(${item.glowColor}, 0.6), 0 0 20px rgba(${item.glowColor}, 0.3)` : "0 2px 4px rgba(0, 0, 0, 0.5)"
           }}
         >
           {item.title}
         </div>
 
-        {/* Animated Border */}
+        {/* Animated Border Ring */}
         <div
-          className={`absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500 ${
+          className={`absolute inset-0 rounded-2xl transition-opacity duration-500 ${
             isHovered ? "opacity-100" : "opacity-0"
           }`}
           style={{
-            background: `linear-gradient(45deg, transparent, rgba(${item.glowColor}, 0.3), transparent)`,
-            animation: isHovered ? "border-glow 2s linear infinite" : "none"
+            background: `conic-gradient(from 0deg, transparent, ${item.color}, transparent, ${item.color}, transparent)`,
+            animation: isHovered ? "spin 3s linear infinite" : "none",
+            mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+            maskComposite: "xor",
+            padding: "2px"
+          }}
+        />
+
+        {/* Inner Pulse Effect */}
+        <div
+          className={`absolute inset-2 rounded-xl transition-opacity duration-500 ${
+            isHovered ? "opacity-100" : "opacity-0"
+          }`}
+          style={{
+            background: `radial-gradient(circle, rgba(${item.glowColor}, 0.1) 0%, transparent 70%)`,
+            animation: isHovered ? "pulse 2s ease-in-out infinite" : "none"
           }}
         />
       </div>
 
-      
+      {/* Floating Particles */}
+      {isHovered && (
+        <div className="absolute inset-0 pointer-events-none">
+          {[...Array(4)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-1 h-1 rounded-full animate-pulse"
+              style={{
+                backgroundColor: item.color,
+                left: `${20 + i * 20}%`,
+                top: `${20 + (i % 2) * 40}%`,
+                animationDelay: `${i * 200}ms`,
+                boxShadow: `0 0 10px ${item.color}`,
+                animation: "float-particles 3s ease-in-out infinite"
+              }}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
