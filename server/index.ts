@@ -38,12 +38,12 @@ app.use((req, res, next) => {
 });
 
 (async () => {
-  registerRoutes(app);
+  const server = await registerRoutes(app);
 
   // Add lead magnet API routes
   app.use('/api', leadMagnetRoutes);
 
-  const server = setupVite(app, serveStatic);
+  await setupVite(app, server);
 
   const PORT = 5000;
   server.listen(PORT, "0.0.0.0", () => {

@@ -37,6 +37,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { Phone } from "lucide-react";
 
 const Index = () => {
   const { toast } = useToast();
@@ -384,7 +385,7 @@ const Index = () => {
               </div>
               <h3 className="text-xl font-semibold mb-4">Rapid Implementation</h3>
               <p className="text-muted-foreground">
-                Fast-track your AI transformation with our proven methodologies and 
+                Fast-trackyour AI transformation with our proven methodologies and 
                 accelerated development processes that deliver results quickly.
               </p>
             </Card>
