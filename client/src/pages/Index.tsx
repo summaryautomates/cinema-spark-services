@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { HeroSection } from "@/components/HeroSection";
 import { ServiceSection } from "@/components/ServiceSection";
-import { FloatingNavigation } from "@/components/FloatingNavigation";
+import { SmartNavigation } from "@/components/SmartNavigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -244,14 +244,16 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Floating Navigation */}
-      <FloatingNavigation />
+      {/* Smart Navigation */}
+      <SmartNavigation />
       
       {/* Hero Section */}
-      <HeroSection 
-        onExploreServices={handleExploreServices}
-        onContactUs={handleContactUs}
-      />
+      <section id="hero" data-section="hero">
+        <HeroSection 
+          onExploreServices={handleExploreServices}
+          onContactUs={handleContactUs}
+        />
+      </section>
 
       
 
@@ -342,7 +344,7 @@ const Index = () => {
       </div>
 
       {/* Why Choose Us Section */}
-      <section className="py-20 bg-muted/20">
+      <section id="why-choose" data-section="why-choose" className="py-20 bg-muted/20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge variant="secondary" className="mb-6 px-4 py-2 bg-primary/10 text-primary border-primary/20">
@@ -392,7 +394,7 @@ const Index = () => {
       </section>
 
       {/* Call to Action Section */}
-      <section className="py-20 relative overflow-hidden">
+      <section id="contact" data-section="contact" className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-hero" />
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
