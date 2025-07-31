@@ -275,58 +275,70 @@ const Index = () => {
       {/* Services Sections */}
       <div id="services" className="relative">
         {/* Strategic Services */}
-        <ServiceSection
-          title="Strategic Services"
-          description="Transform your business with strategic AI consulting and personal branding solutions that drive growth and establish market leadership."
-          services={strategicServices}
-          categoryColor="hsl(var(--primary))"
-          onServiceClick={handleServiceClick}
-        />
+        <div data-section="strategic">
+          <ServiceSection
+            title="Strategic Services"
+            description="Transform your business with strategic AI consulting and personal branding solutions that drive growth and establish market leadership."
+            services={strategicServices}
+            categoryColor="hsl(var(--primary))"
+            onServiceClick={handleServiceClick}
+          />
+        </div>
 
         {/* Development & Technical Services */}
-        <ServiceSection
-          title="Development & Technical Services"
-          description="Cutting-edge AI development and technical solutions that integrate seamlessly with your existing infrastructure."
-          services={developmentServices}
-          categoryColor="hsl(var(--accent))"
-          onServiceClick={handleServiceClick}
-        />
+        <div data-section="development">
+          <ServiceSection
+            title="Development & Technical Services"
+            description="Cutting-edge AI development and technical solutions that integrate seamlessly with your existing infrastructure."
+            services={developmentServices}
+            categoryColor="hsl(var(--accent))"
+            onServiceClick={handleServiceClick}
+          />
+        </div>
 
         {/* Content & Creative Services */}
-        <ServiceSection
-          title="Content & Creative Services"
-          description="Professional content creation and creative services that tell your story and captivate your audience."
-          services={contentServices}
-          categoryColor="hsl(220 100% 65%)"
-          onServiceClick={handleServiceClick}
-        />
+        <div data-section="content">
+          <ServiceSection
+            title="Content & Creative Services"
+            description="Professional content creation and creative services that tell your story and captivate your audience."
+            services={contentServices}
+            categoryColor="hsl(220 100% 65%)"
+            onServiceClick={handleServiceClick}
+          />
+        </div>
 
         {/* Marketing & Community Management */}
-        <ServiceSection
-          title="Marketing & Community Management"
-          description="Comprehensive marketing and community building services that amplify your brand presence across all channels."
-          services={marketingServices}
-          categoryColor="hsl(270 70% 65%)"
-          onServiceClick={handleServiceClick}
-        />
+        <div data-section="marketing">
+          <ServiceSection
+            title="Marketing & Community Management"
+            description="Comprehensive marketing and community building services that amplify your brand presence across all channels."
+            services={marketingServices}
+            categoryColor="hsl(270 70% 65%)"
+            onServiceClick={handleServiceClick}
+          />
+        </div>
 
         {/* Data & Analytics Services */}
-        <ServiceSection
-          title="Data & Analytics Services"
-          description="Unlock the power of your data with AI-driven analytics and automation solutions that drive informed decision-making."
-          services={dataServices}
-          categoryColor="hsl(200 70% 65%)"
-          onServiceClick={handleServiceClick}
-        />
+        <div data-section="analytics">
+          <ServiceSection
+            title="Data & Analytics Services"
+            description="Unlock the power of your data with AI-driven analytics and automation solutions that drive informed decision-making."
+            services={dataServices}
+            categoryColor="hsl(200 70% 65%)"
+            onServiceClick={handleServiceClick}
+          />
+        </div>
 
         {/* Marketing & Sales Strategy */}
-        <ServiceSection
-          title="Marketing & Sales Strategy"
-          description="Comprehensive marketing and sales strategies that convert prospects into customers and drive sustainable growth."
-          services={salesServices}
-          categoryColor="hsl(120 70% 65%)"
-          onServiceClick={handleServiceClick}
-        />
+        <div data-section="sales">
+          <ServiceSection
+            title="Marketing & Sales Strategy"
+            description="Comprehensive marketing and sales strategies that convert prospects into customers and drive sustainable growth."
+            services={salesServices}
+            categoryColor="hsl(120 70% 65%)"
+            onServiceClick={handleServiceClick}
+          />
+        </div>
       </div>
 
       {/* Why Choose Us Section */}
