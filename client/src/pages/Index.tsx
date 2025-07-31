@@ -1,46 +1,47 @@
-import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Card } from "@/components/ui/card";
 import { HeroSection } from "@/components/HeroSection";
 import { ServiceSection } from "@/components/ServiceSection";
 import { FloatingNavigation } from "@/components/FloatingNavigation";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { useToast } from "@/hooks/use-toast";
-import {
-  Brain,
-  TrendingUp,
-  User,
-  Cpu,
-  Settings,
-  Globe,
-  Palette,
-  Bot,
-  MessageSquare,
-  PenTool,
-  FileText,
-  Camera,
-  Video,
-  Briefcase,
-  Share2,
-  Users,
-  MessageCircle,
-  BarChart3,
-  Zap,
-  Target,
-  Calendar,
-  Handshake,
-  Mail,
-  Search,
-  DollarSign,
+import { LeadMagnet } from "@/components/LeadMagnet";
+import { 
+  ArrowRight, 
+  Sparkles, 
+  Brain, 
+  TrendingUp, 
+  User, 
+  Cpu, 
+  Settings, 
+  Globe, 
+  Palette, 
+  Bot, 
+  MessageSquare, 
+  PenTool, 
+  FileText, 
+  Camera, 
+  Video, 
+  Briefcase, 
+  Target, 
+  Calendar, 
+  Handshake, 
+  Mail, 
+  Search, 
+  DollarSign, 
   Eye,
-  ArrowUp,
-  Phone,
-  Sparkles
+  Share2,
+  MessageCircle,
+  Users,
+  BarChart3,
+  Zap
 } from "lucide-react";
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 const Index = () => {
   const { toast } = useToast();
   const [selectedService, setSelectedService] = useState<any>(null);
+  const [isLeadMagnetOpen, setIsLeadMagnetOpen] = useState(false);
 
   const handleServiceClick = (service: any) => {
     setSelectedService(service);
@@ -246,14 +247,14 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       {/* Floating Navigation */}
       <FloatingNavigation />
-      
+
       {/* Hero Section */}
       <HeroSection 
         onExploreServices={handleExploreServices}
         onContactUs={handleContactUs}
       />
 
-      
+
 
       {/* Services Introduction */}
       <section className="py-24 bg-background">
@@ -353,7 +354,7 @@ const Index = () => {
               The AI Excellence Advantage
             </h2>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="p-8 text-center hover-scale bg-card/50 backdrop-blur-sm border-border/50">
               <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center">
@@ -365,7 +366,7 @@ const Index = () => {
                 that scale with your business needs.
               </p>
             </Card>
-            
+
             <Card className="p-8 text-center hover-scale bg-card/50 backdrop-blur-sm border-border/50">
               <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center">
                 <Users className="w-8 h-8 text-primary" />
@@ -376,7 +377,7 @@ const Index = () => {
                 across diverse industries and cutting-edge technologies.
               </p>
             </Card>
-            
+
             <Card className="p-8 text-center hover-scale bg-card/50 backdrop-blur-sm border-border/50">
               <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center">
                 <Zap className="w-8 h-8 text-primary" />
@@ -400,15 +401,15 @@ const Index = () => {
               <Sparkles className="w-4 h-4 mr-2" />
               Ready to Transform Your Business?
             </Badge>
-            
+
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
               Let's Build Something Extraordinary Together
             </h2>
-            
+
             <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
               Join hundreds of satisfied clients who have transformed their businesses with our premium AI solutions and creative services.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="secondary" size="lg" onClick={handleContactUs} className="bg-white text-primary hover:bg-white/90">
                 <Phone className="mr-2" />
@@ -433,7 +434,7 @@ const Index = () => {
                 Transforming businesses through innovative AI solutions and strategic excellence.
               </p>
             </div>
-            
+
             <div className="space-y-4">
               <h4 className="font-semibold">Services</h4>
               <ul className="space-y-2 text-muted-foreground">
@@ -443,7 +444,7 @@ const Index = () => {
                 <li>Marketing Strategy</li>
               </ul>
             </div>
-            
+
             <div className="space-y-4">
               <h4 className="font-semibold">Company</h4>
               <ul className="space-y-2 text-muted-foreground">
@@ -453,7 +454,7 @@ const Index = () => {
                 <li>Contact</li>
               </ul>
             </div>
-            
+
             <div className="space-y-4">
               <h4 className="font-semibold">Connect</h4>
               <ul className="space-y-2 text-muted-foreground">
@@ -464,7 +465,7 @@ const Index = () => {
               </ul>
             </div>
           </div>
-          
+
           <div className="text-center pt-8 border-t border-border">
             <p className="text-muted-foreground">
               © 2024 AI Excellence. All rights reserved. Crafted with innovation and precision.
