@@ -84,11 +84,11 @@ const FloatingNavButton = ({ item, side, index }: FloatingNavButtonProps) => {
     <div
       className={`absolute top-1/2 z-40 cursor-pointer transition-all duration-700 ease-out group ${
         side === "left" 
-          ? "left-0 -translate-x-1/2 hover:-translate-x-3/4" 
-          : "right-0 translate-x-1/2 hover:translate-x-3/4"
+          ? "left-[15%] hover:left-[12%]" 
+          : "right-[15%] hover:right-[12%]"
       }`}
       style={{
-        transform: `translateY(${(index - 2.5) * 85}px)`,
+        transform: `translateY(${(index - 2.5) * 90}px)`,
         animationDelay: `${index * 200}ms`
       }}
       onMouseEnter={() => setIsHovered(true)}
@@ -97,13 +97,13 @@ const FloatingNavButton = ({ item, side, index }: FloatingNavButtonProps) => {
     >
       {/* Connection Line to Hero Image */}
       <div 
-        className={`absolute top-1/2 w-12 h-px transition-all duration-500 ${
-          side === "left" ? "left-full ml-2" : "right-full mr-2"
+        className={`absolute top-1/2 w-16 h-0.5 transition-all duration-500 ${
+          side === "left" ? "right-full" : "left-full"
         }`}
         style={{
-          background: `linear-gradient(${side === "left" ? "90deg" : "270deg"}, rgba(${item.glowColor}, 0.6), transparent)`,
-          opacity: isHovered ? 1 : 0.4,
-          boxShadow: isHovered ? `0 0 8px rgba(${item.glowColor}, 0.4)` : "none"
+          background: `linear-gradient(${side === "left" ? "90deg" : "270deg"}, rgba(${item.glowColor}, 0.8), transparent)`,
+          opacity: isHovered ? 1 : 0.3,
+          boxShadow: isHovered ? `0 0 10px rgba(${item.glowColor}, 0.6)` : "none"
         }}
       />
 
@@ -120,14 +120,14 @@ const FloatingNavButton = ({ item, side, index }: FloatingNavButtonProps) => {
 
       {/* Main Button Container */}
       <div
-        className={`relative bg-slate-900/90 backdrop-blur-xl border rounded-xl p-4 min-w-[120px] transition-all duration-500 ${
-          isHovered ? "scale-105 bg-slate-800/95" : "scale-100"
+        className={`relative bg-black/80 backdrop-blur-xl border-2 rounded-2xl p-5 min-w-[140px] transition-all duration-500 ${
+          isHovered ? "scale-110 bg-black/90" : "scale-100"
         }`}
         style={{
-          borderColor: isHovered ? item.color : `rgba(${item.glowColor.split(', ').join(', ')}, 0.3)`,
+          borderColor: isHovered ? item.color : `rgba(${item.glowColor.split(', ').join(', ')}, 0.4)`,
           boxShadow: isHovered 
-            ? `0 0 25px rgba(${item.glowColor}, 0.4), inset 0 0 15px rgba(${item.glowColor}, 0.05), 0 8px 32px rgba(0, 0, 0, 0.2)`
-            : `0 0 10px rgba(${item.glowColor}, 0.2), 0 4px 15px rgba(0, 0, 0, 0.1)`
+            ? `0 0 30px rgba(${item.glowColor}, 0.6), inset 0 0 20px rgba(${item.glowColor}, 0.1), 0 10px 40px rgba(0, 0, 0, 0.3)`
+            : `0 0 15px rgba(${item.glowColor}, 0.3), 0 5px 20px rgba(0, 0, 0, 0.2)`
         }}
       >
         {/* Background Pattern */}
@@ -236,40 +236,40 @@ export const HeroSection = ({
   const rightItems = serviceNavItems.slice(midpoint);
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Ambient Background Glow */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-cyan-500/5" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 w-full h-full flex items-center justify-center"
+        style={{
+          backgroundImage: `url(${heroImage})`,
+          backgroundPosition: 'center center',
+          backgroundSize: 'contain',
+          backgroundRepeat: 'no-repeat'
+        }} 
+      />
+      
+      {/* Minimal Overlay for better contrast */}
+      <div className="absolute inset-0 bg-black/5" />
 
-      {/* Hero Image Container with Navigation */}
-      <div className="relative flex-1 flex items-center justify-center">
-        {/* Main Hero Image */}
-        <div 
-          className="relative w-full max-w-4xl h-[600px] bg-contain bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url(${heroImage})`
-          }}
-        >
-          {/* Floating Service Navigation - Left Side */}
-          {isVisible && leftItems.map((item, index) => (
-            <FloatingNavButton
-              key={item.id}
-              item={item}
-              side="left"
-              index={index}
-            />
-          ))}
+      {/* Floating Service Navigation - Left Side */}
+      {isVisible && leftItems.map((item, index) => (
+        <FloatingNavButton
+          key={item.id}
+          item={item}
+          side="left"
+          index={index}
+        />
+      ))}
 
-          {/* Floating Service Navigation - Right Side */}
-          {isVisible && rightItems.map((item, index) => (
-            <FloatingNavButton
-              key={item.id}
-              item={item}
-              side="right"
-              index={index}
-            />
-          ))}
-        </div>
-      </div>
+      {/* Floating Service Navigation - Right Side */}
+      {isVisible && rightItems.map((item, index) => (
+        <FloatingNavButton
+          key={item.id}
+          item={item}
+          side="right"
+          index={index}
+        />
+      ))}
       
       {/* Content */}
       <div className="relative z-10 w-full h-full flex flex-col">
