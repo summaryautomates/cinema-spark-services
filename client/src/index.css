@@ -306,6 +306,16 @@ Premium Blue & Neon Blue Luxury Theme
 }
 
 /* Service Navigation Floating Buttons */
+.floating-nav-button {
+  position: fixed;
+  z-index: 1000;
+  pointer-events: auto;
+}
+
+.floating-nav-button:hover {
+  transform: scale(1.05);
+}
+
 @keyframes border-glow {
   0% {
     background-position: 0% 50%;

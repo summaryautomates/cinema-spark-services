@@ -84,15 +84,11 @@ const FloatingNavButton = ({ item, side, index }: FloatingNavButtonProps) => {
     <div
       className={`fixed top-1/2 z-50 cursor-pointer transition-all duration-700 ease-out ${
         side === "left" 
-          ? "left-0 -translate-x-3/4 hover:translate-x-0" 
-          : "right-0 translate-x-3/4 hover:translate-x-0"
+          ? "left-2 hover:left-4" 
+          : "right-2 hover:right-4"
       }`}
       style={{
-        transform: `translateY(${(index - 2.5) * 80}px) ${
-          side === "left" 
-            ? "translateX(-75%)" 
-            : "translateX(75%)"
-        }`,
+        transform: `translateY(${(index - 2.5) * 80}px)`,
         animationDelay: `${index * 150}ms`
       }}
       onMouseEnter={() => setIsHovered(true)}
@@ -112,14 +108,14 @@ const FloatingNavButton = ({ item, side, index }: FloatingNavButtonProps) => {
 
       {/* Main Button Container */}
       <div
-        className={`relative bg-black/80 backdrop-blur-lg border border-white/20 rounded-2xl p-4 transition-all duration-500 ${
-          isHovered ? "scale-110 bg-black/90" : "scale-100"
+        className={`relative bg-black/90 backdrop-blur-lg border border-white/20 rounded-xl p-3 min-w-[120px] transition-all duration-500 ${
+          isHovered ? "scale-105 bg-black/95" : "scale-100"
         }`}
         style={{
           borderColor: item.color,
           boxShadow: isHovered 
-            ? `0 0 40px rgba(${item.glowColor}, 0.8), inset 0 0 20px rgba(${item.glowColor}, 0.2)`
-            : `0 0 20px rgba(${item.glowColor}, 0.4)`
+            ? `0 0 30px rgba(${item.glowColor}, 0.8), inset 0 0 15px rgba(${item.glowColor}, 0.2)`
+            : `0 0 15px rgba(${item.glowColor}, 0.4)`
         }}
       >
         {/* Icon */}
@@ -135,9 +131,7 @@ const FloatingNavButton = ({ item, side, index }: FloatingNavButtonProps) => {
 
         {/* Title */}
         <div
-          className={`text-xs font-bold text-center whitespace-nowrap transition-all duration-300 ${
-            side === "left" ? "text-left" : "text-right"
-          }`}
+          className="text-xs font-bold text-center transition-all duration-300 leading-tight"
           style={{
             color: isHovered ? item.color : "#ffffff",
             textShadow: isHovered ? `0 0 10px rgba(${item.glowColor}, 0.8)` : "none"
@@ -158,21 +152,7 @@ const FloatingNavButton = ({ item, side, index }: FloatingNavButtonProps) => {
         />
       </div>
 
-      {/* Hover Text Expansion */}
-      {isHovered && (
-        <div
-          className={`absolute top-1/2 -translate-y-1/2 ${
-            side === "left" ? "left-full ml-4" : "right-full mr-4"
-          } bg-black/90 backdrop-blur-lg border rounded-lg px-3 py-2 text-sm font-medium whitespace-nowrap transition-all duration-300`}
-          style={{
-            borderColor: item.color,
-            color: item.color,
-            boxShadow: `0 0 20px rgba(${item.glowColor}, 0.6)`
-          }}
-        >
-          Click to explore {item.title.toLowerCase()}
-        </div>
-      )}
+      
     </div>
   );
 };
