@@ -121,8 +121,9 @@ export const FloatingNavigation = () => {
     }
   };
 
-  const leftItems = navigationItems.slice(0, Math.ceil(navigationItems.length / 2));
-  const rightItems = navigationItems.slice(Math.ceil(navigationItems.length / 2));
+  const midpoint = Math.floor(navigationItems.length / 2);
+  const leftItems = navigationItems.slice(0, midpoint);
+  const rightItems = navigationItems.slice(midpoint);
 
   return (
     <div className={cn(
@@ -130,26 +131,26 @@ export const FloatingNavigation = () => {
       isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4 pointer-events-none"
     )}>
       {/* Left Side Navigation */}
-      <div className="fixed left-4 top-1/2 -translate-y-1/2 flex flex-col gap-3">
+      <div className="fixed left-3 top-1/2 -translate-y-1/2 flex flex-col gap-2.5">
         {leftItems.map((item, index) => (
           <FloatingNavButton 
             key={item.id} 
             item={item} 
             onClick={() => handleNavClick(item)}
-            delay={index * 100}
+            delay={index * 80}
             side="left"
           />
         ))}
       </div>
 
       {/* Right Side Navigation */}
-      <div className="fixed right-4 top-1/2 -translate-y-1/2 flex flex-col gap-3">
+      <div className="fixed right-3 top-1/2 -translate-y-1/2 flex flex-col gap-2.5">
         {rightItems.map((item, index) => (
           <FloatingNavButton 
             key={item.id} 
             item={item} 
             onClick={() => handleNavClick(item)}
-            delay={index * 100}
+            delay={index * 80}
             side="right"
           />
         ))}
