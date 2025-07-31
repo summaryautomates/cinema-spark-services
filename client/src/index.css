@@ -396,30 +396,6 @@ Premium Blue & Neon Blue Luxury Theme
   }
 }
 
-@keyframes float-particles {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-    opacity: 0.6;
-  }
-  33% {
-    transform: translateY(-10px) rotate(120deg);
-    opacity: 1;
-  }
-  66% {
-    transform: translateY(-5px) rotate(240deg);
-    opacity: 0.8;
-  }
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 @keyframes text-shimmer {
   0%, 100% {
     background-position: 0% 50%;
