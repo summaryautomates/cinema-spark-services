@@ -1,3 +1,6 @@
+/* Import futuristic fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -273,16 +276,86 @@ Premium Blue & Neon Blue Luxury Theme
   -webkit-mask-composite: xor;
 }
 
-/* Pulse animation for floating nav buttons */
-.animate-pulse-slow {
-  animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+/* Luxury Floating Navigation Animations */
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
 }
 
-@keyframes pulse-slow {
+.animate-pulse-beam {
+  animation: pulse-beam 3s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 4s linear infinite;
+}
+
+.animate-particle-float {
+  animation: particle-float 2s ease-out infinite;
+}
+
+.luxury-text {
+  background: linear-gradient(45deg, currentColor, transparent, currentColor);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: text-shimmer 3s ease-in-out infinite;
+}
+
+.shadow-luxury-glow {
+  box-shadow: 0 0 50px currentColor, 0 0 100px currentColor, inset 0 0 30px currentColor;
+}
+
+@keyframes pulse-glow {
   0%, 100% {
-    opacity: 1;
+    opacity: 0.4;
+    transform: scale(1);
   }
   50% {
     opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes pulse-beam {
+  0%, 100% {
+    opacity: 0.3;
+    height: 8rem;
+  }
+  50% {
+    opacity: 0.8;
+    height: 12rem;
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes particle-float {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-20px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-40px) scale(0);
+  }
+}
+
+@keyframes text-shimmer {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
   }
 }

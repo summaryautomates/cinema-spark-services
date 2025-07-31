@@ -2,87 +2,98 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Brain,
-  TrendingUp,
-  User,
   Cpu,
-  Settings,
-  Globe,
-  Palette,
-  Bot,
-  MessageSquare,
   PenTool,
-  FileText,
-  Camera,
-  Video,
-  Briefcase,
   Share2,
-  Users,
-  MessageCircle,
   BarChart3,
-  Zap,
   Target,
-  Calendar,
-  Handshake,
-  Mail,
-  Search,
-  DollarSign,
-  Eye,
-  Phone,
   Home,
+  Phone,
   Sparkles
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface NavigationItem {
   id: string;
-  label: string;
+  title: string;
+  subtitle: string;
   icon: any;
   color: string;
+  glowColor: string;
   section?: string;
 }
 
 const navigationItems: NavigationItem[] = [
-  // Home & Contact
-  { id: "home", label: "Home", icon: Home, color: "#8b5cf6" },
-  { id: "contact", label: "Contact", icon: Phone, color: "#f59e0b" },
-  
-  // Strategic Services
-  { id: "ai-consulting", label: "AI Consulting", icon: Brain, color: "#3b82f6", section: "services" },
-  { id: "ai-marketing", label: "AI Marketing", icon: TrendingUp, color: "#22c55e", section: "services" },
-  { id: "personal-branding", label: "Personal Brand", icon: User, color: "#f97316", section: "services" },
-  
-  // Technical Services
-  { id: "ai-models", label: "AI Models", icon: Cpu, color: "#ec4899", section: "services" },
-  { id: "system-integration", label: "Integration", icon: Settings, color: "#0ea5e9", section: "services" },
-  { id: "web-development", label: "Web Dev", icon: Globe, color: "#a855f7", section: "services" },
-  { id: "ui-development", label: "UI Design", icon: Palette, color: "#f56565", section: "services" },
-  { id: "ai-agents", label: "AI Agents", icon: Bot, color: "#10b981", section: "services" },
-  { id: "chatbots", label: "Chatbots", icon: MessageSquare, color: "#fbbf24", section: "services" },
-  
-  // Content Services
-  { id: "content-generation", label: "Content", icon: PenTool, color: "#8b5cf6", section: "services" },
-  { id: "case-studies", label: "Case Studies", icon: FileText, color: "#3b82f6", section: "services" },
-  { id: "photography", label: "Photography", icon: Camera, color: "#22c55e", section: "services" },
-  { id: "videography", label: "Video", icon: Video, color: "#f97316", section: "services" },
-  { id: "press-kit", label: "Press Kit", icon: Briefcase, color: "#ec4899", section: "services" },
-  
-  // Marketing Services
-  { id: "social-media", label: "Social Media", icon: Share2, color: "#0ea5e9", section: "services" },
-  { id: "whatsapp", label: "WhatsApp", icon: MessageCircle, color: "#a855f7", section: "services" },
-  { id: "community", label: "Community", icon: Users, color: "#f56565", section: "services" },
-  
-  // Data & Analytics
-  { id: "data-analysis", label: "Data Analysis", icon: BarChart3, color: "#10b981", section: "services" },
-  { id: "automation", label: "Automation", icon: Zap, color: "#fbbf24", section: "services" },
-  
-  // Sales & Performance
-  { id: "content-marketing", label: "Marketing", icon: Target, color: "#8b5cf6", section: "services" },
-  { id: "events", label: "Events", icon: Calendar, color: "#3b82f6", section: "services" },
-  { id: "partnerships", label: "Partnerships", icon: Handshake, color: "#22c55e", section: "services" },
-  { id: "email-marketing", label: "Email", icon: Mail, color: "#f97316", section: "services" },
-  { id: "performance", label: "Performance", icon: Search, color: "#ec4899", section: "services" },
-  { id: "sponsorships", label: "Sponsorships", icon: DollarSign, color: "#0ea5e9", section: "services" },
-  { id: "visitor-mgmt", label: "Visitors", icon: Eye, color: "#a855f7", section: "services" }
+  { 
+    id: "home", 
+    title: "HOME", 
+    subtitle: "Back to Top",
+    icon: Home, 
+    color: "#00d4ff", 
+    glowColor: "0, 212, 255"
+  },
+  { 
+    id: "strategic", 
+    title: "STRATEGIC", 
+    subtitle: "AI Consulting & Strategy",
+    icon: Brain, 
+    color: "#ff0080", 
+    glowColor: "255, 0, 128",
+    section: "services" 
+  },
+  { 
+    id: "development", 
+    title: "DEVELOPMENT", 
+    subtitle: "Technical Solutions",
+    icon: Cpu, 
+    color: "#00ff88", 
+    glowColor: "0, 255, 136",
+    section: "services" 
+  },
+  { 
+    id: "content", 
+    title: "CONTENT", 
+    subtitle: "Creative Services",
+    icon: PenTool, 
+    color: "#ff6600", 
+    glowColor: "255, 102, 0",
+    section: "services" 
+  },
+  { 
+    id: "marketing", 
+    title: "MARKETING", 
+    subtitle: "Community & Social",
+    icon: Share2, 
+    color: "#8800ff", 
+    glowColor: "136, 0, 255",
+    section: "services" 
+  },
+  { 
+    id: "analytics", 
+    title: "ANALYTICS", 
+    subtitle: "Data & Insights",
+    icon: BarChart3, 
+    color: "#ffff00", 
+    glowColor: "255, 255, 0",
+    section: "services" 
+  },
+  { 
+    id: "sales", 
+    title: "SALES", 
+    subtitle: "Performance & Growth",
+    icon: Target, 
+    color: "#ff4444", 
+    glowColor: "255, 68, 68",
+    section: "services" 
+  },
+  { 
+    id: "contact", 
+    title: "CONTACT", 
+    subtitle: "Get In Touch",
+    icon: Phone, 
+    color: "#44ff44", 
+    glowColor: "68, 255, 68"
+  }
 ];
 
 export const FloatingNavigation = () => {
@@ -117,18 +128,19 @@ export const FloatingNavigation = () => {
   };
 
   // Split navigation items exactly in half
-  const midpoint = Math.floor(navigationItems.length / 2);
+  const midpoint = Math.ceil(navigationItems.length / 2);
   const leftItems = navigationItems.slice(0, midpoint);
   const rightItems = navigationItems.slice(midpoint);
 
-  if (!isVisible) return null;
-
   return (
-    <>
+    <div className={cn(
+      "fixed inset-0 pointer-events-none z-50 transition-all duration-700 ease-out",
+      isVisible ? "opacity-100" : "opacity-0"
+    )}>
       {/* Left Side Navigation */}
-      <div className="fixed left-2 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-2">
+      <div className="fixed left-0 top-1/2 -translate-y-1/2 flex flex-col gap-6 pointer-events-auto">
         {leftItems.map((item, index) => (
-          <FloatingNavButton 
+          <LuxuryNavButton 
             key={item.id} 
             item={item} 
             onClick={() => handleNavClick(item)}
@@ -139,9 +151,9 @@ export const FloatingNavigation = () => {
       </div>
 
       {/* Right Side Navigation */}
-      <div className="fixed right-2 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-2">
+      <div className="fixed right-0 top-1/2 -translate-y-1/2 flex flex-col gap-6 pointer-events-auto">
         {rightItems.map((item, index) => (
-          <FloatingNavButton 
+          <LuxuryNavButton 
             key={item.id} 
             item={item} 
             onClick={() => handleNavClick(item)}
@@ -150,92 +162,148 @@ export const FloatingNavigation = () => {
           />
         ))}
       </div>
-    </>
+
+      {/* Connecting Light Beam */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-px h-32 bg-gradient-to-b from-transparent via-cyan-400/50 to-transparent animate-pulse-beam" />
+    </div>
   );
 };
 
-interface FloatingNavButtonProps {
+interface LuxuryNavButtonProps {
   item: NavigationItem;
   onClick: () => void;
   index: number;
   side: "left" | "right";
 }
 
-const FloatingNavButton = ({ item, onClick, index, side }: FloatingNavButtonProps) => {
+const LuxuryNavButton = ({ item, onClick, index, side }: LuxuryNavButtonProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const Icon = item.icon;
 
   return (
     <div 
-      className="relative group"
+      className={cn(
+        "relative group cursor-pointer transition-all duration-500",
+        side === "left" ? "transform -translate-x-full hover:translate-x-0" : "transform translate-x-full hover:translate-x-0"
+      )}
       style={{
-        animationDelay: `${index * 50}ms`
+        animationDelay: `${index * 200}ms`
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={onClick}
     >
-      {/* Neon Glow Background */}
+      {/* Outer Glow Ring */}
       <div 
         className={cn(
-          "absolute inset-0 rounded-full transition-all duration-300 blur-md",
-          isHovered ? "opacity-70 scale-125" : "opacity-40 scale-100"
+          "absolute inset-0 rounded-full blur-xl transition-all duration-500 animate-pulse-glow",
+          isHovered ? "scale-150 opacity-80" : "scale-100 opacity-40"
         )}
         style={{
-          backgroundColor: item.color,
-          boxShadow: `0 0 20px ${item.color}, 0 0 40px ${item.color}60`
+          background: `radial-gradient(circle, rgba(${item.glowColor}, 0.8) 0%, rgba(${item.glowColor}, 0.3) 40%, transparent 70%)`,
+          boxShadow: `0 0 60px rgba(${item.glowColor}, 0.6), 0 0 120px rgba(${item.glowColor}, 0.3)`
         }}
       />
-      
-      {/* Main Button */}
-      <Button
-        onClick={onClick}
-        size="sm"
-        className={cn(
-          "relative w-10 h-10 rounded-full p-0 border-2 transition-all duration-300",
-          "bg-black/90 backdrop-blur-sm hover:bg-black/95",
-          "hover:scale-110 shadow-lg hover:shadow-2xl",
-          "animate-pulse-slow"
-        )}
-        style={{
-          borderColor: item.color,
-          boxShadow: `0 0 8px ${item.color}50`
-        }}
-      >
-        <Icon 
-          className="w-4 h-4 transition-all duration-300" 
-          style={{ 
-            color: item.color,
-            filter: `drop-shadow(0 0 2px ${item.color})`
-          }}
-        />
-      </Button>
 
-      {/* Tooltip */}
-      <div 
-        className={cn(
-          "absolute top-1/2 -translate-y-1/2 z-10 transition-all duration-300",
-          "px-2 py-1 rounded text-xs font-medium whitespace-nowrap",
-          "bg-black/95 backdrop-blur-sm border text-white shadow-lg",
-          "hidden md:block",
-          side === "left" ? "left-12" : "right-12",
-          isHovered ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
-        )}
-        style={{
-          borderColor: item.color,
-          boxShadow: `0 0 10px ${item.color}40`
-        }}
-      >
-        {item.label}
-        
-        {/* Tooltip Arrow */}
+      {/* Main Button Container */}
+      <div className={cn(
+        "relative flex items-center gap-4 px-6 py-4 transition-all duration-500",
+        side === "left" ? "flex-row" : "flex-row-reverse",
+        isHovered ? "scale-110" : "scale-100"
+      )}>
+        {/* Icon Container */}
         <div 
           className={cn(
-            "absolute top-1/2 -translate-y-1/2 w-1.5 h-1.5 rotate-45 bg-black/95 border",
-            side === "left" ? "-left-0.5" : "-right-0.5"
+            "relative w-16 h-16 rounded-full flex items-center justify-center transition-all duration-500",
+            "bg-black/90 backdrop-blur-sm border-2 shadow-2xl",
+            isHovered ? "rotate-12 shadow-luxury-glow" : "rotate-0"
           )}
-          style={{ borderColor: item.color }}
-        />
+          style={{
+            borderColor: item.color,
+            boxShadow: `0 0 30px rgba(${item.glowColor}, 0.5), inset 0 0 20px rgba(${item.glowColor}, 0.1)`
+          }}
+        >
+          {/* Inner Icon Glow */}
+          <div 
+            className="absolute inset-2 rounded-full blur-sm opacity-60"
+            style={{
+              background: `radial-gradient(circle, ${item.color}40 0%, transparent 70%)`
+            }}
+          />
+          
+          <Icon 
+            className={cn(
+              "w-8 h-8 relative z-10 transition-all duration-500",
+              isHovered ? "scale-125" : "scale-100"
+            )}
+            style={{ 
+              color: item.color,
+              filter: `drop-shadow(0 0 8px ${item.color}) drop-shadow(0 0 16px ${item.color}60)`
+            }}
+          />
+
+          {/* Rotating Border */}
+          <div 
+            className={cn(
+              "absolute inset-0 rounded-full border-2 opacity-0 transition-all duration-500 animate-spin-slow",
+              isHovered ? "opacity-100" : "opacity-0"
+            )}
+            style={{
+              borderColor: item.color,
+              borderStyle: "dashed"
+            }}
+          />
+        </div>
+
+        {/* Text Container */}
+        <div 
+          className={cn(
+            "transition-all duration-500 transform",
+            side === "left" ? "text-left" : "text-right",
+            isHovered ? "opacity-100 translate-x-0" : "opacity-0",
+            side === "left" ? "translate-x-4" : "-translate-x-4"
+          )}
+        >
+          <div 
+            className="text-lg font-bold tracking-wider luxury-text"
+            style={{
+              color: item.color,
+              textShadow: `0 0 20px ${item.color}80, 0 0 40px ${item.color}40`,
+              fontFamily: "'Orbitron', 'Rajdhani', monospace"
+            }}
+          >
+            {item.title}
+          </div>
+          <div 
+            className="text-xs font-medium tracking-wide opacity-80"
+            style={{
+              color: item.color,
+              textShadow: `0 0 10px ${item.color}60`
+            }}
+          >
+            {item.subtitle}
+          </div>
+        </div>
       </div>
+
+      {/* Particle Effects */}
+      {isHovered && (
+        <div className="absolute inset-0 pointer-events-none">
+          {[...Array(6)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-1 h-1 rounded-full animate-particle-float"
+              style={{
+                backgroundColor: item.color,
+                left: `${20 + i * 15}%`,
+                top: `${30 + (i % 3) * 20}%`,
+                animationDelay: `${i * 100}ms`,
+                boxShadow: `0 0 10px ${item.color}`
+              }}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
