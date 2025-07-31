@@ -42,49 +42,47 @@ interface NavigationItem {
 }
 
 const navigationItems: NavigationItem[] = [
-  // Home
-  { id: "home", label: "Home", icon: Home, color: "rgb(139, 92, 246)" },
+  // Home & Contact
+  { id: "home", label: "Home", icon: Home, color: "#8b5cf6" },
+  { id: "contact", label: "Contact", icon: Phone, color: "#f59e0b" },
   
   // Strategic Services
-  { id: "ai-consulting", label: "AI Consulting", icon: Brain, color: "rgb(59, 130, 246)", section: "services" },
-  { id: "ai-marketing", label: "AI Marketing", icon: TrendingUp, color: "rgb(34, 197, 94)", section: "services" },
-  { id: "personal-branding", label: "Personal Brand", icon: User, color: "rgb(249, 115, 22)", section: "services" },
+  { id: "ai-consulting", label: "AI Consulting", icon: Brain, color: "#3b82f6", section: "services" },
+  { id: "ai-marketing", label: "AI Marketing", icon: TrendingUp, color: "#22c55e", section: "services" },
+  { id: "personal-branding", label: "Personal Brand", icon: User, color: "#f97316", section: "services" },
   
   // Technical Services
-  { id: "ai-models", label: "AI Models", icon: Cpu, color: "rgb(236, 72, 153)", section: "services" },
-  { id: "system-integration", label: "Integration", icon: Settings, color: "rgb(14, 165, 233)", section: "services" },
-  { id: "web-development", label: "Web Dev", icon: Globe, color: "rgb(168, 85, 247)", section: "services" },
-  { id: "ui-development", label: "UI Design", icon: Palette, color: "rgb(245, 101, 101)", section: "services" },
-  { id: "ai-agents", label: "AI Agents", icon: Bot, color: "rgb(34, 197, 94)", section: "services" },
-  { id: "chatbots", label: "Chatbots", icon: MessageSquare, color: "rgb(251, 191, 36)", section: "services" },
+  { id: "ai-models", label: "AI Models", icon: Cpu, color: "#ec4899", section: "services" },
+  { id: "system-integration", label: "Integration", icon: Settings, color: "#0ea5e9", section: "services" },
+  { id: "web-development", label: "Web Dev", icon: Globe, color: "#a855f7", section: "services" },
+  { id: "ui-development", label: "UI Design", icon: Palette, color: "#f56565", section: "services" },
+  { id: "ai-agents", label: "AI Agents", icon: Bot, color: "#10b981", section: "services" },
+  { id: "chatbots", label: "Chatbots", icon: MessageSquare, color: "#fbbf24", section: "services" },
   
   // Content Services
-  { id: "content-generation", label: "Content", icon: PenTool, color: "rgb(139, 92, 246)", section: "services" },
-  { id: "case-studies", label: "Case Studies", icon: FileText, color: "rgb(59, 130, 246)", section: "services" },
-  { id: "photography", label: "Photography", icon: Camera, color: "rgb(34, 197, 94)", section: "services" },
-  { id: "videography", label: "Video", icon: Video, color: "rgb(249, 115, 22)", section: "services" },
-  { id: "press-kit", label: "Press Kit", icon: Briefcase, color: "rgb(236, 72, 153)", section: "services" },
+  { id: "content-generation", label: "Content", icon: PenTool, color: "#8b5cf6", section: "services" },
+  { id: "case-studies", label: "Case Studies", icon: FileText, color: "#3b82f6", section: "services" },
+  { id: "photography", label: "Photography", icon: Camera, color: "#22c55e", section: "services" },
+  { id: "videography", label: "Video", icon: Video, color: "#f97316", section: "services" },
+  { id: "press-kit", label: "Press Kit", icon: Briefcase, color: "#ec4899", section: "services" },
   
   // Marketing Services
-  { id: "social-media", label: "Social Media", icon: Share2, color: "rgb(14, 165, 233)", section: "services" },
-  { id: "whatsapp", label: "WhatsApp", icon: MessageCircle, color: "rgb(168, 85, 247)", section: "services" },
-  { id: "community", label: "Community", icon: Users, color: "rgb(245, 101, 101)", section: "services" },
+  { id: "social-media", label: "Social Media", icon: Share2, color: "#0ea5e9", section: "services" },
+  { id: "whatsapp", label: "WhatsApp", icon: MessageCircle, color: "#a855f7", section: "services" },
+  { id: "community", label: "Community", icon: Users, color: "#f56565", section: "services" },
   
   // Data & Analytics
-  { id: "data-analysis", label: "Data Analysis", icon: BarChart3, color: "rgb(34, 197, 94)", section: "services" },
-  { id: "automation", label: "Automation", icon: Zap, color: "rgb(251, 191, 36)", section: "services" },
+  { id: "data-analysis", label: "Data Analysis", icon: BarChart3, color: "#10b981", section: "services" },
+  { id: "automation", label: "Automation", icon: Zap, color: "#fbbf24", section: "services" },
   
   // Sales & Performance
-  { id: "content-marketing", label: "Marketing", icon: Target, color: "rgb(139, 92, 246)", section: "services" },
-  { id: "events", label: "Events", icon: Calendar, color: "rgb(59, 130, 246)", section: "services" },
-  { id: "partnerships", label: "Partnerships", icon: Handshake, color: "rgb(34, 197, 94)", section: "services" },
-  { id: "email-marketing", label: "Email", icon: Mail, color: "rgb(249, 115, 22)", section: "services" },
-  { id: "performance", label: "Performance", icon: Search, color: "rgb(236, 72, 153)", section: "services" },
-  { id: "sponsorships", label: "Sponsorships", icon: DollarSign, color: "rgb(14, 165, 233)", section: "services" },
-  { id: "visitor-mgmt", label: "Visitors", icon: Eye, color: "rgb(168, 85, 247)", section: "services" },
-  
-  // Contact
-  { id: "contact", label: "Contact", icon: Phone, color: "rgb(245, 101, 101)" },
+  { id: "content-marketing", label: "Marketing", icon: Target, color: "#8b5cf6", section: "services" },
+  { id: "events", label: "Events", icon: Calendar, color: "#3b82f6", section: "services" },
+  { id: "partnerships", label: "Partnerships", icon: Handshake, color: "#22c55e", section: "services" },
+  { id: "email-marketing", label: "Email", icon: Mail, color: "#f97316", section: "services" },
+  { id: "performance", label: "Performance", icon: Search, color: "#ec4899", section: "services" },
+  { id: "sponsorships", label: "Sponsorships", icon: DollarSign, color: "#0ea5e9", section: "services" },
+  { id: "visitor-mgmt", label: "Visitors", icon: Eye, color: "#a855f7", section: "services" }
 ];
 
 export const FloatingNavigation = () => {
@@ -95,7 +93,6 @@ export const FloatingNavigation = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       
-      // Show/hide based on scroll direction
       if (currentScrollY < lastScrollY || currentScrollY < 100) {
         setIsVisible(true);
       } else {
@@ -113,161 +110,132 @@ export const FloatingNavigation = () => {
     if (item.id === "home") {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else if (item.id === "contact") {
-      // Scroll to bottom or contact section
       window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
     } else if (item.section === "services") {
-      // Scroll to services section
       document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
+  // Split navigation items exactly in half
   const midpoint = Math.floor(navigationItems.length / 2);
   const leftItems = navigationItems.slice(0, midpoint);
   const rightItems = navigationItems.slice(midpoint);
 
+  if (!isVisible) return null;
+
   return (
-    <div className={cn(
-      "fixed top-1/2 -translate-y-1/2 z-50 transition-all duration-500 ease-in-out",
-      isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4 pointer-events-none"
-    )}>
+    <>
       {/* Left Side Navigation */}
-      <div className="fixed left-3 top-1/2 -translate-y-1/2 flex flex-col gap-2.5">
+      <div className="fixed left-2 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-2">
         {leftItems.map((item, index) => (
           <FloatingNavButton 
             key={item.id} 
             item={item} 
             onClick={() => handleNavClick(item)}
-            delay={index * 80}
+            index={index}
             side="left"
           />
         ))}
       </div>
 
       {/* Right Side Navigation */}
-      <div className="fixed right-3 top-1/2 -translate-y-1/2 flex flex-col gap-2.5">
+      <div className="fixed right-2 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-2">
         {rightItems.map((item, index) => (
           <FloatingNavButton 
             key={item.id} 
             item={item} 
             onClick={() => handleNavClick(item)}
-            delay={index * 80}
+            index={index}
             side="right"
           />
         ))}
       </div>
-    </div>
+    </>
   );
 };
 
 interface FloatingNavButtonProps {
   item: NavigationItem;
   onClick: () => void;
-  delay: number;
+  index: number;
   side: "left" | "right";
 }
 
-const FloatingNavButton = ({ item, onClick, delay, side }: FloatingNavButtonProps) => {
+const FloatingNavButton = ({ item, onClick, index, side }: FloatingNavButtonProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const Icon = item.icon;
 
   return (
-    <div
+    <div 
       className="relative group"
-      style={{ animationDelay: `${delay}ms` }}
+      style={{
+        animationDelay: `${index * 50}ms`
+      }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Neon Glow Background */}
       <div 
         className={cn(
-          "absolute inset-0 rounded-full blur-lg transition-all duration-300",
-          isHovered ? "opacity-60 scale-110" : "opacity-30 scale-100"
+          "absolute inset-0 rounded-full transition-all duration-300 blur-md",
+          isHovered ? "opacity-70 scale-125" : "opacity-40 scale-100"
         )}
         style={{
           backgroundColor: item.color,
-          boxShadow: `0 0 20px ${item.color}, 0 0 40px ${item.color}40, 0 0 60px ${item.color}20`
+          boxShadow: `0 0 20px ${item.color}, 0 0 40px ${item.color}60`
         }}
       />
       
       {/* Main Button */}
       <Button
         onClick={onClick}
+        size="sm"
         className={cn(
-          "relative w-12 h-12 rounded-full p-0 border-2 transition-all duration-300",
-          "bg-black/80 backdrop-blur-sm hover:bg-black/90",
-          "hover:scale-110 hover:rotate-3",
-          "shadow-lg hover:shadow-2xl"
+          "relative w-10 h-10 rounded-full p-0 border-2 transition-all duration-300",
+          "bg-black/90 backdrop-blur-sm hover:bg-black/95",
+          "hover:scale-110 shadow-lg hover:shadow-2xl",
+          "animate-pulse-slow"
         )}
         style={{
           borderColor: item.color,
-          boxShadow: `0 0 10px ${item.color}40, inset 0 0 10px ${item.color}20`
+          boxShadow: `0 0 8px ${item.color}50`
         }}
       >
         <Icon 
-          className="w-5 h-5 transition-all duration-300" 
+          className="w-4 h-4 transition-all duration-300" 
           style={{ 
             color: item.color,
-            filter: `drop-shadow(0 0 4px ${item.color})`
+            filter: `drop-shadow(0 0 2px ${item.color})`
           }}
         />
       </Button>
 
-      {/* Tooltip Label */}
-      {side === "left" && (
-        <div className={cn(
-          "absolute top-1/2 -translate-y-1/2 z-10 transition-all duration-300 left-16",
-          "px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap",
-          "bg-black/90 backdrop-blur-sm border border-white/20",
-          "text-white shadow-lg md:block hidden",
-          isHovered ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
-        )}
-        style={{
-          borderColor: item.color,
-          boxShadow: `0 0 15px ${item.color}30`
-        }}>
-          {item.label}
-          
-          {/* Tooltip Arrow */}
-          <div 
-            className="absolute top-1/2 -translate-y-1/2 w-2 h-2 rotate-45 -left-1 bg-black/90 border border-white/20"
-            style={{ borderColor: item.color }}
-          />
-        </div>
-      )}
-
-      {side === "right" && (
-        <div className={cn(
-          "absolute top-1/2 -translate-y-1/2 z-10 transition-all duration-300 right-16",
-          "px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap",
-          "bg-black/90 backdrop-blur-sm border border-white/20",
-          "text-white shadow-lg md:block hidden",
-          isHovered ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
-        )}
-        style={{
-          borderColor: item.color,
-          boxShadow: `0 0 15px ${item.color}30`
-        }}>
-          {item.label}
-          
-          {/* Tooltip Arrow */}
-          <div 
-            className="absolute top-1/2 -translate-y-1/2 w-2 h-2 rotate-45 -right-1 bg-black/90 border border-white/20"
-            style={{ borderColor: item.color }}
-          />
-        </div>
-      )}
-
-      {/* Animated Pulse Ring */}
+      {/* Tooltip */}
       <div 
         className={cn(
-          "absolute inset-0 rounded-full border-2 animate-pulse",
-          isHovered ? "opacity-100" : "opacity-0"
+          "absolute top-1/2 -translate-y-1/2 z-10 transition-all duration-300",
+          "px-2 py-1 rounded text-xs font-medium whitespace-nowrap",
+          "bg-black/95 backdrop-blur-sm border text-white shadow-lg",
+          "hidden md:block",
+          side === "left" ? "left-12" : "right-12",
+          isHovered ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
         )}
         style={{
           borderColor: item.color,
-          animation: isHovered ? "pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite" : "none"
+          boxShadow: `0 0 10px ${item.color}40`
         }}
-      />
+      >
+        {item.label}
+        
+        {/* Tooltip Arrow */}
+        <div 
+          className={cn(
+            "absolute top-1/2 -translate-y-1/2 w-1.5 h-1.5 rotate-45 bg-black/95 border",
+            side === "left" ? "-left-0.5" : "-right-0.5"
+          )}
+          style={{ borderColor: item.color }}
+        />
+      </div>
     </div>
   );
 };
