@@ -9,7 +9,9 @@ import {
   Target,
   Home,
   Phone,
-  Sparkles
+  Sparkles,
+  Menu,
+  X
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -99,6 +101,18 @@ const navigationItems: NavigationItem[] = [
 export const FloatingNavigation = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -117,13 +131,41 @@ export const FloatingNavigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
+
   const handleNavClick = (item: NavigationItem) => {
+    // Close mobile menu if open
+    setIsMobileMenuOpen(false);
+    
+    // Add loading state feedback
+    const button = document.querySelector(`[data-nav-id="${item.id}"]`);
+    if (button) {
+      button.classList.add('animate-pulse');
+      setTimeout(() => button.classList.remove('animate-pulse'), 500);
+    }
+    
     if (item.id === "home") {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else if (item.id === "contact") {
       window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
     } else if (item.section === "services") {
-      document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+      const servicesElement = document.getElementById('services');
+      if (servicesElement) {
+        servicesElement.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        // Fallback: scroll to middle of page if services section doesn't exist
+        window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+      }
     }
   };
 
@@ -131,6 +173,56 @@ export const FloatingNavigation = () => {
   const midpoint = Math.ceil(navigationItems.length / 2);
   const leftItems = navigationItems.slice(0, midpoint);
   const rightItems = navigationItems.slice(midpoint);
+
+  if (isMobile) {
+    return (
+      <>
+        {/* Mobile Menu Toggle Button */}
+        <button
+          className={cn(
+            "fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full transition-all duration-300 pointer-events-auto",
+            "bg-gradient-to-r from-cyan-500 to-purple-600 shadow-lg hover:shadow-xl",
+            "flex items-center justify-center text-white",
+            "hover:scale-110 active:scale-95",
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          )}
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Open navigation menu"
+        >
+          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
+
+        {/* Mobile Menu Overlay */}
+        <div className={cn(
+          "fixed inset-0 z-40 transition-all duration-300",
+          isMobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        )}>
+          {/* Backdrop */}
+          <div 
+            className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+          
+          {/* Mobile Menu Content */}
+          <div className={cn(
+            "absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-gray-900 to-transparent p-6 rounded-t-3xl transition-all duration-300",
+            isMobileMenuOpen ? "translate-y-0" : "translate-y-full"
+          )}>
+            <div className="grid grid-cols-2 gap-4 max-h-96 overflow-y-auto">
+              {navigationItems.map((item, index) => (
+                <MobileNavButton
+                  key={item.id}
+                  item={item}
+                  onClick={() => handleNavClick(item)}
+                  index={index}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  }
 
   return (
     <div className={cn(
@@ -181,10 +273,10 @@ const LuxuryNavButton = ({ item, onClick, index, side }: LuxuryNavButtonProps) =
   const Icon = item.icon;
 
   return (
-    <div 
+    <button 
       className={cn(
-        "relative group cursor-pointer transition-all duration-500",
-        side === "left" ? "transform -translate-x-full hover:translate-x-0" : "transform translate-x-full hover:translate-x-0"
+        "relative group cursor-pointer transition-all duration-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400",
+        side === "left" ? "transform -translate-x-full hover:translate-x-0 focus:translate-x-0" : "transform translate-x-full hover:translate-x-0 focus:translate-x-0"
       )}
       style={{
         animationDelay: `${index * 200}ms`
@@ -192,6 +284,8 @@ const LuxuryNavButton = ({ item, onClick, index, side }: LuxuryNavButtonProps) =
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={onClick}
+      data-nav-id={item.id}
+      aria-label={`Navigate to ${item.title}: ${item.subtitle}`}
     >
       {/* Outer Glow Ring */}
       <div 
@@ -304,6 +398,92 @@ const LuxuryNavButton = ({ item, onClick, index, side }: LuxuryNavButtonProps) =
           ))}
         </div>
       )}
-    </div>
+    </button>
+  );
+};
+
+interface MobileNavButtonProps {
+  item: NavigationItem;
+  onClick: () => void;
+  index: number;
+}
+
+const MobileNavButton = ({ item, onClick, index }: MobileNavButtonProps) => {
+  const [isPressed, setIsPressed] = useState(false);
+  const Icon = item.icon;
+
+  return (
+    <button
+      className={cn(
+        "relative group p-4 rounded-2xl transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400",
+        "bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700/50",
+        "hover:from-gray-700/80 hover:to-gray-800/80 hover:border-gray-600/50",
+        "active:scale-95 transform",
+        isPressed ? "scale-95" : "scale-100"
+      )}
+      style={{
+        animationDelay: `${index * 50}ms`
+      }}
+      onMouseDown={() => setIsPressed(true)}
+      onMouseUp={() => setIsPressed(false)}
+      onMouseLeave={() => setIsPressed(false)}
+      onClick={onClick}
+      data-nav-id={item.id}
+      aria-label={`Navigate to ${item.title}: ${item.subtitle}`}
+    >
+      {/* Glow Effect */}
+      <div 
+        className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-60 transition-opacity duration-300 blur-xl"
+        style={{
+          background: `radial-gradient(circle, rgba(${item.glowColor}, 0.6) 0%, transparent 70%)`
+        }}
+      />
+
+      {/* Content */}
+      <div className="relative flex flex-col items-center gap-2 z-10">
+        {/* Icon */}
+        <div 
+          className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110"
+          style={{
+            backgroundColor: `rgba(${item.glowColor}, 0.1)`,
+            border: `1px solid rgba(${item.glowColor}, 0.3)`,
+            boxShadow: `0 0 20px rgba(${item.glowColor}, 0.3)`
+          }}
+        >
+          <Icon 
+            className="w-5 h-5"
+            style={{ 
+              color: item.color,
+              filter: `drop-shadow(0 0 4px ${item.color})`
+            }}
+          />
+        </div>
+
+        {/* Text */}
+        <div className="text-center">
+          <div 
+            className="text-sm font-bold tracking-wide"
+            style={{
+              color: item.color,
+              textShadow: `0 0 10px ${item.color}60`
+            }}
+          >
+            {item.title}
+          </div>
+          <div className="text-xs text-gray-400 mt-1 line-clamp-2">
+            {item.subtitle}
+          </div>
+        </div>
+      </div>
+
+      {/* Border Glow */}
+      <div 
+        className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        style={{
+          border: `1px solid rgba(${item.glowColor}, 0.5)`,
+          boxShadow: `0 0 20px rgba(${item.glowColor}, 0.3), inset 0 0 20px rgba(${item.glowColor}, 0.1)`
+        }}
+      />
+    </button>
   );
 };
