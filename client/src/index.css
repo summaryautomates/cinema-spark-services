@@ -359,3 +359,98 @@ Premium Blue & Neon Blue Luxury Theme
     background-position: 100% 50%;
   }
 }
+
+/* Luxury Hero Animations */
+@keyframes float-particle {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+    opacity: 0.2;
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px) rotate(90deg);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-10px) translateX(-5px) rotate(180deg);
+    opacity: 0.8;
+  }
+  75% {
+    transform: translateY(-30px) translateX(15px) rotate(270deg);
+    opacity: 0.4;
+  }
+}
+
+@keyframes pulse-premium {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3), 0 0 40px rgba(0, 212, 255, 0.1);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.6), 0 0 60px rgba(0, 212, 255, 0.3);
+    transform: scale(1.02);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    text-shadow: 0 0 20px rgba(0, 212, 255, 0.5), 0 0 40px rgba(0, 212, 255, 0.3), 0 0 60px rgba(0, 212, 255, 0.1);
+  }
+  50% {
+    text-shadow: 0 0 30px rgba(0, 212, 255, 0.8), 0 0 60px rgba(0, 212, 255, 0.5), 0 0 100px rgba(0, 212, 255, 0.3);
+  }
+}
+
+@keyframes particle-trail {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-15px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-30px) scale(0);
+  }
+}
+
+/* Luxury Text Gradient */
+.luxury-gradient-text {
+  background: linear-gradient(45deg, 
+    #ffffff 0%, 
+    #00d4ff 25%, 
+    #ffffff 50%, 
+    #ff0080 75%, 
+    #ffffff 100%
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: text-shimmer 4s ease-in-out infinite;
+}
+
+.animate-pulse-premium {
+  animation: pulse-premium 2s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.animate-float-particle {
+  animation: float-particle 6s ease-in-out infinite;
+}
+
+.animate-particle-trail {
+  animation: particle-trail 1.5s ease-out infinite;
+}
+
+.shadow-luxury {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 212, 255, 0.2);
+}
+
+.shadow-premium {
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4), 0 0 60px rgba(0, 212, 255, 0.4);
+}
