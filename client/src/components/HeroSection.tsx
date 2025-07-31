@@ -18,14 +18,7 @@ interface ServiceNavItem {
   glowColor: string;
 }
 
-const serviceNavItems: ServiceNavItem[] = [
-  {
-    id: "strategic",
-    title: "Strategic Services",
-    icon: Brain,
-    color: "#3b82f6",
-    glowColor: "59, 130, 246"
-  },
+const leftSideServices: ServiceNavItem[] = [
   {
     id: "development",
     title: "Development & Technical",
@@ -34,11 +27,28 @@ const serviceNavItems: ServiceNavItem[] = [
     glowColor: "6, 182, 212"
   },
   {
-    id: "content",
-    title: "Content & Creative",
-    icon: PenTool,
-    color: "#8b5cf6",
-    glowColor: "139, 92, 246"
+    id: "strategic",
+    title: "Strategic Services",
+    icon: Brain,
+    color: "#3b82f6",
+    glowColor: "59, 130, 246"
+  },
+  {
+    id: "analytics",
+    title: "Data & Analytics",
+    icon: BarChart3,
+    color: "#f59e0b",
+    glowColor: "245, 158, 11"
+  }
+];
+
+const rightSideServices: ServiceNavItem[] = [
+  {
+    id: "sales",
+    title: "Marketing & Sales Strategy",
+    icon: Target,
+    color: "#ef4444",
+    glowColor: "239, 68, 68"
   },
   {
     id: "marketing",
@@ -48,18 +58,11 @@ const serviceNavItems: ServiceNavItem[] = [
     glowColor: "16, 185, 129"
   },
   {
-    id: "analytics",
-    title: "Data & Analytics",
-    icon: BarChart3,
-    color: "#f59e0b",
-    glowColor: "245, 158, 11"
-  },
-  {
-    id: "sales",
-    title: "Marketing & Sales Strategy",
-    icon: Target,
-    color: "#ef4444",
-    glowColor: "239, 68, 68"
+    id: "content",
+    title: "Content & Creative",
+    icon: PenTool,
+    color: "#8b5cf6",
+    glowColor: "139, 92, 246"
   }
 ];
 
@@ -168,10 +171,9 @@ export const HeroSection = ({
     return () => clearTimeout(timer);
   }, []);
 
-  // Split items for left and right sides
-  const midpoint = Math.ceil(serviceNavItems.length / 2);
-  const leftItems = serviceNavItems.slice(0, midpoint);
-  const rightItems = serviceNavItems.slice(midpoint);
+  // Use predefined left and right service arrays
+  const leftItems = leftSideServices;
+  const rightItems = rightSideServices;
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
