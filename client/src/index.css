@@ -235,3 +235,40 @@ Premium Blue & Neon Blue Luxury Theme
     transform: translateY(0);
   }
 }
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  80%, 100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+/* Floating navigation hover scale effect */
+.hover-scale {
+  transition: all var(--transition-smooth);
+}
+
+.hover-scale:hover {
+  transform: scale(1.05) translateY(-2px);
+}
+
+/* Neon glow effects for floating navigation */
+.neon-glow {
+  position: relative;
+}
+
+.neon-glow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(45deg, transparent, currentColor, transparent);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+}

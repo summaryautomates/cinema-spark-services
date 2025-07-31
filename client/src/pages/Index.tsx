@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { HeroSection } from "@/components/HeroSection";
 import { ServiceSection } from "@/components/ServiceSection";
+import { FloatingNavigation } from "@/components/FloatingNavigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -243,6 +244,9 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      {/* Floating Navigation */}
+      <FloatingNavigation />
+      
       {/* Hero Section */}
       <HeroSection 
         onExploreServices={handleExploreServices}
