@@ -23,43 +23,43 @@ const serviceNavItems: ServiceNavItem[] = [
     id: "strategic",
     title: "Strategic Services",
     icon: Brain,
-    color: "#ff0080",
-    glowColor: "255, 0, 128"
+    color: "#3b82f6",
+    glowColor: "59, 130, 246"
   },
   {
     id: "development",
     title: "Development & Technical",
     icon: Cpu,
-    color: "#00ff88",
-    glowColor: "0, 255, 136"
+    color: "#06b6d4",
+    glowColor: "6, 182, 212"
   },
   {
     id: "content",
     title: "Content & Creative",
     icon: PenTool,
-    color: "#ff6600",
-    glowColor: "255, 102, 0"
+    color: "#8b5cf6",
+    glowColor: "139, 92, 246"
   },
   {
     id: "marketing",
     title: "Marketing & Community",
     icon: Share2,
-    color: "#8800ff",
-    glowColor: "136, 0, 255"
+    color: "#10b981",
+    glowColor: "16, 185, 129"
   },
   {
     id: "analytics",
     title: "Data & Analytics",
     icon: BarChart3,
-    color: "#ffff00",
-    glowColor: "255, 255, 0"
+    color: "#f59e0b",
+    glowColor: "245, 158, 11"
   },
   {
     id: "sales",
     title: "Marketing & Sales Strategy",
     icon: Target,
-    color: "#ff4444",
-    glowColor: "255, 68, 68"
+    color: "#ef4444",
+    glowColor: "239, 68, 68"
   }
 ];
 
@@ -97,25 +97,25 @@ const FloatingNavButton = ({ item, side, index }: FloatingNavButtonProps) => {
     >
       {/* Outer Glow Ring */}
       <div
-        className={`absolute inset-0 rounded-2xl blur-xl transition-all duration-500 ${
-          isHovered ? "scale-150 opacity-80" : "scale-100 opacity-40"
+        className={`absolute inset-0 rounded-2xl blur-lg transition-all duration-500 ${
+          isHovered ? "scale-125 opacity-60" : "scale-100 opacity-20"
         }`}
         style={{
-          background: `radial-gradient(circle, rgba(${item.glowColor}, 0.8) 0%, rgba(${item.glowColor}, 0.3) 40%, transparent 70%)`,
-          boxShadow: `0 0 60px rgba(${item.glowColor}, 0.6), 0 0 120px rgba(${item.glowColor}, 0.3)`
+          background: `radial-gradient(circle, rgba(${item.glowColor}, 0.4) 0%, rgba(${item.glowColor}, 0.1) 50%, transparent 70%)`,
+          boxShadow: isHovered ? `0 0 40px rgba(${item.glowColor}, 0.3)` : "none"
         }}
       />
 
       {/* Main Button Container */}
       <div
-        className={`relative bg-black/90 backdrop-blur-lg border border-white/20 rounded-xl p-3 min-w-[120px] transition-all duration-500 ${
-          isHovered ? "scale-105 bg-black/95" : "scale-100"
+        className={`relative bg-slate-900/95 backdrop-blur-lg border border-slate-700/50 rounded-xl p-4 min-w-[130px] transition-all duration-500 ${
+          isHovered ? "scale-105 bg-slate-800/95" : "scale-100"
         }`}
         style={{
-          borderColor: item.color,
+          borderColor: isHovered ? item.color : "rgba(148, 163, 184, 0.3)",
           boxShadow: isHovered 
-            ? `0 0 30px rgba(${item.glowColor}, 0.8), inset 0 0 15px rgba(${item.glowColor}, 0.2)`
-            : `0 0 15px rgba(${item.glowColor}, 0.4)`
+            ? `0 0 20px rgba(${item.glowColor}, 0.4), inset 0 0 10px rgba(${item.glowColor}, 0.1)`
+            : `0 4px 15px rgba(0, 0, 0, 0.3)`
         }}
       >
         {/* Icon */}
@@ -131,10 +131,10 @@ const FloatingNavButton = ({ item, side, index }: FloatingNavButtonProps) => {
 
         {/* Title */}
         <div
-          className="text-xs font-bold text-center transition-all duration-300 leading-tight"
+          className="text-xs font-semibold text-center transition-all duration-300 leading-tight"
           style={{
-            color: isHovered ? item.color : "#ffffff",
-            textShadow: isHovered ? `0 0 10px rgba(${item.glowColor}, 0.8)` : "none"
+            color: isHovered ? item.color : "#e2e8f0",
+            textShadow: isHovered ? `0 0 8px rgba(${item.glowColor}, 0.5)` : "none"
           }}
         >
           {item.title}
