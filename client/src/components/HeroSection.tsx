@@ -212,62 +212,8 @@ export const HeroSection = ({
       ))}
       
       {/* Content */}
-      <div className="relative z-10 w-full h-full flex flex-col items-center justify-center text-center px-6">
-        <div className="max-w-4xl mx-auto space-y-8">
-          <Badge variant="secondary" className="px-6 py-3 bg-primary/10 text-primary border-primary/20 backdrop-blur-sm">
-            <Sparkles className="w-4 h-4 mr-2" />
-            AI Transformation Experts
-          </Badge>
-          
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold gradient-text leading-tight">
-            Transform Your Business with AI Solutions
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Discover how AI can revolutionize your operations, boost efficiency, and drive growth with our comprehensive suite of services.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-            <Button 
-              size="lg" 
-              className="px-8 py-6 text-lg font-semibold"
-              onClick={() => {
-                const leadMagnetElement = document.querySelector('[data-trigger="lead-magnet"]') as HTMLElement;
-                if (leadMagnetElement) {
-                  leadMagnetElement.click();
-                }
-              }}
-            >
-              <Sparkles className="w-5 h-5 mr-2" />
-              Get Your Free AI Readiness Report
-            </Button>
-            
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="px-8 py-6 text-lg font-semibold backdrop-blur-sm"
-              onClick={onExploreServices}
-            >
-              Explore Our Services
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
-          </div>
-          
-          <div className="flex items-center justify-center space-x-6 text-sm text-muted-foreground pt-4">
-            <div className="flex items-center space-x-2">
-              <Brain className="w-4 h-4" />
-              <span>AI Strategy</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Cpu className="w-4 h-4" />
-              <span>Custom Development</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Zap className="w-4 h-4" />
-              <span>Automation</span>
-            </div>
-          </div>
-        </div>
+      <div className="relative z-10 w-full h-full flex flex-col">
+        
       </div>
     </section>
   );
