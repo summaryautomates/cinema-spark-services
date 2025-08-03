@@ -118,9 +118,18 @@ export const FloatingNavigation = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       
-      // Show navigation only when scrolled down from the top (more than 50px)
-      // Hide when at the very top of the page
-      if (currentScrollY > 50) {
+      // Check if we're on the home page by looking at the URL
+      const isHomePage = window.location.pathname === '/' || window.location.pathname === '/home';
+      
+      if (!isHomePage) {
+        // Hide navigation completely if not on home page
+        setIsVisible(false);
+        return;
+      }
+      
+      // Show navigation only when scrolled down from the top (more than 100px) on home page
+      // This ensures navigation appears when user scrolls down but disappears when at the very top
+      if (currentScrollY > 100) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
@@ -129,11 +138,18 @@ export const FloatingNavigation = () => {
       setLastScrollY(currentScrollY);
     };
 
-    // Initial check - hide navigation if already at top
+    // Initial check - hide navigation if already at top or not on home page
     handleScroll();
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    
+    // Also listen for URL changes (if using client-side routing)
+    window.addEventListener('popstate', handleScroll);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('popstate', handleScroll);
+    };
   }, []);
 
   useEffect(() => {
