@@ -99,7 +99,7 @@ const navigationItems: NavigationItem[] = [
 ];
 
 export const FloatingNavigation = () => {
-  const [isVisible, setIsVisible] = useState(false); // Start hidden
+  const [isVisible, setIsVisible] = useState(true); // Start visible at top
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -127,9 +127,9 @@ export const FloatingNavigation = () => {
         return;
       }
       
-      // Show navigation only when scrolled down from the top (more than 100px) on home page
-      // This ensures navigation appears when user scrolls down but disappears when at the very top
-      if (currentScrollY > 100) {
+      // Show navigation only when at the top of the home page (less than 100px)
+      // Hide navigation when user scrolls down
+      if (currentScrollY < 100) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
