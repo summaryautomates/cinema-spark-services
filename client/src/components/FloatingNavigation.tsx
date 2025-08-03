@@ -99,7 +99,7 @@ const navigationItems: NavigationItem[] = [
 ];
 
 export const FloatingNavigation = () => {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(false); // Start hidden
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -118,7 +118,9 @@ export const FloatingNavigation = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       
-      if (currentScrollY < lastScrollY || currentScrollY < 100) {
+      // Show navigation only when scrolled down from the top (more than 50px)
+      // Hide when at the very top of the page
+      if (currentScrollY > 50) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
@@ -127,9 +129,12 @@ export const FloatingNavigation = () => {
       setLastScrollY(currentScrollY);
     };
 
+    // Initial check - hide navigation if already at top
+    handleScroll();
+
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   useEffect(() => {
     if (isMobileMenuOpen) {
