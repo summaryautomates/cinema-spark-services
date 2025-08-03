@@ -198,49 +198,9 @@ export const FloatingNavigation = () => {
   if (isMobile) {
     return (
       <>
-        {/* Mobile Menu Toggle Button */}
-        <button
-          className={cn(
-            "fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full transition-all duration-300 pointer-events-auto",
-            "bg-gradient-to-r from-cyan-500 to-purple-600 shadow-lg hover:shadow-xl",
-            "flex items-center justify-center text-white",
-            "hover:scale-110 active:scale-95",
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          )}
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Open navigation menu"
-        >
-          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+        
 
-        {/* Mobile Menu Overlay */}
-        <div className={cn(
-          "fixed inset-0 z-40 transition-all duration-300",
-          isMobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-        )}>
-          {/* Backdrop */}
-          <div 
-            className="absolute inset-0 bg-black/80 backdrop-blur-sm"
-            onClick={() => setIsMobileMenuOpen(false)}
-          />
-          
-          {/* Mobile Menu Content */}
-          <div className={cn(
-            "absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-gray-900 to-transparent p-6 rounded-t-3xl transition-all duration-300",
-            isMobileMenuOpen ? "translate-y-0" : "translate-y-full"
-          )}>
-            <div className="grid grid-cols-2 gap-4 max-h-96 overflow-y-auto">
-              {navigationItems.map((item, index) => (
-                <MobileNavButton
-                  key={item.id}
-                  item={item}
-                  onClick={() => handleNavClick(item)}
-                  index={index}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
+        
       </>
     );
   }
