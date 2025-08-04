@@ -195,20 +195,15 @@ export const FloatingNavigation = () => {
   const leftItems = navigationItems.slice(0, midpoint);
   const rightItems = navigationItems.slice(midpoint);
 
+  // Hide navigation completely on mobile devices
   if (isMobile) {
-    return (
-      <>
-        
-
-        
-      </>
-    );
+    return null;
   }
 
   return (
     <div className={cn(
       "fixed inset-0 pointer-events-none z-50 transition-all duration-700 ease-out",
-      isVisible ? "opacity-100" : "opacity-0"
+      isVisible ? "opacity-40" : "opacity-0"
     )}>
       {/* Left Side Navigation */}
       <div className="fixed left-0 top-1/2 -translate-y-1/2 flex flex-col gap-6 pointer-events-auto">
@@ -237,7 +232,7 @@ export const FloatingNavigation = () => {
       </div>
 
       {/* Connecting Light Beam */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-px h-32 bg-gradient-to-b from-transparent via-cyan-400/50 to-transparent animate-pulse-beam" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-px h-32 bg-gradient-to-b from-transparent via-cyan-400/30 to-transparent animate-pulse-beam" />
     </div>
   );
 };
@@ -272,11 +267,11 @@ const LuxuryNavButton = ({ item, onClick, index, side }: LuxuryNavButtonProps) =
       <div 
         className={cn(
           "absolute inset-0 rounded-full blur-xl transition-all duration-500 animate-pulse-glow",
-          isHovered ? "scale-150 opacity-80" : "scale-100 opacity-40"
+          isHovered ? "scale-150 opacity-60" : "scale-100 opacity-20"
         )}
         style={{
-          background: `radial-gradient(circle, rgba(${item.glowColor}, 0.8) 0%, rgba(${item.glowColor}, 0.3) 40%, transparent 70%)`,
-          boxShadow: `0 0 60px rgba(${item.glowColor}, 0.6), 0 0 120px rgba(${item.glowColor}, 0.3)`
+          background: `radial-gradient(circle, rgba(${item.glowColor}, 0.4) 0%, rgba(${item.glowColor}, 0.15) 40%, transparent 70%)`,
+          boxShadow: `0 0 40px rgba(${item.glowColor}, 0.3), 0 0 80px rgba(${item.glowColor}, 0.15)`
         }}
       />
 
@@ -290,19 +285,19 @@ const LuxuryNavButton = ({ item, onClick, index, side }: LuxuryNavButtonProps) =
         <div 
           className={cn(
             "relative w-16 h-16 rounded-full flex items-center justify-center transition-all duration-500",
-            "bg-black/90 backdrop-blur-sm border-2 shadow-2xl",
+            "bg-black/60 backdrop-blur-sm border-2 shadow-xl",
             isHovered ? "rotate-12 shadow-luxury-glow" : "rotate-0"
           )}
           style={{
             borderColor: item.color,
-            boxShadow: `0 0 30px rgba(${item.glowColor}, 0.5), inset 0 0 20px rgba(${item.glowColor}, 0.1)`
+            boxShadow: `0 0 20px rgba(${item.glowColor}, 0.3), inset 0 0 15px rgba(${item.glowColor}, 0.05)`
           }}
         >
           {/* Inner Icon Glow */}
           <div 
-            className="absolute inset-2 rounded-full blur-sm opacity-60"
+            className="absolute inset-2 rounded-full blur-sm opacity-30"
             style={{
-              background: `radial-gradient(circle, ${item.color}40 0%, transparent 70%)`
+              background: `radial-gradient(circle, ${item.color}30 0%, transparent 70%)`
             }}
           />
           
