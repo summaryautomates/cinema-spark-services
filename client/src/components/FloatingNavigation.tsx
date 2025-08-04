@@ -206,7 +206,7 @@ export const FloatingNavigation = () => {
       isVisible ? "opacity-40" : "opacity-0"
     )}>
       {/* Left Side Navigation */}
-      <div className="fixed left-0 top-1/2 -translate-y-1/2 flex flex-col gap-6 pointer-events-auto">
+      <div className="fixed left-0 top-1/2 -translate-y-1/2 flex flex-col gap-12 pointer-events-auto">
         {leftItems.map((item, index) => (
           <LuxuryNavButton 
             key={item.id} 
@@ -219,7 +219,7 @@ export const FloatingNavigation = () => {
       </div>
 
       {/* Right Side Navigation */}
-      <div className="fixed right-0 top-1/2 -translate-y-1/2 flex flex-col gap-6 pointer-events-auto">
+      <div className="fixed right-0 top-1/2 -translate-y-1/2 flex flex-col gap-12 pointer-events-auto">
         {rightItems.map((item, index) => (
           <LuxuryNavButton 
             key={item.id} 
