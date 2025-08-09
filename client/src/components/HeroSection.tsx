@@ -51,7 +51,7 @@ export const HeroSection = ({
               <img 
                 src={heroImage} 
                 alt="AI Brain Intelligence" 
-                className="w-full h-full object-contain brain-glow transform hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-contain brain-glow transform hover:scale-105 transition-transform duration-700 opacity-80"
               />
               
               {/* Image overlay for better integration */}
