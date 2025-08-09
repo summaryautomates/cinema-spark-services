@@ -185,7 +185,7 @@ export const FloatingNavigation = () => {
     }
   };
 
-  // Adjusted responsive values to keep buttons within screen bounds
+  // Position navigation around the brain image in the hero section
   const getResponsiveValues = () => {
     const vw =
       windowSize.width ||
@@ -195,35 +195,35 @@ export const FloatingNavigation = () => {
       (typeof window !== "undefined" ? window.innerHeight : 768);
 
     if (vw < 640) {
-      // Mobile - much smaller radius
+      // Mobile - smaller radius around brain
       return {
-        radius: Math.min(vw * 0.25, vh * 0.25, 120),
-        containerSize: Math.min(vw * 0.8, vh * 0.8, 300),
-        top: "50%",
+        radius: Math.min(vw * 0.3, vh * 0.25, 140),
+        containerSize: Math.min(vw * 0.9, vh * 0.8, 350),
+        top: "45%", // Slightly higher to align with brain center
         left: "50%",
       };
     } else if (vw < 1024) {
-      // Tablet - moderate radius
+      // Tablet - moderate radius around brain
       return {
-        radius: Math.min(vw * 0.22, vh * 0.22, 160),
-        containerSize: Math.min(vw * 0.7, vh * 0.7, 400),
-        top: "50%",
+        radius: Math.min(vw * 0.25, vh * 0.22, 180),
+        containerSize: Math.min(vw * 0.8, vh * 0.7, 450),
+        top: "48%", // Adjusted for brain position
         left: "50%",
       };
     } else if (vw < 1440) {
-      // Desktop - careful not to exceed screen bounds
+      // Desktop - positioned around brain graphic
       return {
-        radius: Math.min(vw * 0.18, vh * 0.18, 200),
-        containerSize: Math.min(vw * 0.6, vh * 0.6, 500),
-        top: "50%",
+        radius: Math.min(vw * 0.2, vh * 0.2, 240),
+        containerSize: Math.min(vw * 0.65, vh * 0.65, 600),
+        top: "48%", // Brain appears to be slightly above center
         left: "50%",
       };
     } else {
-      // Large desktop - still conservative
+      // Large desktop - wider radius around brain
       return {
-        radius: Math.min(vw * 0.15, vh * 0.15, 220),
-        containerSize: Math.min(vw * 0.5, vh * 0.5, 550),
-        top: "50%",
+        radius: Math.min(vw * 0.18, vh * 0.18, 280),
+        containerSize: Math.min(vw * 0.6, vh * 0.6, 700),
+        top: "48%", // Consistent brain-centered positioning
         left: "50%",
       };
     }
