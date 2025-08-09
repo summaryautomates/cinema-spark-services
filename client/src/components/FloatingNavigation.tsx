@@ -165,22 +165,41 @@ export const FloatingNavigation = () => {
   const handleNavClick = (item: NavigationItem) => {
     setIsMobileMenuOpen(false);
 
+    // Add visual feedback to button
     const button = document.querySelector(`[data-nav-id="${item.id}"]`);
     if (button) {
       button.classList.add("animate-pulse");
       setTimeout(() => button.classList.remove("animate-pulse"), 500);
     }
 
+    // Navigation logic with enhanced targeting
     if (item.id === "home") {
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else if (item.id === "contact") {
-      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
-    } else if (item.section === "services") {
-      const servicesElement = document.getElementById("services");
-      if (servicesElement) {
-        servicesElement.scrollIntoView({ behavior: "smooth" });
+      const contactElement = document.getElementById("contact");
+      if (contactElement) {
+        contactElement.scrollIntoView({ behavior: "smooth", block: "start" });
       } else {
-        window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
+        window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+      }
+    } else if (item.section === "services") {
+      // Navigate to specific service section based on item.id
+      const sectionElement = document.querySelector(`[data-section="${item.id}"]`) as HTMLElement;
+      if (sectionElement) {
+        sectionElement.scrollIntoView({ behavior: "smooth", block: "start" });
+        
+        // Add a subtle highlight effect to the section being navigated to
+        sectionElement.style.transition = "transform 0.3s ease";
+        sectionElement.style.transform = "scale(1.02)";
+        setTimeout(() => {
+          sectionElement.style.transform = "scale(1)";
+        }, 600);
+      } else {
+        // Fallback to general services section
+        const servicesElement = document.getElementById("services");
+        if (servicesElement) {
+          servicesElement.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
       }
     }
   };
@@ -199,16 +218,16 @@ export const FloatingNavigation = () => {
       return {
         radius: Math.min(vw * 0.35, vh * 0.3, 120),
         containerSize: Math.min(vw * 0.95, vh * 0.85, 300),
-        top: "45%", // Positioned around brain center on mobile
-        left: "50%",
+        top: "60%", // Positioned around brain center on mobile
+        left: "84.5%",
       };
     } else if (vw < 1024) {
       // Tablet - moderate radius around brain
       return {
         radius: Math.min(vw * 0.28, vh * 0.25, 160),
         containerSize: Math.min(vw * 0.85, vh * 0.75, 400),
-        top: "47%", // Adjusted for brain position on tablet
-        left: "50%",
+        top: "55%", // Adjusted for brain position on tablet
+        left: "72%",
       };
     } else if (vw < 1440) {
       // Desktop - positioned around brain graphic
@@ -223,15 +242,13 @@ export const FloatingNavigation = () => {
       return {
         radius: Math.min(vw * 0.18, vh * 0.18, 280),
         containerSize: Math.min(vw * 0.6, vh * 0.6, 700),
-        top: "48%", // Consistent brain-centered positioning
-        left: "50%",
+        top: "65%", // Consistent brain-centered positioning
+        left: "65%",
       };
     }
   };
 
   const { radius, containerSize, top, left } = getResponsiveValues();
-
-  
 
   return (
     <div
@@ -330,7 +347,11 @@ const CircularNavButton = ({
           "relative rounded-full flex items-center justify-center transition-all duration-500",
           "bg-black bg-opacity-90 backdrop-blur-sm border-2 shadow-2xl",
           isHovered ? "scale-125" : "scale-100",
-          windowSize.width < 640 ? "w-10 h-10" : windowSize.width < 1024 ? "w-12 h-12" : "w-14 h-14", // Responsive button sizing
+          windowSize.width < 640
+            ? "w-10 h-10"
+            : windowSize.width < 1024
+              ? "w-12 h-12"
+              : "w-14 h-14", // Responsive button sizing
         )}
         style={{
           borderColor: item.color,
@@ -349,7 +370,11 @@ const CircularNavButton = ({
           className={cn(
             "z-10 transition-all duration-500",
             isHovered ? "scale-110" : "scale-100",
-            windowSize.width < 640 ? "w-4 h-4" : windowSize.width < 1024 ? "w-5 h-5" : "w-6 h-6", // Responsive icon sizing
+            windowSize.width < 640
+              ? "w-4 h-4"
+              : windowSize.width < 1024
+                ? "w-5 h-5"
+                : "w-6 h-6", // Responsive icon sizing
           )}
           style={{
             color: item.color,

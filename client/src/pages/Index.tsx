@@ -392,7 +392,7 @@ const Index = () => {
       </section>
 
       {/* Call to Action Section */}
-      <section className="py-20 relative overflow-hidden">
+      <section id="contact" className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-hero" />
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
