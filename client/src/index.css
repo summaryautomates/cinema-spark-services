@@ -243,15 +243,7 @@ Premium Blue & Neon Blue Luxury Theme
             drop-shadow(0 0 90px rgba(99, 102, 241, 0.1));
   }
 
-  .brain-container::before {
-    content: '';
-    position: absolute;
-    inset: -20px;
-    background: conic-gradient(from 0deg, transparent, rgba(59, 130, 246, 0.2), transparent, rgba(34, 211, 238, 0.2), transparent);
-    border-radius: 50%;
-    animation: rotate 20s linear infinite;
-    z-index: -1;
-  }
+  /* Brain container border effect removed for borderless design */
 
   @keyframes rotate {
     from { transform: rotate(0deg); }
