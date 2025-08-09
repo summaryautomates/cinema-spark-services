@@ -215,8 +215,8 @@ export const FloatingNavigation = () => {
       return {
         radius: Math.min(vw * 0.2, vh * 0.2, 240),
         containerSize: Math.min(vw * 0.65, vh * 0.65, 600),
-        top: "48%", // Brain appears to be slightly above center
-        left: "50%",
+        top: "68%", // Brain appears to be slightly above center
+        left: "64.5%",
       };
     } else {
       // Large desktop - wider radius around brain
@@ -319,7 +319,7 @@ export const FloatingNavigation = () => {
       </div>
     </div>
   );
-}
+};
 
 interface CircularNavButtonProps {
   item: NavigationItem;
