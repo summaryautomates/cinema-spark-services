@@ -203,115 +203,177 @@ export const FloatingNavigation = () => {
   return (
     <div className={cn(
       "fixed inset-0 pointer-events-none z-50 transition-all duration-700 ease-out",
-      isVisible ? "opacity-60" : "opacity-0"
+      isVisible ? "opacity-40" : "opacity-0"
     )}>
-      {/* Circular Navigation around Cerebreum */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-auto">
-        {/* Center Text - Cerebreum */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-          <h1 className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-            Cerebreum
-          </h1>
-        </div>
-        
-        {/* Circular Navigation Icons */}
-        {navigationItems.map((item, index) => {
-          const angle = (index * 360) / navigationItems.length;
-          const radius = 120; // Distance from center
-          const radian = (angle * Math.PI) / 180;
-          const x = Math.cos(radian) * radius;
-          const y = Math.sin(radian) * radius;
-          
-          return (
-            <CircularNavIcon
-              key={item.id}
-              item={item}
-              onClick={() => handleNavClick(item)}
-              x={x}
-              y={y}
-              index={index}
-            />
-          );
-        })}
+      {/* Left Side Navigation */}
+      <div className="fixed left-0 top-1/2 -translate-y-1/2 flex flex-col gap-24 pointer-events-auto">
+        {leftItems.map((item, index) => (
+          <LuxuryNavButton 
+            key={item.id} 
+            item={item} 
+            onClick={() => handleNavClick(item)}
+            index={index}
+            side="left"
+          />
+        ))}
       </div>
+
+      {/* Right Side Navigation */}
+      <div className="fixed right-0 top-1/2 -translate-y-1/2 flex flex-col gap-24 pointer-events-auto">
+        {rightItems.map((item, index) => (
+          <LuxuryNavButton 
+            key={item.id} 
+            item={item} 
+            onClick={() => handleNavClick(item)}
+            index={index}
+            side="right"
+          />
+        ))}
+      </div>
+
+      {/* Connecting Light Beam */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-px h-32 bg-gradient-to-b from-transparent via-cyan-400/30 to-transparent animate-pulse-beam" />
     </div>
   );
 };
 
-interface CircularNavIconProps {
+interface LuxuryNavButtonProps {
   item: NavigationItem;
   onClick: () => void;
-  x: number;
-  y: number;
   index: number;
+  side: "left" | "right";
 }
 
-const CircularNavIcon = ({ item, onClick, x, y, index }: CircularNavIconProps) => {
+const LuxuryNavButton = ({ item, onClick, index, side }: LuxuryNavButtonProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const Icon = item.icon;
 
   return (
-    <button
-      className="absolute transition-all duration-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+    <button 
+      className={cn(
+        "relative group cursor-pointer transition-all duration-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400",
+        side === "left" ? "transform -translate-x-full hover:translate-x-0 focus:translate-x-0" : "transform translate-x-full hover:translate-x-0 focus:translate-x-0"
+      )}
       style={{
-        transform: `translate(${x}px, ${y}px) translate(-50%, -50%)`,
-        animationDelay: `${index * 150}ms`
+        animationDelay: `${index * 200}ms`
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={onClick}
       data-nav-id={item.id}
-      aria-label={`Navigate to ${item.title}`}
+      aria-label={`Navigate to ${item.title}: ${item.subtitle}`}
     >
       {/* Outer Glow Ring */}
       <div 
         className={cn(
-          "absolute inset-0 rounded-full blur-lg transition-all duration-500",
-          isHovered ? "scale-150 opacity-40" : "scale-100 opacity-15"
+          "absolute inset-0 rounded-full blur-xl transition-all duration-500 animate-pulse-glow",
+          isHovered ? "scale-150 opacity-60" : "scale-100 opacity-20"
         )}
         style={{
-          background: `radial-gradient(circle, rgba(${item.glowColor}, 0.3) 0%, transparent 70%)`,
-          boxShadow: `0 0 30px rgba(${item.glowColor}, 0.2)`
+          background: `radial-gradient(circle, rgba(${item.glowColor}, 0.4) 0%, rgba(${item.glowColor}, 0.15) 40%, transparent 70%)`,
+          boxShadow: `0 0 40px rgba(${item.glowColor}, 0.3), 0 0 80px rgba(${item.glowColor}, 0.15)`
         }}
       />
-      
-      {/* Icon Container */}
-      <div 
-        className={cn(
-          "relative w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500",
-          "bg-black/40 backdrop-blur-sm border border-white/10",
-          isHovered ? "scale-125 rotate-12" : "scale-100 rotate-0"
-        )}
-        style={{
-          borderColor: `rgba(${item.glowColor}, 0.3)`,
-          boxShadow: `0 0 15px rgba(${item.glowColor}, 0.2), inset 0 0 10px rgba(${item.glowColor}, 0.05)`
-        }}
-      >
-        {/* Inner Icon Glow */}
+
+      {/* Main Button Container */}
+      <div className={cn(
+        "relative flex items-center gap-4 px-6 py-4 transition-all duration-500",
+        side === "left" ? "flex-row" : "flex-row-reverse",
+        isHovered ? "scale-110" : "scale-100"
+      )}>
+        {/* Icon Container */}
         <div 
-          className="absolute inset-1 rounded-full blur-sm opacity-20"
-          style={{
-            background: `radial-gradient(circle, ${item.color}40 0%, transparent 70%)`
-          }}
-        />
-        
-        <Icon 
           className={cn(
-            "w-5 h-5 z-10 transition-all duration-300",
-            isHovered ? "scale-110" : "scale-100"
-          )} 
-          style={{ color: item.color }}
-        />
+            "relative w-16 h-16 rounded-full flex items-center justify-center transition-all duration-500",
+            "bg-black/60 backdrop-blur-sm border-2 shadow-xl",
+            isHovered ? "rotate-12 shadow-luxury-glow" : "rotate-0"
+          )}
+          style={{
+            borderColor: item.color,
+            boxShadow: `0 0 20px rgba(${item.glowColor}, 0.3), inset 0 0 15px rgba(${item.glowColor}, 0.05)`
+          }}
+        >
+          {/* Inner Icon Glow */}
+          <div 
+            className="absolute inset-2 rounded-full blur-sm opacity-30"
+            style={{
+              background: `radial-gradient(circle, ${item.color}30 0%, transparent 70%)`
+            }}
+          />
+          
+          <Icon 
+            className={cn(
+              "w-8 h-8 relative z-10 transition-all duration-500",
+              isHovered ? "scale-125" : "scale-100"
+            )}
+            style={{ 
+              color: item.color,
+              filter: `drop-shadow(0 0 8px ${item.color}) drop-shadow(0 0 16px ${item.color}60)`
+            }}
+          />
+
+          {/* Rotating Border */}
+          <div 
+            className={cn(
+              "absolute inset-0 rounded-full border-2 opacity-0 transition-all duration-500 animate-spin-slow",
+              isHovered ? "opacity-100" : "opacity-0"
+            )}
+            style={{
+              borderColor: item.color,
+              borderStyle: "dashed"
+            }}
+          />
+        </div>
+
+        {/* Text Container */}
+        <div 
+          className={cn(
+            "transition-all duration-500 transform",
+            side === "left" ? "text-left" : "text-right",
+            isHovered ? "opacity-100 translate-x-0" : "opacity-0",
+            side === "left" ? "translate-x-4" : "-translate-x-4"
+          )}
+        >
+          <div 
+            className="text-lg font-bold tracking-wider luxury-text"
+            style={{
+              color: item.color,
+              textShadow: `0 0 20px ${item.color}80, 0 0 40px ${item.color}40`,
+              fontFamily: "'Orbitron', 'Rajdhani', monospace"
+            }}
+          >
+            {item.title}
+          </div>
+          <div 
+            className="text-xs font-medium tracking-wide opacity-80"
+            style={{
+              color: item.color,
+              textShadow: `0 0 10px ${item.color}60`
+            }}
+          >
+            {item.subtitle}
+          </div>
+        </div>
       </div>
 
-      {/* Hover Label */}
-      <div className={cn(
-        "absolute top-full mt-2 left-1/2 -translate-x-1/2 transition-all duration-300",
-        "bg-black/60 backdrop-blur-sm px-2 py-1 rounded text-xs text-white whitespace-nowrap",
-        isHovered ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"
-      )}>
-        {item.title}
-      </div>
+      {/* Particle Effects */}
+      {isHovered && (
+        <div className="absolute inset-0 pointer-events-none">
+          {[...Array(6)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-1 h-1 rounded-full animate-particle-float"
+              style={{
+                backgroundColor: item.color,
+                left: `${20 + i * 15}%`,
+                top: `${30 + (i % 3) * 20}%`,
+                animationDelay: `${i * 100}ms`,
+                boxShadow: `0 0 10px ${item.color}`
+              }}
+            />
+          ))}
+        </div>
+      )}
     </button>
   );
 };

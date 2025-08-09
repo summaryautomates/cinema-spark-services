@@ -191,7 +191,25 @@ export const HeroSection = ({
       {/* Minimal Overlay for better contrast */}
       <div className="absolute inset-0 bg-black/5" />
 
+      {/* Floating Service Navigation - Left Side */}
+      {isVisible && leftItems.map((item, index) => (
+        <FloatingNavButton
+          key={item.id}
+          item={item}
+          side="left"
+          index={index}
+        />
+      ))}
 
+      {/* Floating Service Navigation - Right Side */}
+      {isVisible && rightItems.map((item, index) => (
+        <FloatingNavButton
+          key={item.id}
+          item={item}
+          side="right"
+          index={index}
+        />
+      ))}
       
       {/* Content */}
       <div className="relative z-10 w-full h-full flex flex-col">
