@@ -1,8 +1,5 @@
 
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Sparkles, Zap, Brain } from "lucide-react";
 import heroImage from "@assets/ChatGPT Image Jul 15, 2025, 11_18_23 PM_1752602257547.png";
 
 interface HeroSectionProps {
@@ -33,73 +30,11 @@ export const HeroSection = ({
       {/* Grid Pattern Overlay */}
       <div className="absolute inset-0 bg-grid-white/[0.02] bg-grid"></div>
       
-      {/* Main Content Container */}
-      <div className="relative z-10 container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
-        
-        {/* Left Content */}
-        <div className={`space-y-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
-          <div className="space-y-6">
-            <Badge variant="secondary" className="px-4 py-2 bg-blue-500/10 text-blue-400 border-blue-500/20 backdrop-blur-sm">
-              <Sparkles className="w-4 h-4 mr-2" />
-              AI-Powered Innovation
-            </Badge>
-            
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-              <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                Summary
-              </span>
-              <br />
-              <span className="text-white">
-                Automates
-              </span>
-            </h1>
-            
-            <p className="text-xl text-slate-300 leading-relaxed max-w-lg">
-              Transform your business with cutting-edge AI solutions. From intelligent automation to strategic consulting, we deliver the future of technology today.
-            </p>
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button 
-              size="lg" 
-              onClick={onExploreServices}
-              className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-3 text-lg font-medium shadow-2xl shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-300"
-            >
-              Explore Services
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              onClick={onContactUs}
-              className="border-slate-600 text-white hover:bg-slate-800 px-8 py-3 text-lg font-medium backdrop-blur-sm"
-            >
-              <Zap className="mr-2 w-5 h-5" />
-              Get Started
-            </Button>
-          </div>
-
-          {/* Stats */}
-          <div className="flex gap-8 pt-8">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-white">500+</div>
-              <div className="text-sm text-slate-400">Projects Completed</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-white">98%</div>
-              <div className="text-sm text-slate-400">Client Satisfaction</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-white">24/7</div>
-              <div className="text-sm text-slate-400">AI Support</div>
-            </div>
-          </div>
-        </div>
-
-        {/* Right Content - Brain Image */}
-        <div className={`relative flex items-center justify-center transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
+      {/* Brain Image Container - Centered */}
+      <div className="relative z-10 flex items-center justify-center min-h-screen py-20">
+        <div className={`relative transition-all duration-1000 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
           {/* Brain Container with enhanced effects */}
-          <div className="relative w-full max-w-lg brain-container">
+          <div className="relative w-full max-w-2xl brain-container">
             {/* Orbital rings */}
             <div className="absolute inset-0 rounded-full border border-blue-500/20 scale-110 animate-pulse"></div>
             <div className="absolute inset-0 rounded-full border border-cyan-400/20 scale-125 animate-pulse" style={{ animationDelay: '1s' }}></div>
