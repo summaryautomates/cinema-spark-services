@@ -195,9 +195,9 @@ export const FloatingNavigation = () => {
   const leftItems = navigationItems.slice(0, midpoint);
   const rightItems = navigationItems.slice(midpoint);
 
-  // Show simplified circular navigation on mobile with smaller radius
-  const radius = isMobile ? 150 : 220;
-  const containerSize = isMobile ? 320 : 500;
+  // Adjust radius for better positioning around the brain visual
+  const radius = isMobile ? 180 : 280;
+  const containerSize = isMobile ? 400 : 600;
 
   return (
     <div className={cn(
@@ -206,14 +206,21 @@ export const FloatingNavigation = () => {
     )}>
       {/* Circular Navigation around Hero Center */}
       <div 
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-auto"
-        style={{ width: `${containerSize}px`, height: `${containerSize}px` }}
+        className="absolute pointer-events-auto"
+        style={{ 
+          width: `${containerSize}px`, 
+          height: `${containerSize}px`,
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)'
+        }}
       >
         {navigationItems.map((item, index) => {
-          // Calculate circular position
-          const angle = (index * (360 / navigationItems.length)) * (Math.PI / 180);
-          const x = Math.cos(angle - Math.PI/2) * radius; // -PI/2 to start from top
-          const y = Math.sin(angle - Math.PI/2) * radius;
+          // Calculate circular position with better distribution
+          const angleOffset = -Math.PI/4; // Start from top-right instead of top
+          const angle = (index * (360 / navigationItems.length)) * (Math.PI / 180) + angleOffset;
+          const x = Math.cos(angle) * radius;
+          const y = Math.sin(angle) * radius;
           
           return (
             <CircularNavButton
@@ -276,7 +283,7 @@ const CircularNavButton = ({ item, onClick, index, x, y, isMobile = false }: Cir
           "relative rounded-full flex items-center justify-center transition-all duration-500",
           "bg-black/90 backdrop-blur-sm border-2 shadow-2xl",
           isHovered ? "scale-125 rotate-12 shadow-luxury-glow" : "scale-100 rotate-0",
-          isMobile ? "w-12 h-12" : "w-14 h-14"
+          isMobile ? "w-14 h-14" : "w-16 h-16"
         )}
         style={{
           borderColor: item.color,
@@ -295,7 +302,7 @@ const CircularNavButton = ({ item, onClick, index, x, y, isMobile = false }: Cir
           className={cn(
             "z-10 transition-all duration-500",
             isHovered ? "scale-110" : "scale-100",
-            isMobile ? "w-5 h-5" : "w-6 h-6"
+            isMobile ? "w-6 h-6" : "w-7 h-7"
           )}
           style={{
             color: item.color,
