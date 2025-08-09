@@ -268,6 +268,7 @@ export const FloatingNavigation = () => {
               x={x}
               y={y}
               isMobile={isMobile}
+              windowSize={windowSize}
             />
           );
         })}
@@ -283,6 +284,7 @@ interface CircularNavButtonProps {
   x: number;
   y: number;
   isMobile?: boolean;
+  windowSize: { width: number; height: number };
 }
 
 const CircularNavButton = ({
@@ -292,6 +294,7 @@ const CircularNavButton = ({
   x,
   y,
   isMobile = false,
+  windowSize,
 }: CircularNavButtonProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const Icon = item.icon;
