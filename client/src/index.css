@@ -221,39 +221,26 @@ Premium Blue & Neon Blue Luxury Theme
     animation: fadeInUp 0.8s ease-out forwards;
   }
   
-  /* Grid Background Pattern - Responsive */
+  /* Grid Background Pattern */
   .bg-grid {
     background-image: 
       linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
       linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-    background-size: 30px 30px;
+    background-size: 50px 50px;
   }
   
   .bg-grid-white\/\[0\.02\] {
     background-image: 
       linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
       linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-    background-size: 30px 30px;
-  }
-  
-  /* Responsive grid size adjustments */
-  @media (min-width: 640px) {
-    .bg-grid, .bg-grid-white\/\[0\.02\] {
-      background-size: 40px 40px;
-    }
-  }
-  
-  @media (min-width: 1024px) {
-    .bg-grid, .bg-grid-white\/\[0\.02\] {
-      background-size: 50px 50px;
-    }
+    background-size: 50px 50px;
   }
 
-  /* Subtle brain image effects */
+  /* Enhanced brain image effects */
   .brain-glow {
-    filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.15)) 
-            drop-shadow(0 0 40px rgba(34, 211, 238, 0.08)) 
-            drop-shadow(0 0 60px rgba(99, 102, 241, 0.05));
+    filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.4)) 
+            drop-shadow(0 0 60px rgba(34, 211, 238, 0.2)) 
+            drop-shadow(0 0 90px rgba(99, 102, 241, 0.1));
   }
 
   .brain-container::before {

@@ -180,19 +180,14 @@ export const FloatingNavigation = () => {
       if (contactElement) {
         contactElement.scrollIntoView({ behavior: "smooth", block: "start" });
       } else {
-        window.scrollTo({
-          top: document.body.scrollHeight,
-          behavior: "smooth",
-        });
+        window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
       }
     } else if (item.section === "services") {
       // Navigate to specific service section based on item.id
-      const sectionElement = document.querySelector(
-        `[data-section="${item.id}"]`,
-      ) as HTMLElement;
+      const sectionElement = document.querySelector(`[data-section="${item.id}"]`) as HTMLElement;
       if (sectionElement) {
         sectionElement.scrollIntoView({ behavior: "smooth", block: "start" });
-
+        
         // Add a subtle highlight effect to the section being navigated to
         sectionElement.style.transition = "transform 0.3s ease";
         sectionElement.style.transform = "scale(1.02)";
@@ -203,10 +198,7 @@ export const FloatingNavigation = () => {
         // Fallback to general services section
         const servicesElement = document.getElementById("services");
         if (servicesElement) {
-          servicesElement.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          });
+          servicesElement.scrollIntoView({ behavior: "smooth", block: "start" });
         }
       }
     }
@@ -242,7 +234,7 @@ export const FloatingNavigation = () => {
       return {
         radius: Math.min(vw * 0.2, vh * 0.2, 240),
         containerSize: Math.min(vw * 0.65, vh * 0.65, 600),
-        top: "79%", // Brain appears to be slightly above center
+        top: "68%", // Brain appears to be slightly above center
         left: "64.5%",
       };
     } else {
