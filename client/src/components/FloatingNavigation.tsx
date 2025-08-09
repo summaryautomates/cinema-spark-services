@@ -216,34 +216,50 @@ export const FloatingNavigation = () => {
     if (vw < 640) {
       // Mobile - smaller radius around brain
       return {
-        radius: Math.min(vw * 0.35, vh * 0.3, 120),
-        containerSize: Math.min(vw * 0.95, vh * 0.85, 300),
-        top: "60%", // Positioned around brain center on mobile
-        left: "84.5%",
+        radius: Math.min(vw * 0.32, vh * 0.28, 110),
+        containerSize: Math.min(vw * 0.9, vh * 0.8, 280),
+        top: "50%", // Centered on mobile
+        left: "50%",
+      };
+    } else if (vw < 768) {
+      // Small tablet - moderate radius around brain
+      return {
+        radius: Math.min(vw * 0.3, vh * 0.26, 140),
+        containerSize: Math.min(vw * 0.8, vh * 0.7, 350),
+        top: "50%", // Centered positioning
+        left: "50%",
       };
     } else if (vw < 1024) {
       // Tablet - moderate radius around brain
       return {
-        radius: Math.min(vw * 0.28, vh * 0.25, 160),
-        containerSize: Math.min(vw * 0.85, vh * 0.75, 400),
-        top: "55%", // Adjusted for brain position on tablet
-        left: "72%",
+        radius: Math.min(vw * 0.25, vh * 0.23, 180),
+        containerSize: Math.min(vw * 0.75, vh * 0.65, 450),
+        top: "50%", // Centered for better symmetry
+        left: "50%",
       };
     } else if (vw < 1440) {
       // Desktop - positioned around brain graphic
       return {
-        radius: Math.min(vw * 0.2, vh * 0.2, 240),
-        containerSize: Math.min(vw * 0.65, vh * 0.65, 600),
-        top: "68%", // Brain appears to be slightly above center
-        left: "64.5%",
+        radius: Math.min(vw * 0.22, vh * 0.22, 220),
+        containerSize: Math.min(vw * 0.7, vh * 0.7, 550),
+        top: "50%", // Perfect center for desktop
+        left: "50%",
       };
-    } else {
+    } else if (vw < 1920) {
       // Large desktop - wider radius around brain
       return {
-        radius: Math.min(vw * 0.18, vh * 0.18, 280),
-        containerSize: Math.min(vw * 0.6, vh * 0.6, 700),
-        top: "65%", // Consistent brain-centered positioning
-        left: "65%",
+        radius: Math.min(vw * 0.2, vh * 0.2, 260),
+        containerSize: Math.min(vw * 0.65, vh * 0.65, 650),
+        top: "50%", // Consistent centered positioning
+        left: "50%",
+      };
+    } else {
+      // Ultra-wide desktop - optimized for large screens
+      return {
+        radius: Math.min(vw * 0.18, vh * 0.18, 300),
+        containerSize: Math.min(vw * 0.6, vh * 0.6, 750),
+        top: "50%", // Consistent centered positioning
+        left: "50%",
       };
     }
   };
@@ -349,9 +365,15 @@ const CircularNavButton = ({
           isHovered ? "scale-125" : "scale-100",
           windowSize.width < 640
             ? "w-10 h-10"
-            : windowSize.width < 1024
-              ? "w-12 h-12"
-              : "w-14 h-14", // Responsive button sizing
+            : windowSize.width < 768
+              ? "w-11 h-11"
+              : windowSize.width < 1024
+                ? "w-12 h-12"
+                : windowSize.width < 1440
+                  ? "w-14 h-14"
+                  : windowSize.width < 1920
+                    ? "w-16 h-16"
+                    : "w-18 h-18", // Enhanced responsive button sizing
         )}
         style={{
           borderColor: item.color,
@@ -372,9 +394,15 @@ const CircularNavButton = ({
             isHovered ? "scale-110" : "scale-100",
             windowSize.width < 640
               ? "w-4 h-4"
-              : windowSize.width < 1024
-                ? "w-5 h-5"
-                : "w-6 h-6", // Responsive icon sizing
+              : windowSize.width < 768
+                ? "w-4 h-4"
+                : windowSize.width < 1024
+                  ? "w-5 h-5"
+                  : windowSize.width < 1440
+                    ? "w-6 h-6"
+                    : windowSize.width < 1920
+                      ? "w-7 h-7"
+                      : "w-8 h-8", // Enhanced responsive icon sizing
           )}
           style={{
             color: item.color,

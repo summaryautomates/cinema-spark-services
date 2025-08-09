@@ -19,23 +19,23 @@ export const HeroSection = ({
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800">
-      {/* Animated Background Elements */}
+    <section className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800">
+      {/* Animated Background Elements - Responsive sizing */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-indigo-600/5 rounded-full blur-3xl animate-pulse delay-500"></div>
+        <div className="absolute top-1/4 left-1/4 w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 bg-blue-600/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-40 h-40 sm:w-56 sm:h-56 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[28rem] xl:h-[28rem] bg-cyan-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 w-48 h-48 sm:w-64 sm:h-64 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] xl:w-[32rem] xl:h-[32rem] bg-indigo-600/5 rounded-full blur-3xl animate-pulse delay-500"></div>
       </div>
 
       {/* Grid Pattern Overlay */}
       <div className="absolute inset-0 bg-grid-white/[0.02] bg-grid"></div>
       
-      {/* Brain Image Container - Centered */}
-      <div className="relative z-10 flex items-center justify-center min-h-screen py-20">
-        <div className={`relative transition-all duration-1000 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
+      {/* Brain Image Container - Properly centered and responsive */}
+      <div className="relative z-10 flex items-center justify-center w-full h-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+        <div className={`relative transition-all duration-1000 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'} w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-2xl 2xl:max-w-3xl`}>
           {/* Brain Container with enhanced effects */}
-          <div className="relative w-full max-w-2xl brain-container">
-            {/* Orbital rings */}
+          <div className="relative w-full aspect-square brain-container">
+            {/* Orbital rings - Responsive scaling */}
             <div className="absolute inset-0 rounded-full border border-blue-500/20 scale-110 animate-pulse"></div>
             <div className="absolute inset-0 rounded-full border border-cyan-400/20 scale-125 animate-pulse" style={{ animationDelay: '1s' }}></div>
             <div className="absolute inset-0 rounded-full border border-indigo-400/20 scale-140 animate-pulse" style={{ animationDelay: '2s' }}></div>
@@ -46,8 +46,8 @@ export const HeroSection = ({
             {/* Secondary glow layers */}
             <div className="absolute inset-0 bg-gradient-to-t from-indigo-600/10 to-blue-500/10 rounded-full blur-2xl animate-pulse scale-125" style={{ animationDelay: '0.5s' }}></div>
             
-            {/* Main brain image with custom glow */}
-            <div className="relative z-10 aspect-square w-full">
+            {/* Main brain image with custom glow - Maintains aspect ratio */}
+            <div className="relative z-10 w-full h-full">
               <img 
                 src={heroImage} 
                 alt="AI Brain Intelligence" 
@@ -58,23 +58,23 @@ export const HeroSection = ({
               <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-blue-500/5 rounded-full"></div>
             </div>
             
-            {/* Floating particles/dots around brain */}
-            <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-blue-400 rounded-full animate-ping opacity-80"></div>
-            <div className="absolute top-1/3 right-1/4 w-1.5 h-1.5 bg-cyan-400 rounded-full animate-ping delay-700 opacity-60"></div>
-            <div className="absolute bottom-1/3 left-1/3 w-2.5 h-2.5 bg-indigo-400 rounded-full animate-ping delay-1000 opacity-70"></div>
-            <div className="absolute bottom-1/4 right-1/3 w-1 h-1 bg-blue-300 rounded-full animate-ping delay-500 opacity-50"></div>
-            <div className="absolute top-1/2 right-1/6 w-1 h-1 bg-cyan-300 rounded-full animate-ping delay-1500 opacity-60"></div>
-            <div className="absolute top-3/4 left-1/5 w-1.5 h-1.5 bg-blue-200 rounded-full animate-ping delay-300 opacity-40"></div>
+            {/* Floating particles/dots around brain - Responsive sizing */}
+            <div className="absolute top-1/4 left-1/4 w-1 h-1 sm:w-1.5 sm:h-1.5 md:w-2 md:h-2 bg-blue-400 rounded-full animate-ping opacity-80"></div>
+            <div className="absolute top-1/3 right-1/4 w-1 h-1 sm:w-1.5 sm:h-1.5 bg-cyan-400 rounded-full animate-ping delay-700 opacity-60"></div>
+            <div className="absolute bottom-1/3 left-1/3 w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 bg-indigo-400 rounded-full animate-ping delay-1000 opacity-70"></div>
+            <div className="absolute bottom-1/4 right-1/3 w-0.5 h-0.5 sm:w-1 sm:h-1 bg-blue-300 rounded-full animate-ping delay-500 opacity-50"></div>
+            <div className="absolute top-1/2 right-1/6 w-0.5 h-0.5 sm:w-1 sm:h-1 bg-cyan-300 rounded-full animate-ping delay-1500 opacity-60"></div>
+            <div className="absolute top-3/4 left-1/5 w-1 h-1 sm:w-1.5 sm:h-1.5 bg-blue-200 rounded-full animate-ping delay-300 opacity-40"></div>
             
-            {/* Energy lines */}
-            <div className="absolute top-1/2 left-1/2 w-32 h-px bg-gradient-to-r from-transparent via-blue-400/50 to-transparent animate-pulse transform -rotate-45 -translate-x-16 -translate-y-8"></div>
-            <div className="absolute top-1/2 left-1/2 w-24 h-px bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent animate-pulse transform rotate-45 -translate-x-12 translate-y-4" style={{ animationDelay: '1.5s' }}></div>
+            {/* Energy lines - Responsive sizing */}
+            <div className="absolute top-1/2 left-1/2 w-16 sm:w-24 md:w-32 h-px bg-gradient-to-r from-transparent via-blue-400/50 to-transparent animate-pulse transform -rotate-45 -translate-x-8 sm:-translate-x-12 md:-translate-x-16 -translate-y-4 sm:-translate-y-6 md:-translate-y-8"></div>
+            <div className="absolute top-1/2 left-1/2 w-12 sm:w-18 md:w-24 h-px bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent animate-pulse transform rotate-45 -translate-x-6 sm:-translate-x-9 md:-translate-x-12 translate-y-2 sm:translate-y-3 md:translate-y-4" style={{ animationDelay: '1.5s' }}></div>
           </div>
         </div>
       </div>
 
       {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-16 sm:h-24 md:h-32 bg-gradient-to-t from-background to-transparent"></div>
     </section>
   );
 };
