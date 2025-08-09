@@ -34,8 +34,11 @@ export const HeroSection = ({
       <div className="relative z-10 flex items-center justify-center min-h-screen py-20">
         <div className={`relative transition-all duration-1000 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
           {/* Brain Container with enhanced effects */}
-          <div className="relative w-full max-w-2xl">
-            {/* Orbital rings removed for borderless design */}
+          <div className="relative w-full max-w-2xl brain-container">
+            {/* Orbital rings */}
+            <div className="absolute inset-0 rounded-full border border-blue-500/20 scale-110 animate-pulse"></div>
+            <div className="absolute inset-0 rounded-full border border-cyan-400/20 scale-125 animate-pulse" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute inset-0 rounded-full border border-indigo-400/20 scale-140 animate-pulse" style={{ animationDelay: '2s' }}></div>
             
             {/* Pulsing background glow */}
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-cyan-600/20 rounded-full blur-3xl animate-pulse scale-110"></div>
