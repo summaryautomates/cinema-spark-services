@@ -103,15 +103,17 @@ export const FloatingNavigation = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
-    const checkMobile = () => {
+    const handleResize = () => {
       setIsMobile(window.innerWidth < 1024);
+      setWindowSize({ width: window.innerWidth, height: window.innerHeight });
     };
     
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   useEffect(() => {
@@ -195,9 +197,22 @@ export const FloatingNavigation = () => {
   const leftItems = navigationItems.slice(0, midpoint);
   const rightItems = navigationItems.slice(midpoint);
 
-  // Adjust radius for better positioning around the brain visual
-  const radius = isMobile ? 180 : 280;
-  const containerSize = isMobile ? 400 : 600;
+  // Responsive radius and positioning for all screen sizes
+  const getResponsiveValues = () => {
+    const vw = windowSize.width || (typeof window !== 'undefined' ? window.innerWidth : 1024);
+    
+    if (vw < 640) { // Mobile
+      return { radius: 140, containerSize: 320 };
+    } else if (vw < 1024) { // Tablet
+      return { radius: 180, containerSize: 400 };
+    } else if (vw < 1440) { // Desktop
+      return { radius: 240, containerSize: 520 };
+    } else { // Large desktop
+      return { radius: 280, containerSize: 600 };
+    }
+  };
+  
+  const { radius, containerSize } = getResponsiveValues();
 
   return (
     <div className={cn(
@@ -206,19 +221,15 @@ export const FloatingNavigation = () => {
     )}>
       {/* Circular Navigation around Hero Center */}
       <div 
-        className="absolute pointer-events-auto"
+        className="absolute pointer-events-auto top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
         style={{ 
           width: `${containerSize}px`, 
-          height: `${containerSize}px`,
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)'
+          height: `${containerSize}px`
         }}
       >
         {navigationItems.map((item, index) => {
-          // Calculate circular position with better distribution
-          const angleOffset = -Math.PI/4; // Start from top-right instead of top
-          const angle = (index * (360 / navigationItems.length)) * (Math.PI / 180) + angleOffset;
+          // Calculate circular position starting from top and going clockwise
+          const angle = (index * (360 / navigationItems.length)) * (Math.PI / 180) - Math.PI/2;
           const x = Math.cos(angle) * radius;
           const y = Math.sin(angle) * radius;
           
