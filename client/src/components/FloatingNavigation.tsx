@@ -204,11 +204,11 @@ export const FloatingNavigation = () => {
     if (vw < 640) { // Mobile
       return { radius: 120, containerSize: 280, top: '50%', left: '50%' };
     } else if (vw < 1024) { // Tablet
-      return { radius: 150, containerSize: 340, top: '48%', left: '55%' };
+      return { radius: 150, containerSize: 340, top: '50%', left: '50%' };
     } else if (vw < 1440) { // Desktop
-      return { radius: 200, containerSize: 440, top: '45%', left: '58%' };
+      return { radius: 200, containerSize: 440, top: '50%', left: '50%' };
     } else { // Large desktop
-      return { radius: 220, containerSize: 480, top: '45%', left: '58%' };
+      return { radius: 220, containerSize: 480, top: '50%', left: '50%' };
     }
   };
   
