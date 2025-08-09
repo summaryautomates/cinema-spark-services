@@ -202,17 +202,17 @@ export const FloatingNavigation = () => {
     const vw = windowSize.width || (typeof window !== 'undefined' ? window.innerWidth : 1024);
     
     if (vw < 640) { // Mobile
-      return { radius: 140, containerSize: 320 };
+      return { radius: 120, containerSize: 280, top: '50%', left: '50%' };
     } else if (vw < 1024) { // Tablet
-      return { radius: 180, containerSize: 400 };
+      return { radius: 150, containerSize: 340, top: '48%', left: '55%' };
     } else if (vw < 1440) { // Desktop
-      return { radius: 240, containerSize: 520 };
+      return { radius: 200, containerSize: 440, top: '45%', left: '58%' };
     } else { // Large desktop
-      return { radius: 280, containerSize: 600 };
+      return { radius: 220, containerSize: 480, top: '45%', left: '58%' };
     }
   };
   
-  const { radius, containerSize } = getResponsiveValues();
+  const { radius, containerSize, top, left } = getResponsiveValues();
 
   return (
     <div className={cn(
@@ -221,10 +221,13 @@ export const FloatingNavigation = () => {
     )}>
       {/* Circular Navigation around Hero Center */}
       <div 
-        className="absolute pointer-events-auto top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        className="absolute pointer-events-auto"
         style={{ 
           width: `${containerSize}px`, 
-          height: `${containerSize}px`
+          height: `${containerSize}px`,
+          top: top,
+          left: left,
+          transform: 'translate(-50%, -50%)'
         }}
       >
         {navigationItems.map((item, index) => {
