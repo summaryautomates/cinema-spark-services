@@ -195,10 +195,9 @@ export const FloatingNavigation = () => {
   const leftItems = navigationItems.slice(0, midpoint);
   const rightItems = navigationItems.slice(midpoint);
 
-  // Hide navigation completely on mobile devices
-  if (isMobile) {
-    return null;
-  }
+  // Show simplified circular navigation on mobile with smaller radius
+  const radius = isMobile ? 150 : 220;
+  const containerSize = isMobile ? 320 : 500;
 
   return (
     <div className={cn(
@@ -206,11 +205,13 @@ export const FloatingNavigation = () => {
       isVisible ? "opacity-100" : "opacity-0"
     )}>
       {/* Circular Navigation around Hero Center */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] pointer-events-auto">
+      <div 
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-auto"
+        style={{ width: `${containerSize}px`, height: `${containerSize}px` }}
+      >
         {navigationItems.map((item, index) => {
           // Calculate circular position
           const angle = (index * (360 / navigationItems.length)) * (Math.PI / 180);
-          const radius = 280; // Distance from center
           const x = Math.cos(angle - Math.PI/2) * radius; // -PI/2 to start from top
           const y = Math.sin(angle - Math.PI/2) * radius;
           
@@ -222,6 +223,7 @@ export const FloatingNavigation = () => {
               index={index}
               x={x}
               y={y}
+              isMobile={isMobile}
             />
           );
         })}
@@ -236,9 +238,10 @@ interface CircularNavButtonProps {
   index: number;
   x: number;
   y: number;
+  isMobile?: boolean;
 }
 
-const CircularNavButton = ({ item, onClick, index, x, y }: CircularNavButtonProps) => {
+const CircularNavButton = ({ item, onClick, index, x, y, isMobile = false }: CircularNavButtonProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const Icon = item.icon;
 
@@ -270,9 +273,10 @@ const CircularNavButton = ({ item, onClick, index, x, y }: CircularNavButtonProp
       {/* Icon Container */}
       <div
         className={cn(
-          "relative w-16 h-16 rounded-full flex items-center justify-center transition-all duration-500",
-          "bg-black/80 backdrop-blur-sm border-2 shadow-2xl",
-          isHovered ? "scale-125 rotate-12 shadow-luxury-glow" : "scale-100 rotate-0"
+          "relative rounded-full flex items-center justify-center transition-all duration-500",
+          "bg-black/90 backdrop-blur-sm border-2 shadow-2xl",
+          isHovered ? "scale-125 rotate-12 shadow-luxury-glow" : "scale-100 rotate-0",
+          isMobile ? "w-12 h-12" : "w-14 h-14"
         )}
         style={{
           borderColor: item.color,
@@ -281,7 +285,7 @@ const CircularNavButton = ({ item, onClick, index, x, y }: CircularNavButtonProp
       >
         {/* Inner Icon Glow */}
         <div
-          className="absolute inset-2 rounded-full blur-sm opacity-40"
+          className="absolute inset-1 rounded-full blur-sm opacity-40"
           style={{
             background: `radial-gradient(circle, ${item.color}40 0%, transparent 70%)`
           }}
@@ -289,8 +293,9 @@ const CircularNavButton = ({ item, onClick, index, x, y }: CircularNavButtonProp
         
         <Icon
           className={cn(
-            "w-7 h-7 z-10 transition-all duration-500",
-            isHovered ? "scale-110" : "scale-100"
+            "z-10 transition-all duration-500",
+            isHovered ? "scale-110" : "scale-100",
+            isMobile ? "w-5 h-5" : "w-6 h-6"
           )}
           style={{
             color: item.color,
