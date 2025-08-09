@@ -34,38 +34,15 @@ export const HeroSection = ({
         <div
           className={`relative transition-all duration-1000 ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
         >
-          {/* Brain Container with enhanced effects */}
+          {/* Brain Container - borderless and square */}
           <div className="relative w-full max-w-2xl brain-container">
-            {/* Orbital rings */}
-            <div className="absolute inset-0 rounded-full border border-blue-500/20 scale-110 animate-pulse"></div>
-            <div
-              className="absolute inset-0 rounded-full border border-cyan-400/20 scale-125 animate-pulse"
-              style={{ animationDelay: "1s" }}
-            ></div>
-            <div
-              className="absolute inset-0 rounded-full border border-indigo-400/20 scale-140 animate-pulse"
-              style={{ animationDelay: "2s" }}
-            ></div>
-
-            {/* Pulsing background glow */}
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-cyan-600/20 rounded-full blur-3xl animate-pulse scale-110"></div>
-
-            {/* Secondary glow layers */}
-            <div
-              className="absolute inset-0 bg-gradient-to-t from-indigo-600/10 to-blue-500/10 rounded-full blur-2xl animate-pulse scale-125"
-              style={{ animationDelay: "0.5s" }}
-            ></div>
-
-            {/* Main brain image with custom glow */}
+            {/* Main brain image - borderless aspect square */}
             <div className="relative z-10 aspect-square w-full">
               <img
                 src={heroImage}
                 alt="AI Brain Intelligence"
-                className="w-full h-full object-contain brain-glow transform hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-contain transform hover:scale-105 transition-transform duration-700"
               />
-
-              {/* Image overlay for better integration */}
-              <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-blue-500/5 rounded-full"></div>
             </div>
 
             {/* Floating particles/dots around brain */}
