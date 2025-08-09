@@ -197,17 +197,17 @@ export const FloatingNavigation = () => {
     if (vw < 640) {
       // Mobile - smaller radius around brain
       return {
-        radius: Math.min(vw * 0.3, vh * 0.25, 140),
-        containerSize: Math.min(vw * 0.9, vh * 0.8, 350),
-        top: "45%", // Slightly higher to align with brain center
+        radius: Math.min(vw * 0.35, vh * 0.3, 120),
+        containerSize: Math.min(vw * 0.95, vh * 0.85, 300),
+        top: "45%", // Positioned around brain center on mobile
         left: "50%",
       };
     } else if (vw < 1024) {
       // Tablet - moderate radius around brain
       return {
-        radius: Math.min(vw * 0.25, vh * 0.22, 180),
-        containerSize: Math.min(vw * 0.8, vh * 0.7, 450),
-        top: "48%", // Adjusted for brain position
+        radius: Math.min(vw * 0.28, vh * 0.25, 160),
+        containerSize: Math.min(vw * 0.85, vh * 0.75, 400),
+        top: "47%", // Adjusted for brain position on tablet
         left: "50%",
       };
     } else if (vw < 1440) {
@@ -231,52 +231,7 @@ export const FloatingNavigation = () => {
 
   const { radius, containerSize, top, left } = getResponsiveValues();
 
-  // Show mobile menu for small screens
-  if (isMobile && windowSize.width > 0) {
-    return (
-      <div
-        className={cn(
-          "fixed inset-0 pointer-events-none z-50 transition-all duration-700 ease-out",
-          isVisible ? "opacity-100" : "opacity-0",
-        )}
-      >
-        {/* Mobile Menu Toggle */}
-        <div className="absolute top-6 right-6 pointer-events-auto">
-          <button
-            className="p-2 rounded-md bg-black/80 border border-cyan-400/50 hover:bg-cyan-400/20 transition-colors"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? (
-              <X className="h-4 w-4 text-cyan-400" />
-            ) : (
-              <Menu className="h-4 w-4 text-cyan-400" />
-            )}
-          </button>
-        </div>
-
-        {/* Mobile Menu Overlay */}
-        <div
-          className={cn(
-            "fixed inset-0 bg-black/95 backdrop-blur-sm transition-all duration-500 pointer-events-auto",
-            isMobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none",
-          )}
-        >
-          <div className="flex flex-col items-center justify-center h-full p-6">
-            <div className="grid grid-cols-2 gap-4 max-w-md w-full">
-              {navigationItems.map((item, index) => (
-                <MobileNavButton
-                  key={item.id}
-                  item={item}
-                  onClick={() => handleNavClick(item)}
-                  index={index}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
+  
 
   return (
     <div
@@ -372,7 +327,7 @@ const CircularNavButton = ({
           "relative rounded-full flex items-center justify-center transition-all duration-500",
           "bg-black bg-opacity-90 backdrop-blur-sm border-2 shadow-2xl",
           isHovered ? "scale-125" : "scale-100",
-          isMobile ? "w-12 h-12" : "w-14 h-14", // Slightly smaller buttons
+          windowSize.width < 640 ? "w-10 h-10" : windowSize.width < 1024 ? "w-12 h-12" : "w-14 h-14", // Responsive button sizing
         )}
         style={{
           borderColor: item.color,
@@ -391,7 +346,7 @@ const CircularNavButton = ({
           className={cn(
             "z-10 transition-all duration-500",
             isHovered ? "scale-110" : "scale-100",
-            isMobile ? "w-5 h-5" : "w-6 h-6", // Slightly smaller icons
+            windowSize.width < 640 ? "w-4 h-4" : windowSize.width < 1024 ? "w-5 h-5" : "w-6 h-6", // Responsive icon sizing
           )}
           style={{
             color: item.color,
