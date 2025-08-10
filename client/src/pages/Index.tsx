@@ -846,14 +846,6 @@ const Index = () => {
                 <Phone className="mr-2" />
                 Schedule Consultation
               </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-white/30 text-white hover:bg-white/10"
-              >
-                View Portfolio
-                <ArrowUp className="ml-2" />
-              </Button>
             </div>
           </div>
         </div>
