@@ -839,7 +839,9 @@ const Index = () => {
                 size="lg"
                 onClick={(e) => {
                   e.preventDefault();
-                  console.log("Redirecting to: https://summaryautomates.setmore.com");
+                  console.log(
+                    "Redirecting to: https://summaryautomates.setmore.com",
+                  );
                   window.open("https://summaryautomates.setmore.com", "_blank");
                 }}
                 className="bg-white text-primary hover:bg-white/90"
@@ -870,7 +872,12 @@ const Index = () => {
                   variant="outline"
                   size="icon"
                   className="h-9 w-9"
-                  onClick={() => window.open('https://linkedin.com/company/summary-automates', '_blank')}
+                  onClick={() =>
+                    window.open(
+                      "https://linkedin.com/company/summary-automates",
+                      "_blank",
+                    )
+                  }
                 >
                   <Users className="h-4 w-4" />
                 </Button>
@@ -878,7 +885,12 @@ const Index = () => {
                   variant="outline"
                   size="icon"
                   className="h-9 w-9"
-                  onClick={() => window.open('https://twitter.com/summary_automates', '_blank')}
+                  onClick={() =>
+                    window.open(
+                      "https://twitter.com/summary_automates",
+                      "_blank",
+                    )
+                  }
                 >
                   <MessageCircle className="h-4 w-4" />
                 </Button>
@@ -886,7 +898,12 @@ const Index = () => {
                   variant="outline"
                   size="icon"
                   className="h-9 w-9"
-                  onClick={() => window.open('https://github.com/summary-automates', '_blank')}
+                  onClick={() =>
+                    window.open(
+                      "https://github.com/summary-automates",
+                      "_blank",
+                    )
+                  }
                 >
                   <Globe className="h-4 w-4" />
                 </Button>
@@ -903,7 +920,11 @@ const Index = () => {
                 <li>
                   <button
                     className="text-muted-foreground hover:text-primary transition-colors cursor-pointer text-left"
-                    onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}
+                    onClick={() =>
+                      document
+                        .getElementById("services")
+                        ?.scrollIntoView({ behavior: "smooth" })
+                    }
                   >
                     AI Consulting & Strategy
                   </button>
@@ -911,7 +932,11 @@ const Index = () => {
                 <li>
                   <button
                     className="text-muted-foreground hover:text-primary transition-colors cursor-pointer text-left"
-                    onClick={() => document.querySelector('[data-section="development"]')?.scrollIntoView({ behavior: "smooth" })}
+                    onClick={() =>
+                      document
+                        .querySelector('[data-section="development"]')
+                        ?.scrollIntoView({ behavior: "smooth" })
+                    }
                   >
                     Custom Development
                   </button>
@@ -919,7 +944,11 @@ const Index = () => {
                 <li>
                   <button
                     className="text-muted-foreground hover:text-primary transition-colors cursor-pointer text-left"
-                    onClick={() => document.querySelector('[data-section="content"]')?.scrollIntoView({ behavior: "smooth" })}
+                    onClick={() =>
+                      document
+                        .querySelector('[data-section="content"]')
+                        ?.scrollIntoView({ behavior: "smooth" })
+                    }
                   >
                     Content Creation
                   </button>
@@ -927,7 +956,11 @@ const Index = () => {
                 <li>
                   <button
                     className="text-muted-foreground hover:text-primary transition-colors cursor-pointer text-left"
-                    onClick={() => document.querySelector('[data-section="sales"]')?.scrollIntoView({ behavior: "smooth" })}
+                    onClick={() =>
+                      document
+                        .querySelector('[data-section="sales"]')
+                        ?.scrollIntoView({ behavior: "smooth" })
+                    }
                   >
                     Marketing Strategy
                   </button>
@@ -948,7 +981,8 @@ const Index = () => {
                     onClick={() => {
                       toast({
                         title: "About Us",
-                        description: "Learn more about our mission to transform businesses with AI.",
+                        description:
+                          "Learn more about our mission to transform businesses with AI.",
                       });
                     }}
                   >
@@ -961,7 +995,8 @@ const Index = () => {
                     onClick={() => {
                       toast({
                         title: "Case Studies",
-                        description: "Explore our successful AI implementations across industries.",
+                        description:
+                          "Explore our successful AI implementations across industries.",
                       });
                     }}
                   >
@@ -972,20 +1007,23 @@ const Index = () => {
                   <button
                     className="text-muted-foreground hover:text-primary transition-colors cursor-pointer text-left"
                     onClick={() => {
-                      toast({
-                        title: "Careers",
-                        description: "Join our team of AI innovators. Contact us for opportunities.",
-                      });
+                      window.open(
+                        "https://whatsapp.com/channel/0029VbAnSN3Fy72HM18RCg2q",
+                        "_blank",
+                      );
                     }}
                   >
-                    <li>
-  <button
-    className="text-muted-foreground hover:text-primary transition-colors cursor-pointer text-left"
-    onClick={() => {
-      window.open("https://whatsapp.com/channel/0029VbAnSN3Fy72HM18RCg2q", "_blank");
-    }}
-  >
-    WhatsApp Channel
+                    WhatsApp Channel
+                  </button>
+                </li>
+                <li>
+                  <button
+                    className="text-muted-foreground hover:text-primary transition-colors cursor-pointer text-left"
+                    onClick={() =>
+                      document
+                        .getElementById("contact")
+                        ?.scrollIntoView({ behavior: "smooth" })
+                    }
                   >
                     Contact
                   </button>
@@ -1004,7 +1042,10 @@ const Index = () => {
                   variant="outline"
                   className="w-full justify-start"
                   onClick={() => {
-                    window.open("https://www.linkedin.com/newsletters/the-summarized-ai-beyond-7325814782631002114", "_blank");
+                    window.open(
+                      "https://www.linkedin.com/newsletters/the-summarized-ai-beyond-7325814782631002114",
+                      "_blank",
+                    );
                   }}
                 >
                   <Mail className="w-4 h-4 mr-2" />
@@ -1014,10 +1055,13 @@ const Index = () => {
                   variant="outline"
                   className="w-full justify-start"
                   onClick={() => {
-                    navigator.clipboard.writeText("summaryautomations@gmail.com");
+                    navigator.clipboard.writeText(
+                      "summaryautomations@gmail.com",
+                    );
                     toast({
                       title: "Email Copied",
-                      description: "summaryautomations@gmail.com copied to clipboard",
+                      description:
+                        "summaryautomations@gmail.com copied to clipboard",
                     });
                   }}
                 >
@@ -1046,7 +1090,8 @@ const Index = () => {
           <div className="pt-8 border-t border-border">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <p className="text-muted-foreground">
-                © 2025 Summary Automates. All rights reserved. Crafted with innovation and precision.
+                © 2025 Summary Automates. All rights reserved. Crafted with
+                innovation and precision.
               </p>
               <div className="flex items-center space-x-6">
                 <button
@@ -1054,7 +1099,8 @@ const Index = () => {
                   onClick={() => {
                     toast({
                       title: "Privacy Policy",
-                      description: "Your privacy is important to us. Contact us for our full privacy policy.",
+                      description:
+                        "Your privacy is important to us. Contact us for our full privacy policy.",
                     });
                   }}
                 >
@@ -1065,7 +1111,8 @@ const Index = () => {
                   onClick={() => {
                     toast({
                       title: "Terms of Service",
-                      description: "View our terms of service. Contact us for detailed information.",
+                      description:
+                        "View our terms of service. Contact us for detailed information.",
                     });
                   }}
                 >
@@ -1074,7 +1121,9 @@ const Index = () => {
                 <Button
                   variant="outline"
                   size="sm"
-                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                  onClick={() =>
+                    window.scrollTo({ top: 0, behavior: "smooth" })
+                  }
                 >
                   <ArrowUp className="w-4 h-4 mr-1" />
                   Back to Top
