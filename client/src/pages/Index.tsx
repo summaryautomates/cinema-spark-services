@@ -278,11 +278,6 @@ const Index = () => {
                 "Hospitality"
               ]}
               rotationInterval={3000}
-              transition={{ type: "spring", damping: 25, stiffness: 300, duration: 0.5 }}
-              initial={{ y: "100%", opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: "-100%", opacity: 0 }}
-              splitBy="words"
               className="text-blue-400"
             />
           </h2>
