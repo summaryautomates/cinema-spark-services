@@ -837,9 +837,14 @@ const Index = () => {
               <Button
                 variant="secondary"
                 size="lg"
-                onClick={() => {
-                  console.log("Opening Setmore booking link");
-                  window.open("https://summaryautomates.setmore.com", "_blank");
+                onClick={(e) => {
+                  e.preventDefault();
+                  console.log("Opening Setmore booking link: https://summaryautomates.setmore.com");
+                  const newWindow = window.open("https://summaryautomates.setmore.com", "_blank", "noopener,noreferrer");
+                  if (!newWindow) {
+                    console.error("Popup blocked - trying direct navigation");
+                    window.location.href = "https://summaryautomates.setmore.com";
+                  }
                 }}
                 className="bg-white text-primary hover:bg-white/90"
               >
