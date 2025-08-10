@@ -859,52 +859,234 @@ const Index = () => {
       <footer className="py-16 border-t border-border bg-muted/20">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
+            {/* Company Info */}
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold gradient-text">
+              <h3 className="text-lg font-semibold gradient-text flex items-center">
+                <Brain className="w-5 h-5 mr-2" />
                 AI Excellence
               </h3>
               <p className="text-muted-foreground">
                 Transforming businesses through innovative AI solutions and
                 strategic excellence.
               </p>
+              <div className="flex space-x-4">
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="h-9 w-9"
+                  onClick={() => window.open('https://linkedin.com/company/ai-excellence', '_blank')}
+                >
+                  <Users className="h-4 w-4" />
+                </Button>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="h-9 w-9"
+                  onClick={() => window.open('https://twitter.com/ai_excellence', '_blank')}
+                >
+                  <MessageCircle className="h-4 w-4" />
+                </Button>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="h-9 w-9"
+                  onClick={() => window.open('https://github.com/ai-excellence', '_blank')}
+                >
+                  <Globe className="h-4 w-4" />
+                </Button>
+              </div>
             </div>
 
+            {/* Services */}
             <div className="space-y-4">
-              <h4 className="font-semibold">Services</h4>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>AI Consulting</li>
-                <li>Custom Development</li>
-                <li>Content Creation</li>
-                <li>Marketing Strategy</li>
+              <h4 className="font-semibold flex items-center">
+                <Settings className="w-4 h-4 mr-2" />
+                Services
+              </h4>
+              <ul className="space-y-2">
+                <li>
+                  <button
+                    className="text-muted-foreground hover:text-primary transition-colors cursor-pointer text-left"
+                    onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}
+                  >
+                    AI Consulting & Strategy
+                  </button>
+                </li>
+                <li>
+                  <button
+                    className="text-muted-foreground hover:text-primary transition-colors cursor-pointer text-left"
+                    onClick={() => document.querySelector('[data-section="development"]')?.scrollIntoView({ behavior: "smooth" })}
+                  >
+                    Custom Development
+                  </button>
+                </li>
+                <li>
+                  <button
+                    className="text-muted-foreground hover:text-primary transition-colors cursor-pointer text-left"
+                    onClick={() => document.querySelector('[data-section="content"]')?.scrollIntoView({ behavior: "smooth" })}
+                  >
+                    Content Creation
+                  </button>
+                </li>
+                <li>
+                  <button
+                    className="text-muted-foreground hover:text-primary transition-colors cursor-pointer text-left"
+                    onClick={() => document.querySelector('[data-section="sales"]')?.scrollIntoView({ behavior: "smooth" })}
+                  >
+                    Marketing Strategy
+                  </button>
+                </li>
               </ul>
             </div>
 
+            {/* Company */}
             <div className="space-y-4">
-              <h4 className="font-semibold">Company</h4>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>About Us</li>
-                <li>Case Studies</li>
-                <li>Careers</li>
-                <li>Contact</li>
+              <h4 className="font-semibold flex items-center">
+                <Briefcase className="w-4 h-4 mr-2" />
+                Company
+              </h4>
+              <ul className="space-y-2">
+                <li>
+                  <button
+                    className="text-muted-foreground hover:text-primary transition-colors cursor-pointer text-left"
+                    onClick={() => {
+                      toast({
+                        title: "About Us",
+                        description: "Learn more about our mission to transform businesses with AI.",
+                      });
+                    }}
+                  >
+                    About Us
+                  </button>
+                </li>
+                <li>
+                  <button
+                    className="text-muted-foreground hover:text-primary transition-colors cursor-pointer text-left"
+                    onClick={() => {
+                      toast({
+                        title: "Case Studies",
+                        description: "Explore our successful AI implementations across industries.",
+                      });
+                    }}
+                  >
+                    Case Studies
+                  </button>
+                </li>
+                <li>
+                  <button
+                    className="text-muted-foreground hover:text-primary transition-colors cursor-pointer text-left"
+                    onClick={() => {
+                      toast({
+                        title: "Careers",
+                        description: "Join our team of AI innovators. Contact us for opportunities.",
+                      });
+                    }}
+                  >
+                    Careers
+                  </button>
+                </li>
+                <li>
+                  <button
+                    className="text-muted-foreground hover:text-primary transition-colors cursor-pointer text-left"
+                    onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+                  >
+                    Contact
+                  </button>
+                </li>
               </ul>
             </div>
 
+            {/* Connect & Newsletter */}
             <div className="space-y-4">
-              <h4 className="font-semibold">Connect</h4>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>LinkedIn</li>
-                <li>Twitter</li>
-                <li>GitHub</li>
-                <li>Newsletter</li>
-              </ul>
+              <h4 className="font-semibold flex items-center">
+                <Share2 className="w-4 h-4 mr-2" />
+                Stay Connected
+              </h4>
+              <div className="space-y-3">
+                <Button
+                  variant="outline"
+                  className="w-full justify-start"
+                  onClick={() => {
+                    toast({
+                      title: "Newsletter Subscription",
+                      description: "Thank you for your interest! We'll send you AI insights and updates.",
+                    });
+                  }}
+                >
+                  <Mail className="w-4 h-4 mr-2" />
+                  Subscribe to Newsletter
+                </Button>
+                <Button
+                  variant="outline"
+                  className="w-full justify-start"
+                  onClick={() => {
+                    navigator.clipboard.writeText("hello@ai-excellence.com");
+                    toast({
+                      title: "Email Copied",
+                      description: "hello@ai-excellence.com copied to clipboard",
+                    });
+                  }}
+                >
+                  <Mail className="w-4 h-4 mr-2" />
+                  hello@ai-excellence.com
+                </Button>
+                <Button
+                  variant="outline"
+                  className="w-full justify-start"
+                  onClick={() => {
+                    navigator.clipboard.writeText("+1 (555) 123-4567");
+                    toast({
+                      title: "Phone Copied",
+                      description: "+1 (555) 123-4567 copied to clipboard",
+                    });
+                  }}
+                >
+                  <Phone className="w-4 h-4 mr-2" />
+                  +1 (555) 123-4567
+                </Button>
+              </div>
             </div>
           </div>
 
-          <div className="text-center pt-8 border-t border-border">
-            <p className="text-muted-foreground">
-              © 2024 AI Excellence. All rights reserved. Crafted with
-              innovation and precision.
-            </p>
+          {/* Bottom Footer */}
+          <div className="pt-8 border-t border-border">
+            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+              <p className="text-muted-foreground">
+                © 2024 AI Excellence. All rights reserved. Crafted with innovation and precision.
+              </p>
+              <div className="flex items-center space-x-6">
+                <button
+                  className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                  onClick={() => {
+                    toast({
+                      title: "Privacy Policy",
+                      description: "Your privacy is important to us. Contact us for our full privacy policy.",
+                    });
+                  }}
+                >
+                  Privacy Policy
+                </button>
+                <button
+                  className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                  onClick={() => {
+                    toast({
+                      title: "Terms of Service",
+                      description: "View our terms of service. Contact us for detailed information.",
+                    });
+                  }}
+                >
+                  Terms of Service
+                </button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                >
+                  <ArrowUp className="w-4 h-4 mr-1" />
+                  Back to Top
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </footer>
