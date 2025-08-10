@@ -1,8 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { HeroSection } from "@/components/HeroSection";
 import { ServiceSection } from "@/components/ServiceSection";
 import { FloatingNavigation } from "@/components/FloatingNavigation";
-import RotatingText from "@/components/RotatingText";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -48,6 +47,17 @@ import {
 const Index = () => {
   const { toast } = useToast();
   const [selectedService, setSelectedService] = useState<any>(null);
+  
+  // Simple rotating text implementation
+  const [currentTextIndex, setCurrentTextIndex] = useState(0);
+  const industryTexts = ["E-commerce", "Edtech", "Recruitment", "Healthcare", "Fintech", "Real Estate", "Hospitality"];
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTextIndex((prev) => (prev + 1) % industryTexts.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [industryTexts.length]);
 
   const handleServiceClick = (service: any) => {
     setSelectedService(service);
@@ -267,18 +277,17 @@ const Index = () => {
           </Badge>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 gradient-text leading-tight">
             AI Deployment for{" "}
-            <RotatingText
-              texts={[
-                "E-commerce",
-                "Edtech",
-                "Recruitment", 
-                "Healthcare",
-                "Fintech",
-                "Real Estate",
-                "Hospitality"
-              ]}
-              rotationInterval={3000}
-            />
+            <span 
+              className="inline-block text-white font-bold px-6 py-3 rounded-xl shadow-lg transition-all duration-300"
+              style={{
+                backgroundColor: '#2563eb',
+                minWidth: '200px',
+                textAlign: 'center',
+                color: '#ffffff'
+              }}
+            >
+              {industryTexts[currentTextIndex]}
+            </span>
           </h2>
           {/* 6-Week Process */}
           <div className="max-w-6xl mx-auto mb-16">
