@@ -258,16 +258,16 @@ export const FloatingNavigation = () => {
       return {
         radius: Math.min(vw * 0.2, vh * 0.2, 260),
         containerSize: Math.min(vw * 0.65, vh * 0.65, 650),
-        top: "50%", // Consistent centered positioning
-        left: "50%",
+        top: "70%", // Consistent centered positioning
+        left: "65%",
       };
     } else {
       // Ultra-wide desktop - optimized for large screens
       return {
         radius: Math.min(vw * 0.18, vh * 0.18, 300),
         containerSize: Math.min(vw * 0.6, vh * 0.6, 750),
-        top: "50%", // Consistent centered positioning
-        left: "50%",
+        top: "70%", // Consistent centered positioning
+        left: "65%",
       };
     }
   };
