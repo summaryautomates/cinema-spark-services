@@ -278,12 +278,13 @@ const Index = () => {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 gradient-text leading-tight">
             AI Deployment for{" "}
             <span 
-              className="inline-block text-white font-bold px-6 py-3 rounded-xl shadow-lg transition-all duration-300"
+              className="inline-block font-bold px-6 py-3 rounded-xl shadow-lg transition-all duration-300 text-visible"
               style={{
                 backgroundColor: '#2563eb',
                 minWidth: '200px',
                 textAlign: 'center',
-                color: '#ffffff'
+                color: '#ffffff !important',
+                WebkitTextFillColor: '#ffffff !important'
               }}
             >
               {industryTexts[currentTextIndex]}
