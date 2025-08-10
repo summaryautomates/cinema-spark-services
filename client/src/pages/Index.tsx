@@ -296,7 +296,7 @@ const Index = () => {
           <div className="max-w-6xl mx-auto mb-16">
             <div className="text-center mb-12">
               <h3 className="text-3xl md:text-4xl font-bold mb-6">
-                Our <span className="text-blue-500">6-Week Process</span>
+                Build, integrate, and grow in our <span className="text-blue-500">6 weeks process</span>
               </h3>
             </div>
             
