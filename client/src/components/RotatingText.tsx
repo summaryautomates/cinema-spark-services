@@ -41,8 +41,16 @@ const RotatingText: React.FC<RotatingTextProps> = ({
           animate={animate}
           exit={exit}
           transition={transition}
-          className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg font-bold"
-          style={{ minWidth: '200px', textAlign: 'center', display: 'inline-block' }}
+          className="inline-block bg-blue-600 px-6 py-3 rounded-xl font-bold shadow-lg"
+          style={{ 
+            minWidth: '200px', 
+            textAlign: 'center', 
+            display: 'inline-block',
+            color: '#ffffff !important',
+            fontSize: 'inherit',
+            lineHeight: 'inherit',
+            backgroundColor: '#2563eb'
+          }}
         >
           {texts[currentIndex]}
         </motion.span>
