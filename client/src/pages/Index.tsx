@@ -1007,10 +1007,7 @@ const Index = () => {
                   variant="outline"
                   className="w-full justify-start"
                   onClick={() => {
-                    toast({
-                      title: "Newsletter Subscription",
-                      description: "Thank you for your interest! We'll send you AI insights and updates.",
-                    });
+                    window.open("https://www.linkedin.com/newsletters/the-summarized-ai-beyond-7325814782631002114", "_blank");
                   }}
                 >
                   <Mail className="w-4 h-4 mr-2" />
