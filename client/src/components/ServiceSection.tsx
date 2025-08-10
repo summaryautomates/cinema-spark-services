@@ -45,9 +45,12 @@ export const ServiceSection = ({
           {services.map((service, index) => (
             <ServiceCard
               key={index}
-              service={service}
-              categoryColor={categoryColor}
-              onClick={() => onServiceClick?.(service)}
+              title={service.title}
+              description={service.description}
+              features={service.features}
+              icon={service.icon}
+              category={categoryColor}
+              onCTAClick={() => onServiceClick?.(service)}
               delay={index * 100}
             />
           ))}
