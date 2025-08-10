@@ -34,24 +34,25 @@ export const ServiceSection = ({
           <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
             {description}
           </p>
-          <div
+          <div 
             className="w-24 h-1 mx-auto mt-8 rounded-full shadow-glow"
             style={{ backgroundColor: categoryColor }}
           />
         </div>
 
         {/* Services Grid */}
-        <div className="grid-responsive-3">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <ServiceCard
-              key={index}
+              key={service.title}
               title={service.title}
               description={service.description}
               features={service.features}
               icon={service.icon}
-              category={categoryColor}
+              category={title}
               onCTAClick={() => onServiceClick?.(service)}
               delay={index * 100}
+              className="premium-card"
             />
           ))}
         </div>

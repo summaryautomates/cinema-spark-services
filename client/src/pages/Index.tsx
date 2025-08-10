@@ -440,8 +440,8 @@ const Index = () => {
         onContactUs={handleContactUs}
       />
       {/* Services Introduction */}
-      <section className="padding-responsive-xl bg-background">
-        <div className="container-responsive text-center">
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-6 text-center">
           <Badge
             variant="secondary"
             className="mb-8 px-6 py-3 bg-primary/10 text-primary border-primary/20 backdrop-blur-sm"
@@ -449,45 +449,41 @@ const Index = () => {
             <Sparkles className="w-4 h-4 mr-2" />
             Our Expertise
           </Badge>
-          <h2 className="text-responsive-5xl font-bold space-responsive-md gradient-text leading-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 gradient-text leading-tight">
             AI Deployment for{" "}
             <span
-              className="inline-block font-bold padding-responsive-sm rounded-xl shadow-lg transition-all duration-300"
+              className="inline-block font-bold px-6 py-3 rounded-xl shadow-lg transition-all duration-300"
               style={{
                 backgroundColor: "#2563eb",
-                minWidth: "clamp(150px, 40vw, 250px)",
+                minWidth: "200px",
                 textAlign: "center",
                 color: "#ffffff",
                 WebkitTextFillColor: "#ffffff",
                 backgroundClip: "initial",
                 WebkitBackgroundClip: "initial",
-                fontSize: "clamp(1.5rem, 5vw + 1rem, 3rem)",
               }}
             >
               {industryTexts[currentTextIndex]}
             </span>
           </h2>
           {/* 6-Week Process */}
-          <div className="w-full max-w-7xl mx-auto space-responsive-lg">
-            <div className="text-center space-responsive-md">
-              <h3 className="text-responsive-4xl font-bold space-responsive-sm">
+          <div className="max-w-6xl mx-auto mb-16">
+            <div className="text-center mb-12">
+              <h3 className="text-3xl md:text-4xl font-bold mb-6">
                 Build, integrate, and grow in our{" "}
                 <span className="text-blue-500"> 6 weeks process</span>
               </h3>
             </div>
 
-            {/* 6-Week Process Grid - Responsive layout */}
-            <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl padding-responsive-lg">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12 xl:gap-16">
+            {/* 6-Week Process Grid - 3 above, 3 below with 3D Glass Icons */}
+            <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 md:p-12">
+              <div className="grid grid-cols-3 gap-12 md:gap-16">
                 {/* Top Row */}
                 {/* Week 1 - Ideate */}
-                <div className="flex flex-col items-center text-center space-responsive-sm">
+                <div className="flex flex-col items-center text-center">
                   <div
-                    className="relative bg-transparent outline-none group"
+                    className="relative bg-transparent outline-none w-[4.5em] h-[4.5em] mb-6 group"
                     style={{
-                      width: "clamp(3.5rem, 8vw, 5rem)",
-                      height: "clamp(3.5rem, 8vw, 5rem)",
-                      marginBottom: "clamp(1rem, 3vw, 1.5rem)",
                       perspective: "24em",
                       transformStyle: "preserve-3d",
                     }}
@@ -512,8 +508,8 @@ const Index = () => {
                       </span>
                     </span>
                   </div>
-                  <h4 className="font-bold text-responsive-lg text-white">IDEATE</h4>
-                  <p className="text-responsive-sm text-gray-300">Conceptualize & Plan</p>
+                  <h4 className="font-bold text-lg text-white mb-1">IDEATE</h4>
+                  <p className="text-sm text-gray-300">Conceptualize & Plan</p>
                 </div>
 
                 {/* Week 2 - Build */}
@@ -759,9 +755,9 @@ const Index = () => {
         </div>
       </div>
       {/* Why Choose Us Section */}
-      <section className="padding-responsive-xl bg-muted/20">
-        <div className="container-responsive">
-          <div className="text-center space-responsive-lg">
+      <section className="py-20 bg-muted/20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
             <Badge
               variant="secondary"
               className="mb-6 px-4 py-2 bg-primary/10 text-primary border-primary/20"
@@ -769,12 +765,12 @@ const Index = () => {
               <Target className="w-4 h-4 mr-2" />
               Why Choose Us
             </Badge>
-            <h2 className="text-responsive-4xl font-bold gradient-text">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">
               The Summary Automates Advantage
             </h2>
           </div>
 
-          <div className="grid-responsive-3">
+          <div className="grid md:grid-cols-3 gap-8">
             <Card className="p-8 text-center hover-scale bg-card/50 backdrop-blur-sm border-border/50">
               <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center">
                 <Brain className="w-8 h-8 text-primary" />
@@ -816,10 +812,10 @@ const Index = () => {
         </div>
       </section>
       {/* Call to Action Section */}
-      <section id="contact" className="padding-responsive-xl relative overflow-hidden">
+      <section id="contact" className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-hero" />
-        <div className="container-responsive text-center relative z-10">
-          <div className="w-full max-w-4xl mx-auto space-responsive-md">
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <div className="max-w-4xl mx-auto">
             <Badge
               variant="secondary"
               className="mb-6 px-4 py-2 bg-white/10 text-white border-white/20"
@@ -828,16 +824,16 @@ const Index = () => {
               Ready to Transform Your Business?
             </Badge>
 
-            <h2 className="text-responsive-4xl font-bold text-white space-responsive-sm">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
               Let's Build Something Extraordinary Together
             </h2>
 
-            <p className="text-responsive-lg text-white/80 max-w-2xl mx-auto space-responsive-sm">
+            <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
               Join hundreds of satisfied clients who have transformed their
               businesses with our premium AI solutions and creative services.
             </p>
 
-            <div className="flex-responsive-row justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 variant="secondary"
                 size="lg"
@@ -856,9 +852,9 @@ const Index = () => {
         </div>
       </section>
       {/* Footer */}
-      <footer className="padding-responsive-xl border-t border-border bg-muted/20">
-        <div className="container-responsive">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 space-responsive-md">
+      <footer className="py-16 border-t border-border bg-muted/20">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
             {/* Company Info */}
             <div className="space-y-4">
               <h3 className="text-lg font-semibold gradient-text flex items-center">
@@ -976,10 +972,13 @@ const Index = () => {
                   <button
                     className="text-muted-foreground hover:text-primary transition-colors cursor-pointer text-left"
                     onClick={() => {
-                      window.open("https://whatsapp.com/channel/0029VbAnSN3Fy72HM18RCg2q", "_blank");
+                      toast({
+                        title: "Careers",
+                        description: "Join our team of AI innovators. Contact us for opportunities.",
+                      });
                     }}
                   >
-                    WhatsApp Channel
+                    Careers
                   </button>
                 </li>
                 <li>
