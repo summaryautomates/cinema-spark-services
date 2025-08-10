@@ -35,7 +35,13 @@ import {
   Eye,
   ArrowUp,
   Phone,
-  Sparkles
+  Sparkles,
+  Lightbulb,
+  Hammer,
+  MessageSquare as Feedback,
+  RotateCcw,
+  Rocket,
+  Trophy
 } from "lucide-react";
 
 const Index = () => {
@@ -273,17 +279,28 @@ const Index = () => {
               </h3>
             </div>
             
-            {/* 6-Week Process Grid - 3 above, 3 below */}
+            {/* 6-Week Process Grid - 3 above, 3 below with 3D Glass Icons */}
             <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 md:p-12">
-              <div className="grid grid-cols-3 gap-8 md:gap-12">
+              <div className="grid grid-cols-3 gap-12 md:gap-16">
                 {/* Top Row */}
                 {/* Week 1 - Ideate */}
                 <div className="flex flex-col items-center text-center">
-                  <div className="relative mb-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
-                      1
-                    </div>
-                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full opacity-90"></div>
+                  <div className="relative bg-transparent outline-none w-[4.5em] h-[4.5em] mb-6 group" style={{perspective: '24em', transformStyle: 'preserve-3d'}}>
+                    <span 
+                      className="absolute top-0 left-0 w-full h-full rounded-[1.25em] block transition-all duration-300 ease-[cubic-bezier(0.83,0,0.17,1)] origin-[100%_100%] rotate-[15deg] group-hover:rotate-[25deg] group-hover:translate-x-[-0.5em] group-hover:translate-y-[-0.5em] group-hover:translate-z-[0.5em]"
+                      style={{
+                        background: 'linear-gradient(hsl(223, 90%, 50%), hsl(208, 90%, 50%))',
+                        boxShadow: '0.5em -0.5em 0.75em hsla(223, 10%, 10%, 0.15)'
+                      }}
+                    ></span>
+                    <span 
+                      className="absolute top-0 left-0 w-full h-full rounded-[1.25em] bg-white/15 transition-all duration-300 ease-[cubic-bezier(0.83,0,0.17,1)] origin-[80%_50%] flex backdrop-blur-[0.75em] group-hover:translate-z-[2em]"
+                      style={{boxShadow: '0 0 0 0.1em hsla(0, 0%, 100%, 0.3) inset'}}
+                    >
+                      <span className="m-auto w-[1.5em] h-[1.5em] flex items-center justify-center">
+                        <Lightbulb className="text-xl text-white" />
+                      </span>
+                    </span>
                   </div>
                   <h4 className="font-bold text-lg text-white mb-1">IDEATE</h4>
                   <p className="text-sm text-gray-300">Conceptualize & Plan</p>
@@ -291,11 +308,22 @@ const Index = () => {
 
                 {/* Week 2 - Build */}
                 <div className="flex flex-col items-center text-center">
-                  <div className="relative mb-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
-                      2
-                    </div>
-                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full opacity-90"></div>
+                  <div className="relative bg-transparent outline-none w-[4.5em] h-[4.5em] mb-6 group" style={{perspective: '24em', transformStyle: 'preserve-3d'}}>
+                    <span 
+                      className="absolute top-0 left-0 w-full h-full rounded-[1.25em] block transition-all duration-300 ease-[cubic-bezier(0.83,0,0.17,1)] origin-[100%_100%] rotate-[15deg] group-hover:rotate-[25deg] group-hover:translate-x-[-0.5em] group-hover:translate-y-[-0.5em] group-hover:translate-z-[0.5em]"
+                      style={{
+                        background: 'linear-gradient(hsl(283, 90%, 50%), hsl(268, 90%, 50%))',
+                        boxShadow: '0.5em -0.5em 0.75em hsla(223, 10%, 10%, 0.15)'
+                      }}
+                    ></span>
+                    <span 
+                      className="absolute top-0 left-0 w-full h-full rounded-[1.25em] bg-white/15 transition-all duration-300 ease-[cubic-bezier(0.83,0,0.17,1)] origin-[80%_50%] flex backdrop-blur-[0.75em] group-hover:translate-z-[2em]"
+                      style={{boxShadow: '0 0 0 0.1em hsla(0, 0%, 100%, 0.3) inset'}}
+                    >
+                      <span className="m-auto w-[1.5em] h-[1.5em] flex items-center justify-center">
+                        <Hammer className="text-xl text-white" />
+                      </span>
+                    </span>
                   </div>
                   <h4 className="font-bold text-lg text-white mb-1">BUILD</h4>
                   <p className="text-sm text-gray-300">Develop & Create</p>
@@ -303,11 +331,22 @@ const Index = () => {
 
                 {/* Week 3 - Feedback */}
                 <div className="flex flex-col items-center text-center">
-                  <div className="relative mb-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
-                      3
-                    </div>
-                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full opacity-90"></div>
+                  <div className="relative bg-transparent outline-none w-[4.5em] h-[4.5em] mb-6 group" style={{perspective: '24em', transformStyle: 'preserve-3d'}}>
+                    <span 
+                      className="absolute top-0 left-0 w-full h-full rounded-[1.25em] block transition-all duration-300 ease-[cubic-bezier(0.83,0,0.17,1)] origin-[100%_100%] rotate-[15deg] group-hover:rotate-[25deg] group-hover:translate-x-[-0.5em] group-hover:translate-y-[-0.5em] group-hover:translate-z-[0.5em]"
+                      style={{
+                        background: 'linear-gradient(hsl(3, 90%, 50%), hsl(348, 90%, 50%))',
+                        boxShadow: '0.5em -0.5em 0.75em hsla(223, 10%, 10%, 0.15)'
+                      }}
+                    ></span>
+                    <span 
+                      className="absolute top-0 left-0 w-full h-full rounded-[1.25em] bg-white/15 transition-all duration-300 ease-[cubic-bezier(0.83,0,0.17,1)] origin-[80%_50%] flex backdrop-blur-[0.75em] group-hover:translate-z-[2em]"
+                      style={{boxShadow: '0 0 0 0.1em hsla(0, 0%, 100%, 0.3) inset'}}
+                    >
+                      <span className="m-auto w-[1.5em] h-[1.5em] flex items-center justify-center">
+                        <MessageSquare className="text-xl text-white" />
+                      </span>
+                    </span>
                   </div>
                   <h4 className="font-bold text-lg text-white mb-1">FEEDBACK</h4>
                   <p className="text-sm text-gray-300">Review & Refine</p>
@@ -316,11 +355,22 @@ const Index = () => {
                 {/* Bottom Row */}
                 {/* Week 4 - Iterate */}
                 <div className="flex flex-col items-center text-center">
-                  <div className="relative mb-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
-                      4
-                    </div>
-                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full opacity-90"></div>
+                  <div className="relative bg-transparent outline-none w-[4.5em] h-[4.5em] mb-6 group" style={{perspective: '24em', transformStyle: 'preserve-3d'}}>
+                    <span 
+                      className="absolute top-0 left-0 w-full h-full rounded-[1.25em] block transition-all duration-300 ease-[cubic-bezier(0.83,0,0.17,1)] origin-[100%_100%] rotate-[15deg] group-hover:rotate-[25deg] group-hover:translate-x-[-0.5em] group-hover:translate-y-[-0.5em] group-hover:translate-z-[0.5em]"
+                      style={{
+                        background: 'linear-gradient(hsl(253, 90%, 50%), hsl(238, 90%, 50%))',
+                        boxShadow: '0.5em -0.5em 0.75em hsla(223, 10%, 10%, 0.15)'
+                      }}
+                    ></span>
+                    <span 
+                      className="absolute top-0 left-0 w-full h-full rounded-[1.25em] bg-white/15 transition-all duration-300 ease-[cubic-bezier(0.83,0,0.17,1)] origin-[80%_50%] flex backdrop-blur-[0.75em] group-hover:translate-z-[2em]"
+                      style={{boxShadow: '0 0 0 0.1em hsla(0, 0%, 100%, 0.3) inset'}}
+                    >
+                      <span className="m-auto w-[1.5em] h-[1.5em] flex items-center justify-center">
+                        <RotateCcw className="text-xl text-white" />
+                      </span>
+                    </span>
                   </div>
                   <h4 className="font-bold text-lg text-white mb-1">ITERATE</h4>
                   <p className="text-sm text-gray-300">Improve & Polish</p>
@@ -328,11 +378,22 @@ const Index = () => {
 
                 {/* Week 5 - Launch */}
                 <div className="flex flex-col items-center text-center">
-                  <div className="relative mb-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
-                      5
-                    </div>
-                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full opacity-90"></div>
+                  <div className="relative bg-transparent outline-none w-[4.5em] h-[4.5em] mb-6 group" style={{perspective: '24em', transformStyle: 'preserve-3d'}}>
+                    <span 
+                      className="absolute top-0 left-0 w-full h-full rounded-[1.25em] block transition-all duration-300 ease-[cubic-bezier(0.83,0,0.17,1)] origin-[100%_100%] rotate-[15deg] group-hover:rotate-[25deg] group-hover:translate-x-[-0.5em] group-hover:translate-y-[-0.5em] group-hover:translate-z-[0.5em]"
+                      style={{
+                        background: 'linear-gradient(hsl(43, 90%, 50%), hsl(28, 90%, 50%))',
+                        boxShadow: '0.5em -0.5em 0.75em hsla(223, 10%, 10%, 0.15)'
+                      }}
+                    ></span>
+                    <span 
+                      className="absolute top-0 left-0 w-full h-full rounded-[1.25em] bg-white/15 transition-all duration-300 ease-[cubic-bezier(0.83,0,0.17,1)] origin-[80%_50%] flex backdrop-blur-[0.75em] group-hover:translate-z-[2em]"
+                      style={{boxShadow: '0 0 0 0.1em hsla(0, 0%, 100%, 0.3) inset'}}
+                    >
+                      <span className="m-auto w-[1.5em] h-[1.5em] flex items-center justify-center">
+                        <Rocket className="text-xl text-white" />
+                      </span>
+                    </span>
                   </div>
                   <h4 className="font-bold text-lg text-white mb-1">LAUNCH</h4>
                   <p className="text-sm text-gray-300">Deploy & Release</p>
@@ -340,11 +401,22 @@ const Index = () => {
 
                 {/* Week 6 - Showcase */}
                 <div className="flex flex-col items-center text-center">
-                  <div className="relative mb-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
-                      6
-                    </div>
-                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full opacity-90"></div>
+                  <div className="relative bg-transparent outline-none w-[4.5em] h-[4.5em] mb-6 group" style={{perspective: '24em', transformStyle: 'preserve-3d'}}>
+                    <span 
+                      className="absolute top-0 left-0 w-full h-full rounded-[1.25em] block transition-all duration-300 ease-[cubic-bezier(0.83,0,0.17,1)] origin-[100%_100%] rotate-[15deg] group-hover:rotate-[25deg] group-hover:translate-x-[-0.5em] group-hover:translate-y-[-0.5em] group-hover:translate-z-[0.5em]"
+                      style={{
+                        background: 'linear-gradient(hsl(123, 90%, 40%), hsl(108, 90%, 40%))',
+                        boxShadow: '0.5em -0.5em 0.75em hsla(223, 10%, 10%, 0.15)'
+                      }}
+                    ></span>
+                    <span 
+                      className="absolute top-0 left-0 w-full h-full rounded-[1.25em] bg-white/15 transition-all duration-300 ease-[cubic-bezier(0.83,0,0.17,1)] origin-[80%_50%] flex backdrop-blur-[0.75em] group-hover:translate-z-[2em]"
+                      style={{boxShadow: '0 0 0 0.1em hsla(0, 0%, 100%, 0.3) inset'}}
+                    >
+                      <span className="m-auto w-[1.5em] h-[1.5em] flex items-center justify-center">
+                        <Trophy className="text-xl text-white" />
+                      </span>
+                    </span>
                   </div>
                   <h4 className="font-bold text-lg text-white mb-1">SHOWCASE</h4>
                   <p className="text-sm text-gray-300">Present & Celebrate</p>
