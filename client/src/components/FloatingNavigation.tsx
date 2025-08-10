@@ -180,14 +180,19 @@ export const FloatingNavigation = () => {
       if (contactElement) {
         contactElement.scrollIntoView({ behavior: "smooth", block: "start" });
       } else {
-        window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: "smooth",
+        });
       }
     } else if (item.section === "services") {
       // Navigate to specific service section based on item.id
-      const sectionElement = document.querySelector(`[data-section="${item.id}"]`) as HTMLElement;
+      const sectionElement = document.querySelector(
+        `[data-section="${item.id}"]`,
+      ) as HTMLElement;
       if (sectionElement) {
         sectionElement.scrollIntoView({ behavior: "smooth", block: "start" });
-        
+
         // Add a subtle highlight effect to the section being navigated to
         sectionElement.style.transition = "transform 0.3s ease";
         sectionElement.style.transform = "scale(1.02)";
@@ -198,7 +203,10 @@ export const FloatingNavigation = () => {
         // Fallback to general services section
         const servicesElement = document.getElementById("services");
         if (servicesElement) {
-          servicesElement.scrollIntoView({ behavior: "smooth", block: "start" });
+          servicesElement.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
         }
       }
     }
@@ -218,15 +226,15 @@ export const FloatingNavigation = () => {
       return {
         radius: Math.min(vw * 0.32, vh * 0.28, 110),
         containerSize: Math.min(vw * 0.9, vh * 0.8, 280),
-        top: "50%", // Centered on mobile
-        left: "50%",
+        top: "60%", // Centered on mobile
+        left: "83%",
       };
     } else if (vw < 768) {
       // Small tablet - moderate radius around brain
       return {
         radius: Math.min(vw * 0.3, vh * 0.26, 140),
         containerSize: Math.min(vw * 0.8, vh * 0.7, 350),
-        top: "50%", // Centered positioning
+        top: "60%", // Centered positioning
         left: "50%",
       };
     } else if (vw < 1024) {
@@ -234,7 +242,7 @@ export const FloatingNavigation = () => {
       return {
         radius: Math.min(vw * 0.25, vh * 0.23, 180),
         containerSize: Math.min(vw * 0.75, vh * 0.65, 450),
-        top: "50%", // Centered for better symmetry
+        top: "65%", // Centered for better symmetry
         left: "50%",
       };
     } else if (vw < 1440) {
@@ -242,8 +250,8 @@ export const FloatingNavigation = () => {
       return {
         radius: Math.min(vw * 0.22, vh * 0.22, 220),
         containerSize: Math.min(vw * 0.7, vh * 0.7, 550),
-        top: "50%", // Perfect center for desktop
-        left: "50%",
+        top: "70%", // Perfect center for desktop
+        left: "66%",
       };
     } else if (vw < 1920) {
       // Large desktop - wider radius around brain
