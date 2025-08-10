@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from "react";
 import heroImage from "@assets/ChatGPT Image Jul 15, 2025, 11_18_23 PM_1752602257547.png";
+import DotGrid from "./DotGrid";
 
 interface HeroSectionProps {
   onExploreServices?: () => void;
@@ -20,15 +21,26 @@ export const HeroSection = ({
 
   return (
     <section className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800">
-      {/* Animated Background Elements - Responsive sizing */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 bg-blue-600/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-40 h-40 sm:w-56 sm:h-56 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[28rem] xl:h-[28rem] bg-cyan-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 w-48 h-48 sm:w-64 sm:h-64 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] xl:w-[32rem] xl:h-[32rem] bg-indigo-600/5 rounded-full blur-3xl animate-pulse delay-500"></div>
+      {/* Interactive Dot Grid Background */}
+      <div className="absolute inset-0">
+        <DotGrid
+          dotSize={4}
+          gap={24}
+          baseColor="#1e293b"
+          activeColor="#3b82f6"
+          proximity={120}
+          speedTrigger={80}
+          shockRadius={200}
+          shockStrength={3}
+          maxSpeed={3000}
+          resistance={500}
+          returnDuration={1.2}
+          className="w-full h-full"
+        />
       </div>
 
-      {/* Grid Pattern Overlay */}
-      <div className="absolute inset-0 bg-grid-white/[0.02] bg-grid"></div>
+      {/* Subtle gradient overlay for depth */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-950/20 via-transparent to-slate-800/20"></div>
       
       {/* Brain Image Container - Properly centered and responsive */}
       <div className="relative z-10 flex items-center justify-center w-full h-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
