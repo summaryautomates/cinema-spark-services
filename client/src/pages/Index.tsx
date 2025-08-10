@@ -273,11 +273,12 @@ const Index = () => {
               </h3>
             </div>
             
-            {/* Horizontal Timeline */}
-            <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 md:p-12 overflow-x-auto">
-              <div className="flex justify-between items-start min-w-[800px] mx-auto">
+            {/* 6-Week Process Grid - 3 above, 3 below */}
+            <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 md:p-12">
+              <div className="grid grid-cols-3 gap-8 md:gap-12">
+                {/* Top Row */}
                 {/* Week 1 - Ideate */}
-                <div className="flex flex-col items-center text-center flex-1">
+                <div className="flex flex-col items-center text-center">
                   <div className="relative mb-4">
                     <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
                       1
@@ -289,7 +290,7 @@ const Index = () => {
                 </div>
 
                 {/* Week 2 - Build */}
-                <div className="flex flex-col items-center text-center flex-1">
+                <div className="flex flex-col items-center text-center">
                   <div className="relative mb-4">
                     <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
                       2
@@ -301,7 +302,7 @@ const Index = () => {
                 </div>
 
                 {/* Week 3 - Feedback */}
-                <div className="flex flex-col items-center text-center flex-1">
+                <div className="flex flex-col items-center text-center">
                   <div className="relative mb-4">
                     <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
                       3
@@ -312,8 +313,9 @@ const Index = () => {
                   <p className="text-sm text-gray-300">Review & Refine</p>
                 </div>
 
+                {/* Bottom Row */}
                 {/* Week 4 - Iterate */}
-                <div className="flex flex-col items-center text-center flex-1">
+                <div className="flex flex-col items-center text-center">
                   <div className="relative mb-4">
                     <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
                       4
@@ -325,7 +327,7 @@ const Index = () => {
                 </div>
 
                 {/* Week 5 - Launch */}
-                <div className="flex flex-col items-center text-center flex-1">
+                <div className="flex flex-col items-center text-center">
                   <div className="relative mb-4">
                     <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
                       5
@@ -337,7 +339,7 @@ const Index = () => {
                 </div>
 
                 {/* Week 6 - Showcase */}
-                <div className="flex flex-col items-center text-center flex-1">
+                <div className="flex flex-col items-center text-center">
                   <div className="relative mb-4">
                     <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
                       6
