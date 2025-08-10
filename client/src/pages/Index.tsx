@@ -268,146 +268,85 @@ const Index = () => {
           {/* 6-Week Process */}
           <div className="max-w-6xl mx-auto mb-16">
             <div className="text-center mb-12">
-              <h3 className="text-2xl md:text-3xl font-semibold mb-4 gradient-text">
-                Our 6-Week Process
+              <h3 className="text-3xl md:text-4xl font-bold mb-6">
+                Our <span className="text-blue-500">6-Week Process</span>
               </h3>
-              <p className="text-muted-foreground text-lg">
-                From idea to launch in just 6 weeks with our proven methodology
-              </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-              {/* Week 1 - Ideate */}
-              <div className="relative group">
-                <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-xl p-6 hover-scale transition-all duration-300 group-hover:border-primary/30">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="relative flex-shrink-0">
-                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
-                        1
-                      </div>
-                      <div className="absolute -top-1 -right-1 w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full opacity-80"></div>
+            {/* Horizontal Timeline */}
+            <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 md:p-12 overflow-x-auto">
+              <div className="flex justify-between items-start min-w-[800px] mx-auto">
+                {/* Week 1 - Ideate */}
+                <div className="flex flex-col items-center text-center flex-1">
+                  <div className="relative mb-4">
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                      1
                     </div>
-                    <div className="flex-1">
-                      <h4 className="font-bold text-lg mb-1">IDEATE</h4>
-                      <p className="text-sm text-primary font-medium">Conceptualize & Plan</p>
-                    </div>
+                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full opacity-90"></div>
                   </div>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    We dive deep into your business needs, define objectives, and create a comprehensive roadmap for success.
-                  </p>
+                  <h4 className="font-bold text-lg text-white mb-1">IDEATE</h4>
+                  <p className="text-sm text-gray-300">Conceptualize & Plan</p>
                 </div>
-              </div>
 
-              {/* Week 2 - Build */}
-              <div className="relative group">
-                <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-xl p-6 hover-scale transition-all duration-300 group-hover:border-primary/30">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="relative flex-shrink-0">
-                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
-                        2
-                      </div>
-                      <div className="absolute -top-1 -right-1 w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full opacity-80"></div>
+                {/* Week 2 - Build */}
+                <div className="flex flex-col items-center text-center flex-1">
+                  <div className="relative mb-4">
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                      2
                     </div>
-                    <div className="flex-1">
-                      <h4 className="font-bold text-lg mb-1">BUILD</h4>
-                      <p className="text-sm text-primary font-medium">Develop & Create</p>
-                    </div>
+                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full opacity-90"></div>
                   </div>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    Our expert team begins development, creating the core architecture and implementing key features.
-                  </p>
+                  <h4 className="font-bold text-lg text-white mb-1">BUILD</h4>
+                  <p className="text-sm text-gray-300">Develop & Create</p>
                 </div>
-              </div>
 
-              {/* Week 3 - Feedback */}
-              <div className="relative group">
-                <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-xl p-6 hover-scale transition-all duration-300 group-hover:border-primary/30">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="relative flex-shrink-0">
-                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
-                        3
-                      </div>
-                      <div className="absolute -top-1 -right-1 w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full opacity-80"></div>
+                {/* Week 3 - Feedback */}
+                <div className="flex flex-col items-center text-center flex-1">
+                  <div className="relative mb-4">
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                      3
                     </div>
-                    <div className="flex-1">
-                      <h4 className="font-bold text-lg mb-1">FEEDBACK</h4>
-                      <p className="text-sm text-primary font-medium">Review & Refine</p>
-                    </div>
+                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full opacity-90"></div>
                   </div>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    We present initial results, gather your feedback, and align our direction with your vision.
-                  </p>
+                  <h4 className="font-bold text-lg text-white mb-1">FEEDBACK</h4>
+                  <p className="text-sm text-gray-300">Review & Refine</p>
                 </div>
-              </div>
 
-              {/* Week 4 - Iterate */}
-              <div className="relative group">
-                <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-xl p-6 hover-scale transition-all duration-300 group-hover:border-primary/30">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="relative flex-shrink-0">
-                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
-                        4
-                      </div>
-                      <div className="absolute -top-1 -right-1 w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full opacity-80"></div>
+                {/* Week 4 - Iterate */}
+                <div className="flex flex-col items-center text-center flex-1">
+                  <div className="relative mb-4">
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                      4
                     </div>
-                    <div className="flex-1">
-                      <h4 className="font-bold text-lg mb-1">ITERATE</h4>
-                      <p className="text-sm text-primary font-medium">Improve & Polish</p>
-                    </div>
+                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full opacity-90"></div>
                   </div>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    Based on your feedback, we refine and enhance the solution, ensuring it exceeds expectations.
-                  </p>
+                  <h4 className="font-bold text-lg text-white mb-1">ITERATE</h4>
+                  <p className="text-sm text-gray-300">Improve & Polish</p>
                 </div>
-              </div>
 
-              {/* Week 5 - Launch */}
-              <div className="relative group">
-                <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-xl p-6 hover-scale transition-all duration-300 group-hover:border-primary/30">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="relative flex-shrink-0">
-                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
-                        5
-                      </div>
-                      <div className="absolute -top-1 -right-1 w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full opacity-80"></div>
+                {/* Week 5 - Launch */}
+                <div className="flex flex-col items-center text-center flex-1">
+                  <div className="relative mb-4">
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                      5
                     </div>
-                    <div className="flex-1">
-                      <h4 className="font-bold text-lg mb-1">LAUNCH</h4>
-                      <p className="text-sm text-primary font-medium">Deploy & Release</p>
-                    </div>
+                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full opacity-90"></div>
                   </div>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    We deploy your solution with full support, ensuring a smooth transition to production.
-                  </p>
+                  <h4 className="font-bold text-lg text-white mb-1">LAUNCH</h4>
+                  <p className="text-sm text-gray-300">Deploy & Release</p>
                 </div>
-              </div>
 
-              {/* Week 6 - Showcase */}
-              <div className="relative group">
-                <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-xl p-6 hover-scale transition-all duration-300 group-hover:border-primary/30">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="relative flex-shrink-0">
-                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
-                        6
-                      </div>
-                      <div className="absolute -top-1 -right-1 w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full opacity-80"></div>
+                {/* Week 6 - Showcase */}
+                <div className="flex flex-col items-center text-center flex-1">
+                  <div className="relative mb-4">
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                      6
                     </div>
-                    <div className="flex-1">
-                      <h4 className="font-bold text-lg mb-1">SHOWCASE</h4>
-                      <p className="text-sm text-primary font-medium">Present & Celebrate</p>
-                    </div>
+                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full opacity-90"></div>
                   </div>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    We present your completed solution and celebrate the successful transformation of your business.
-                  </p>
+                  <h4 className="font-bold text-lg text-white mb-1">SHOWCASE</h4>
+                  <p className="text-sm text-gray-300">Present & Celebrate</p>
                 </div>
-              </div>
-            </div>
-            
-            {/* Process Timeline Connector for larger screens */}
-            <div className="hidden lg:block relative mt-8">
-              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-full max-w-5xl">
-                <div className="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
               </div>
             </div>
           </div>
