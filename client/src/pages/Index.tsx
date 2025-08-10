@@ -978,13 +978,14 @@ const Index = () => {
                       });
                     }}
                   >
-                    Careers
-                  </button>
-                </li>
-                <li>
-                  <button
-                    className="text-muted-foreground hover:text-primary transition-colors cursor-pointer text-left"
-                    onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+                    <li>
+  <button
+    className="text-muted-foreground hover:text-primary transition-colors cursor-pointer text-left"
+    onClick={() => {
+      window.open("https://whatsapp.com/channel/0029VbAnSN3Fy72HM18RCg2q", "_blank");
+    }}
+  >
+    WhatsApp Channel
                   >
                     Contact
                   </button>
