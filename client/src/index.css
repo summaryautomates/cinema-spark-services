@@ -167,6 +167,13 @@ Premium Blue & Neon Blue Luxury Theme
     background-clip: text;
   }
 
+  /* Override for elements inside gradient text that need visible text */
+  .gradient-text .text-visible {
+    -webkit-text-fill-color: initial !important;
+    background: none !important;
+    color: inherit !important;
+  }
+
   .floating-animation {
     animation: float 6s ease-in-out infinite;
   }
