@@ -252,15 +252,11 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       {/* Floating Navigation */}
       <FloatingNavigation />
-      
       {/* Hero Section */}
       <HeroSection 
         onExploreServices={handleExploreServices}
         onContactUs={handleContactUs}
       />
-
-      
-
       {/* Services Introduction */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-6 text-center">
@@ -268,9 +264,7 @@ const Index = () => {
             <Sparkles className="w-4 h-4 mr-2" />
             Our Expertise
           </Badge>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 gradient-text leading-tight">
-            Comprehensive AI Solutions for Every Business Need
-          </h2>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 gradient-text leading-tight">AI Deployment for E-commerce  Edtech, Recruitment, Healthcare, Fintech, Real Estate,  Hospitality</h2>
           {/* 6-Week Process */}
           <div className="max-w-6xl mx-auto mb-16">
             <div className="text-center mb-12">
@@ -426,7 +420,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
       {/* Services Sections */}
       <div id="services" className="relative">
         {/* Strategic Services */}
@@ -495,7 +488,6 @@ const Index = () => {
           />
         </div>
       </div>
-
       {/* Why Choose Us Section */}
       <section className="py-20 bg-muted/20">
         <div className="container mx-auto px-4">
@@ -545,7 +537,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
       {/* Call to Action Section */}
       <section id="contact" className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-hero" />
@@ -577,7 +568,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
       {/* Footer */}
       <footer className="py-16 border-t border-border bg-muted/20">
         <div className="container mx-auto px-4">
