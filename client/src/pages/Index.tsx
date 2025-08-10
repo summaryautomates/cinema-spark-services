@@ -837,8 +837,10 @@ const Index = () => {
               <Button
                 variant="secondary"
                 size="lg"
-                onClick={() => {
-                  window.location.href = "https://summaryautomates.setmore.com";
+                onClick={(e) => {
+                  e.preventDefault();
+                  console.log("Redirecting to: https://summaryautomates.setmore.com");
+                  window.open("https://summaryautomates.setmore.com", "_blank");
                 }}
                 className="bg-white text-primary hover:bg-white/90"
               >
