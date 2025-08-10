@@ -837,7 +837,10 @@ const Index = () => {
               <Button
                 variant="secondary"
                 size="lg"
-                onClick={() => window.open("https://summaryautomates.setmore.com", "_blank")}
+                onClick={() => {
+                  console.log("Opening Setmore booking link");
+                  window.open("https://summaryautomates.setmore.com", "_blank");
+                }}
                 className="bg-white text-primary hover:bg-white/90"
               >
                 <Phone className="mr-2" />
