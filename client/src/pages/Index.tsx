@@ -766,7 +766,7 @@ const Index = () => {
               Why Choose Us
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">
-              The AI Excellence Advantage
+              The Summary Automates Advantage
             </h2>
           </div>
 
@@ -863,7 +863,7 @@ const Index = () => {
             <div className="space-y-4">
               <h3 className="text-lg font-semibold gradient-text flex items-center">
                 <Brain className="w-5 h-5 mr-2" />
-                AI Excellence
+                Summary Automates
               </h3>
               <p className="text-muted-foreground">
                 Transforming businesses through innovative AI solutions and
@@ -874,7 +874,7 @@ const Index = () => {
                   variant="outline"
                   size="icon"
                   className="h-9 w-9"
-                  onClick={() => window.open('https://linkedin.com/company/ai-excellence', '_blank')}
+                  onClick={() => window.open('https://linkedin.com/company/summary-automates', '_blank')}
                 >
                   <Users className="h-4 w-4" />
                 </Button>
@@ -882,7 +882,7 @@ const Index = () => {
                   variant="outline"
                   size="icon"
                   className="h-9 w-9"
-                  onClick={() => window.open('https://twitter.com/ai_excellence', '_blank')}
+                  onClick={() => window.open('https://twitter.com/summary_automates', '_blank')}
                 >
                   <MessageCircle className="h-4 w-4" />
                 </Button>
@@ -890,7 +890,7 @@ const Index = () => {
                   variant="outline"
                   size="icon"
                   className="h-9 w-9"
-                  onClick={() => window.open('https://github.com/ai-excellence', '_blank')}
+                  onClick={() => window.open('https://github.com/summary-automates', '_blank')}
                 >
                   <Globe className="h-4 w-4" />
                 </Button>
@@ -1020,29 +1020,29 @@ const Index = () => {
                   variant="outline"
                   className="w-full justify-start"
                   onClick={() => {
-                    navigator.clipboard.writeText("hello@ai-excellence.com");
+                    navigator.clipboard.writeText("summaryautomations@gmail.com");
                     toast({
                       title: "Email Copied",
-                      description: "hello@ai-excellence.com copied to clipboard",
+                      description: "summaryautomations@gmail.com copied to clipboard",
                     });
                   }}
                 >
                   <Mail className="w-4 h-4 mr-2" />
-                  hello@ai-excellence.com
+                  summaryautomations@gmail.com
                 </Button>
                 <Button
                   variant="outline"
                   className="w-full justify-start"
                   onClick={() => {
-                    navigator.clipboard.writeText("+1 (555) 123-4567");
+                    navigator.clipboard.writeText("+919373395733");
                     toast({
                       title: "Phone Copied",
-                      description: "+1 (555) 123-4567 copied to clipboard",
+                      description: "+919373395733 copied to clipboard",
                     });
                   }}
                 >
                   <Phone className="w-4 h-4 mr-2" />
-                  +1 (555) 123-4567
+                  +919373395733
                 </Button>
               </div>
             </div>
@@ -1052,7 +1052,7 @@ const Index = () => {
           <div className="pt-8 border-t border-border">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <p className="text-muted-foreground">
-                © 2024 AI Excellence. All rights reserved. Crafted with innovation and precision.
+                © 2025 Summary Automates. All rights reserved. Crafted with innovation and precision.
               </p>
               <div className="flex items-center space-x-6">
                 <button
