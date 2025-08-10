@@ -976,10 +976,13 @@ const Index = () => {
                   <button
                     className="text-muted-foreground hover:text-primary transition-colors cursor-pointer text-left"
                     onClick={() => {
-                      window.open("https://whatsapp.com/channel/0029VbAnSN3Fy72HM18RCg2q", "_blank");
+                      toast({
+                        title: "Careers",
+                        description: "Join our team of AI innovators. Contact us for opportunities.",
+                      });
                     }}
                   >
-                    WhatsApp Channel
+                    Careers
                   </button>
                 </li>
                 <li>
