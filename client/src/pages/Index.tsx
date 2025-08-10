@@ -2,6 +2,7 @@ import { useState } from "react";
 import { HeroSection } from "@/components/HeroSection";
 import { ServiceSection } from "@/components/ServiceSection";
 import { FloatingNavigation } from "@/components/FloatingNavigation";
+import RotatingText from "@/components/RotatingText";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -264,7 +265,27 @@ const Index = () => {
             <Sparkles className="w-4 h-4 mr-2" />
             Our Expertise
           </Badge>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 gradient-text leading-tight">AI Deployment for E-commerce  Edtech, Recruitment, Healthcare, Fintech, Real Estate,  Hospitality</h2>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 gradient-text leading-tight">
+            AI Deployment for{" "}
+            <RotatingText
+              texts={[
+                "E-commerce",
+                "Edtech",
+                "Recruitment", 
+                "Healthcare",
+                "Fintech",
+                "Real Estate",
+                "Hospitality"
+              ]}
+              rotationInterval={3000}
+              transition={{ type: "spring", damping: 25, stiffness: 300, duration: 0.5 }}
+              initial={{ y: "100%", opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: "-100%", opacity: 0 }}
+              splitBy="words"
+              className="text-blue-400"
+            />
+          </h2>
           {/* 6-Week Process */}
           <div className="max-w-6xl mx-auto mb-16">
             <div className="text-center mb-12">
