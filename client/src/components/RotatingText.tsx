@@ -33,7 +33,7 @@ const RotatingText: React.FC<RotatingTextProps> = ({
   }, [texts.length, rotationInterval]);
 
   return (
-    <span className={`inline-block ${className}`} style={{ minWidth: '200px' }}>
+    <span className={`inline-block relative ${className}`}>
       <AnimatePresence mode="wait">
         <motion.span
           key={currentIndex}
@@ -41,7 +41,8 @@ const RotatingText: React.FC<RotatingTextProps> = ({
           animate={animate}
           exit={exit}
           transition={transition}
-          className="inline-block"
+          className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg font-bold"
+          style={{ minWidth: '200px', textAlign: 'center', display: 'inline-block' }}
         >
           {texts[currentIndex]}
         </motion.span>

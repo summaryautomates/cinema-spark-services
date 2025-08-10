@@ -278,7 +278,6 @@ const Index = () => {
                 "Hospitality"
               ]}
               rotationInterval={3000}
-              className="text-blue-400"
             />
           </h2>
           {/* 6-Week Process */}
